@@ -1,0 +1,161 @@
+# This project's gate. Two steps, and both run the same on your machine:
+#   npm run verificar
+#   npx --yes github:Navesz/rebar .
+#
+# THE MATRIX EXISTS FOR A MEASURED REASON. The portability defect that killed the
+# previous project — an `execFileSync("npx")` that does not exist as an
+# executable on Windows — survived a year because its CI only ran Linux. Here the
+# same command has to pass on both systems or it passes on neither.
+#
+# The workflow, job and step NAMES stay Portuguese — `verificar`, `régua do
+# rebar`, `régua de segurança`, `publicar`. They are identifiers: the required
+# status checks on GitHub are matched by name, and `npm run verificar` is the
+# script this file invokes. Renaming them is a different job from translating
+# prose, and it breaks branch protection silently. Same for the `so` matrix key
+# and the `id: publicacao` step: `${{ matrix.so }}` and
+# `steps.publicacao.outputs` read them back by that spelling.
+
+name: verificar
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verificar-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verificar:
+    name: verificar (${{ matrix.so }})
+    runs-on: ${{ matrix.so }}
+    # A time ceiling, because GitHub's default is SIX HOURS.
+    #
+    # The number that motivated the line, measured on 31/08 generating this
+    # project: the whole `npm run verificar` takes 26 s with the cache warm, but
+    # `eslint` alone took 93 s on the FIRST run, with the module cache cold — and
+    # before that, three attempts were killed at 200 s and at 280 s without
+    # printing one line. Cold lint on this stack is indistinguishable from lint
+    # hung while you look at it. A CI runner is always cold.
+    #
+    # Without the ceiling, a regression on that path does not become an error: it
+    # becomes a runner busy for six hours and a PR "in progress" all morning. With
+    # the ceiling, it is a red X in 20 minutes — forty times the worst time ever
+    # measured, with room to spare for the install and for the build.
+    timeout-minutes: 20
+    strategy:
+      # No fail-fast: knowing it broke only on Windows, or on both, is half the
+      # diagnosis. Cancelling the other platform hides exactly that.
+      fail-fast: false
+      matrix:
+        so: [windows-latest, ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # rebar-check has two rules that read `git log` — coautoria-ia and
+          # identidade-git. With the default shallow clone (fetch-depth: 1) they
+          # would see one commit only and would pass any history. A check that
+          # sees only the last commit is not a check.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      # `npm ci` and not `npm install`: the lockfile is the source, and CI does
+      # not decide the version.
+      - run: npm ci
+
+      # One command only. Its body is in package.json, so that what runs here is
+      # literally what you run on your machine before opening the PR.
+      - name: verificar
+        run: npm run verificar
+
+      # The rebar ruler, on top of what this repository checks of itself. Exit 0
+      # is the only pass: 1 failed, 2 invalid target, 3 partial slice, 127 the
+      # tooling broke — all of them bring the job down.
+      - name: régua do rebar
+        run: npx --yes github:Navesz/rebar .
+
+      # THE SECURITY RULER, and it is a DIFFERENT binary from the same package —
+      # hence the `-p`. Without it npx runs the default bin, which is the format
+      # checker, and this step would repeat the one above with nobody noticing.
+      #
+      # Network is allowed here: it runs once per push, not once per commit. What
+      # could not wait for CI is in the hook, written in shell.
+      - name: régua de segurança
+        run: npx --yes -p github:Navesz/rebar rebar-security .
+
+  # ─────────────────────────────────────────────────────────────── publishing
+  #
+  # `needs: verificar` is the whole line of the design: the deploy is NOT a path
+  # parallel to the gate, it is what comes after it. A separate publishing
+  # workflow would put the page up with the lint broken, and the gate would turn
+  # into what this project exists not to be — a report nobody reads.
+  #
+  # The matrix runs on both systems; `needs` waits for BOTH legs. Red on Windows
+  # does not publish.
+  #
+  # IF THIS PROJECT IS NOT GOING TO GITHUB PAGES, delete this whole job. It is
+  # born here because the `site` preset already comes with `output: "export"` and
+  # with the `.pages.yml`: without the job, the project has everything to publish
+  # and nothing that publishes, which is the state it was born in until
+  # 2026-09-06.
+  #
+  # On GitHub's side a human step is still missing, and it is not a file:
+  # Settings › Pages › Source = "GitHub Actions". Without that the job runs and
+  # `deploy-pages` fails saying the source is another one.
+  publicar:
+    name: publicar no GitHub Pages
+    needs: verificar
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    # Only this job gets the permission to write to Pages. The `contents: read`
+    # at the top still holds for the others.
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    # One deploy at a time, and the newer one waits instead of cancelling what is
+    # already going up: `cancel-in-progress` here would leave the page halfway.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v7
+      # `node-version: '22'` and not `node-version-file: '.nvmrc'`: the generator
+      # does not write .nvmrc, and the job above already pins the version right
+      # here. One more file just to say the same number would be a second source
+      # to diverge -- and, the way it was, a source that did not exist: the
+      # setup-node died and this job, the only one with `pages: write`, never ran
+      # green.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+
+      # The same `next build` the ruler already ran. The `out/` is not versioned —
+      # a build artifact in the repository is one of the things rebar flags.
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: out
+      - id: publicacao
+        uses: actions/deploy-pages@v4

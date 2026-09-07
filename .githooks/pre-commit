@@ -1,0 +1,58 @@
+#!/bin/sh
+# Pre-commit hook — ONLY WHAT IS FAST.
+#
+# A slow hook is a hook turned off, and a hook turned off verifies zero. The
+# target is under 5 seconds. No typecheck, no test, no build: that is CI's work,
+# and CI can take its time because nobody is waiting in front of it.
+#
+# Here lives the one thing that has to be blocked BEFORE it exists, because
+# afterwards it is already late: a secret, once in the history, demands ROTATION
+# of the credential, and the next commit does not undo that.
+#
+# The other half — the AI co-authorship trailer — is blocked by the commit-msg
+# hook, which runs with the message in hand and keeps the trailer from GETTING
+# IN. In a repository born with both hooks installed, blocking the entrance is
+# enough; sweeping the whole history on every commit is the work rebar's ruler
+# does in CI.
+#
+# Install with: node .githooks/install.mjs
+# Skip once with: git commit --no-verify
+
+set -e
+
+RAIZ=$(git rev-parse --show-toplevel)
+cd "$RAIZ"
+
+# Only what is staged, not the whole repository: it is what this commit is about
+# to add, and it is what fits in the time budget.
+node .githooks/scan-secret.mjs --staged
+
+# TRACKED ENVIRONMENT FILE, caught on its own, without looking at the content:
+# an empty `.env` today gets the key tomorrow, and by then it has already gone
+# through review. It is rebar-security's `env-committed` rule, and it is N5 --
+# after the commit the fix is not deleting the file, it is rotating the
+# credential.
+#
+# Written here instead of `npx rebar-security` because a hook cannot depend on
+# the network: an `npx` on every commit is slow and dies offline. It is two
+# commands.
+#
+# `.env.example`, `.env.sample` and the like stay out -- they are the fix for
+# the failure, not the failure.
+#
+# `exemplo` and `modelo` in the second grep stay Portuguese: they are the
+# suffixes Brazilian repositories actually use on their example env files, and
+# this pattern is what SEARCHES for them. Translating them makes the hook block
+# a `.env.exemplo` that is not a failure.
+ENVS=$(git diff --cached --name-only --diff-filter=AM \
+  | grep -E '(^|/)\.env($|\.)' \
+  | grep -vE '\.(example|exemplo|sample|template|dist|modelo)$' || true)
+if [ -n "$ENVS" ]; then
+  echo "[env] environment file staged:"
+  echo "$ENVS" | sed 's/^/  /'
+  echo "  Deleting is not enough if it was already committed: rotate the credential."
+  echo "  If it is an example, rename it to .env.example."
+  exit 1
+fi
+
+exit 0

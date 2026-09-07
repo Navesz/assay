@@ -1,0 +1,140 @@
+# Pages CMS (MIT) — EMITTED AND DISCONNECTED ON PURPOSE.
+#
+# This file describes the fields of `conteudo/site.json` for a visual editor.
+# It does NOT connect the CMS to anything, and must not connect on its own:
+# connecting Pages CMS means giving WRITE ACCESS to this repository to a hosted
+# third-party service, and that is the owner's decision, not the generator's.
+# Decision of 31/08: always emit, never connect.
+#
+# To connect, the owner goes to pagescms.org and authorizes the repository —
+# five minutes. The point of emitting it even disconnected is that the
+# alternative would be a refactor on the day he wanted it, and then he would not
+# do it.
+#
+# While it is disconnected, this file is readable DOCUMENTATION of the contract:
+# whoever edits the JSON by hand reads here what each field is. The executable
+# truth is still `conteudo/esquema.ts`, which fails the build.
+#
+# The `name:` values are the KEYS of `conteudo/site.json` and stay in
+# Portuguese — they are identifiers, not prose. `UF` and `CEP` stay too: they
+# are the Brazilian address fields the schema validates.
+
+media: public
+
+content:
+  - name: site
+    label: Site
+    type: file
+    path: conteudo/site.json
+    fields:
+      # THE DEMAND FOLLOWS THE USE. Only `nome` is mandatory: it is the
+      # `applicationName`, the `og:siteName` and the manifest's `name`, and
+      # every page renders it without asking. WhatsApp, e-mail and address are
+      # CONDITIONAL BLOCKS — the presence of the key in `conteudo/site.json` is
+      # the declaration that the home renders that. No WhatsApp? Delete the
+      # whole `whatsapp` key; the button goes with it and the build passes.
+      # Leaving it empty is NOT "I do not have it": the build fails, on purpose.
+      - name: identidade
+        label: Business identity
+        type: object
+        description: Phone and address are validated CONTENT, not an environment variable (§12.3). Only the name is mandatory; the contact blocks exist if they are used.
+        fields:
+          - { name: nome, label: Name, type: string, required: true }
+          # All-or-nothing block: the four fields together, or the key out of
+          # the file. An empty field here is the `wa.me` with no recipient from
+          # `Navesz/Galegos#1`, and the schema fails the build before that ships.
+          - name: whatsapp
+            label: WhatsApp — the whole block is optional
+            type: object
+            description: Delete this block if the business does not answer on WhatsApp. If it exists, the four fields are mandatory.
+            required: false
+            fields:
+              - { name: e164, label: 'Number with DDI, digits only', type: string, required: true }
+              - { name: exibicao, label: How it shows on screen, type: string, required: true }
+              - { name: chamadaAcao, label: Button text, type: string, required: true }
+              - {
+                  name: mensagem,
+                  label: Message already written into the conversation,
+                  type: text,
+                  required: true,
+                }
+          - {
+              name: email,
+              label: 'E-mail — optional, delete the key if there is none',
+              type: string,
+              required: false,
+            }
+          # Half an address is worse than none: the visitor reads a place that
+          # does not exist. The five fields come together, or the key leaves the
+          # file.
+          - name: endereco
+            label: Address — the whole block is optional
+            type: object
+            description: Delete this block if the business has no physical address open to the public. If it exists, the five fields are mandatory together.
+            required: false
+            fields:
+              - { name: logradouro, label: Street and number, type: string, required: true }
+              - { name: bairro, label: Neighborhood, type: string, required: true }
+              - { name: cidade, label: City, type: string, required: true }
+              - { name: uf, label: UF, type: string, required: true }
+              - { name: cep, label: CEP, type: string, required: true }
+
+      - name: meta
+        label: Metadata and sharing
+        type: object
+        fields:
+          - { name: urlBase, label: 'Site URL, no trailing slash', type: string, required: true }
+          - { name: idioma, label: Language, type: string, required: true }
+          - { name: titulo, label: Title, type: string, required: true }
+          - {
+              name: gabaritoDeTitulo,
+              label: 'Title template, with %s',
+              type: string,
+              required: true,
+            }
+          - {
+              name: descricao,
+              label: 'Description, from 50 to 160 characters',
+              type: text,
+              required: true,
+            }
+          - {
+              name: nomeCurto,
+              label: 'Short name, up to 12 characters',
+              type: string,
+              required: true,
+            }
+          - { name: atualizadoEm, label: Updated on, type: date, required: true }
+          - name: cores
+            label: Colors
+            type: object
+            fields:
+              - { name: tema, label: Theme color, type: string, required: true }
+              - { name: fundo, label: Background color, type: string, required: true }
+          - name: og
+            label: Sharing card
+            type: object
+            fields:
+              - { name: caminho, label: File in public/, type: string, required: true }
+              - { name: largura, label: Width, type: number, required: true }
+              - { name: altura, label: Height, type: number, required: true }
+              - { name: alt, label: Alternative text, type: string, required: true }
+
+      - name: home
+        label: Home page
+        type: object
+        fields:
+          # `chamadaAcao` and `mensagemWhatsapp` used to live HERE and moved
+          # inside the `identidade.whatsapp` block. They were the copy of a
+          # button that may not exist: with no WhatsApp, two fields the owner
+          # writes, reviews, publishes — and that nothing renders. Inside the
+          # block, they go away along with the button.
+          - { name: titulo, label: Title, type: string, required: true }
+          - { name: subtitulo, label: Subtitle, type: text, required: true }
+          - name: destaques
+            label: Highlights
+            type: object
+            list: { min: 1, max: 6 }
+            fields:
+              - { name: titulo, label: Title, type: string, required: true }
+              - { name: texto, label: Text, type: text, required: true }

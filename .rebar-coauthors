@@ -1,0 +1,22 @@
+# Coautores HUMANOS aceitos neste repositório. ALLOWLIST, não lista de inimigos.
+#
+# Por que invertido: a política antiga era uma ENUMERAÇÃO de agentes de IA, e o
+# ataque de 2026-08-30 furou os dois lugares onde ela morava — seis agentes
+# entraram no histórico de uma vez, com trailer que o git reconhece como
+# coautoria, e a régua acusou 1 de 9 commits quando 8 tinham trailer. Enumerar
+# agente é corrida que se perde toda semana; humano do projeto é lista curta e
+# que muda uma vez por ano.
+#
+# FORMATO: uma identidade por linha, "Nome <email>" ou só o e-mail. O que é
+# comparado é o E-MAIL, em caixa baixa. Nome é texto livre e não identifica
+# ninguém. Linha vazia e linha começada por # são ignoradas.
+#
+# QUEM LÊ:
+#   .githooks/check-message.mjs       no commit-msg, antes de o commit existir
+#   regra coautoria-ia do rebar-check   no histórico, depois de ele existir
+#
+# ESTE ARQUIVO TEM DE ESTAR RASTREADO. O rebar-check só o aceita se o
+# "git ls-files" o listar, porque allowlist solta no disco é allowlist que o
+# auditor não vê — e aqui um arquivo de dois bytes desligaria a regra inteira.
+
+Naves <58537948+Navesz@users.noreply.github.com>

@@ -1,0 +1,56 @@
+{
+  "identidade": {
+    "nome": "assay",
+    "whatsapp": {
+      "e164": "TROQUE-PELO-NUMERO-COM-DDI",
+      "exibicao": "TROQUE-PELO-NUMERO-VISIVEL",
+      "chamadaAcao": "Falar no WhatsApp",
+      "mensagem": "Ola! Vim pelo site e gostaria de mais informacoes."
+    },
+    "email": "TROQUE-PELO-EMAIL-REAL",
+    "endereco": {
+      "logradouro": "TROQUE-PELA-RUA-E-NUMERO",
+      "bairro": "TROQUE-PELO-BAIRRO",
+      "cidade": "TROQUE-PELA-CIDADE",
+      "uf": "TROQUE-PELA-UF",
+      "cep": "TROQUE-PELO-CEP"
+    }
+  },
+  "meta": {
+    "urlBase": "https://navesz.github.io/assay",
+    "idioma": "pt-BR",
+    "titulo": "assay",
+    "gabaritoDeTitulo": "%s · assay",
+    "descricao": "TROQUE-PELA-DESCRICAO-REAL: o que o negocio faz, em uma frase, porque e ela que aparece no Google e no preview de link do WhatsApp.",
+    "nomeCurto": "assay",
+    "atualizadoEm": "2026-09-07",
+    "cores": {
+      "tema": "#0f172a",
+      "fundo": "#ffffff"
+    },
+    "og": {
+      "caminho": "/og.png",
+      "largura": 1200,
+      "altura": 630,
+      "alt": "Cartão de compartilhamento de assay"
+    }
+  },
+  "home": {
+    "titulo": "assay",
+    "subtitulo": "Troque este subtitulo pelo que o negocio faz, em uma frase que um desconhecido entenda.",
+    "destaques": [
+      {
+        "titulo": "Primeiro destaque",
+        "texto": "Troque por um motivo real de fechar com voce. Um paragrafo curto, sem promessa que nao se cumpre."
+      },
+      {
+        "titulo": "Segundo destaque",
+        "texto": "Troque por outro motivo. Tres destaques cabem na primeira tela sem rolagem em celular."
+      },
+      {
+        "titulo": "Terceiro destaque",
+        "texto": "Troque por outro motivo. Se nao houver um terceiro honesto, apague este item: a lista aceita de 1 a 6."
+      }
+    ]
+  }
+}
