@@ -176,7 +176,7 @@ jobs:
       # a build artifact in the repository is one of the things rebar flags.
       - run: npm run build
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v4
         with:
           path: out
