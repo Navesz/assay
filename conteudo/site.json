@@ -1,55 +1,41 @@
 {
   "identidade": {
-    "nome": "assay",
-    "whatsapp": {
-      "e164": "TROQUE-PELO-NUMERO-COM-DDI",
-      "exibicao": "TROQUE-PELO-NUMERO-VISIVEL",
-      "chamadaAcao": "Falar no WhatsApp",
-      "mensagem": "Ola! Vim pelo site e gostaria de mais informacoes."
-    },
-    "email": "TROQUE-PELO-EMAIL-REAL",
-    "endereco": {
-      "logradouro": "TROQUE-PELA-RUA-E-NUMERO",
-      "bairro": "TROQUE-PELO-BAIRRO",
-      "cidade": "TROQUE-PELA-CIDADE",
-      "uf": "TROQUE-PELA-UF",
-      "cep": "TROQUE-PELO-CEP"
-    }
+    "nome": "assay"
   },
   "meta": {
     "urlBase": "https://navesz.github.io/assay",
     "idioma": "pt-BR",
     "titulo": "assay",
     "gabaritoDeTitulo": "%s · assay",
-    "descricao": "TROQUE-PELA-DESCRICAO-REAL: o que o negocio faz, em uma frase, porque e ela que aparece no Google e no preview de link do WhatsApp.",
+    "descricao": "Indicadores fundamentalistas de empresas da B3 com fonte e data em cada número, e onde cada indicador engana. Não recomenda compra nem venda.",
     "nomeCurto": "assay",
     "atualizadoEm": "2026-09-07",
     "cores": {
-      "tema": "#0f172a",
-      "fundo": "#ffffff"
+      "tema": "#ec8435",
+      "fundo": "#0e1117"
     },
     "og": {
       "caminho": "/og.png",
       "largura": 1200,
       "altura": 630,
-      "alt": "Cartão de compartilhamento de assay"
+      "alt": "assay — indicadores da B3 com fonte, data e o limite de cada um"
     }
   },
   "home": {
-    "titulo": "assay",
-    "subtitulo": "Troque este subtitulo pelo que o negocio faz, em uma frase que um desconhecido entenda.",
+    "titulo": "De que a empresa é feita, pelos números.",
+    "subtitulo": "Indicadores das companhias abertas da B3, tirados da demonstração que cada uma entregou à CVM — com a fonte e a data em cada número, e o caso em que a leitura ingênua de cada indicador engana.",
     "destaques": [
       {
-        "titulo": "Primeiro destaque",
-        "texto": "Troque por um motivo real de fechar com voce. Um paragrafo curto, sem promessa que nao se cumpre."
+        "titulo": "Todo número diz de onde veio",
+        "texto": "Fonte, exercício e data de coleta colados na tabela, não escondidos num rodapé. Número sem procedência é opinião com aparência de fato."
       },
       {
-        "titulo": "Segundo destaque",
-        "texto": "Troque por outro motivo. Tres destaques cabem na primeira tela sem rolagem em celular."
+        "titulo": "Cada indicador diz onde engana",
+        "texto": "Dívida infla o retorno sobre o patrimônio. Estoque encalhado infla a liquidez. Aquisição vira crescimento de receita. O que o número não diz vem escrito ao lado dele."
       },
       {
-        "titulo": "Terceiro destaque",
-        "texto": "Troque por outro motivo. Se nao houver um terceiro honesto, apague este item: a lista aceita de 1 a 6."
+        "titulo": "Não recomenda nada",
+        "texto": "É uma ferramenta de leitura, não consultoria. Não há carteira sugerida, nota, ranking de compra nem análise por papel — e não há preço, pelo motivo explicado abaixo."
       }
     ]
   }

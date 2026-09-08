@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 
+import { Companhias } from '@/components/companhias'
 import { linkWhatsapp, site, type Contato } from '@/conteudo/carregar'
 
 /**
@@ -114,6 +115,8 @@ export default function Pagina() {
           </li>
         ))}
       </ul>
+
+      <Companhias />
 
       <footer className="text-muted-foreground mt-auto flex flex-col gap-1 text-sm">
         <p>{site.identidade.nome}</p>

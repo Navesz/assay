@@ -1,0 +1,75 @@
+{
+  "titulo": "Seis indicadores, e onde cada um engana",
+  "intro": "Todos vêm da demonstração que a companhia entregou à CVM. Nenhum depende de cotação — a nota abaixo explica por quê. Ao lado de cada um está o caso em que a leitura ingênua leva à conclusão errada, que é a parte que quase nenhum lugar escreve.",
+  "rotulos": {
+    "oQueMede": "o que mede",
+    "ondeEngana": "onde engana",
+    "oQueNaoDiz": "o que não diz",
+    "empresa": "companhia",
+    "ticker": "código",
+    "receita": "receita",
+    "exercicio": "exercício",
+    "busca": "filtrar por nome ou código",
+    "vazio": "Nenhuma companhia com esse filtro.",
+    "contagem": "companhias",
+    "semValor": "—"
+  },
+  "semPreco": {
+    "titulo": "Por que não há preço aqui",
+    "texto": "Todo indicador que depende de cotação — P/L, P/VP, dividend yield — exige uma API paga cujo campo de data, medido em 07/09/2026 com a bolsa fechada, avançava minuto a minuto enquanto o preço ficava parado: era o relógio do cache, não a hora do negócio. Um site cujo contrato é citar a fonte e a data não pode publicar isso. O que ficou vem da demonstração que a companhia assinou e entregou, e tem data de referência de verdade."
+  },
+  "foraDoConjunto": {
+    "titulo": "Quem ficou de fora, e por quê",
+    "texto": "Bancos e seguradoras usam outro plano de contas: nele o código 1.01 é \"Caixa e Equivalentes\", não \"Ativo Circulante\". Calcular liquidez corrente com os mesmos códigos das demais produziria um número errado com aparência de certo, então elas saem do conjunto — com o motivo registrado, nunca em silêncio."
+  },
+  "lista": [
+    {
+      "chave": "margemLiquida",
+      "nome": "Margem líquida",
+      "unidade": "porcento",
+      "oQueMede": "Quanto de cada real de receita sobra como lucro depois de tudo — custo, despesa, juros e imposto.",
+      "ondeEngana": "Um ganho que não se repete infla o lucro sem que a operação tenha melhorado: venda de um ativo, reversão de provisão, crédito tributário reconhecido de uma vez. A margem sobe e a empresa é a mesma.",
+      "oQueNaoDiz": "Nada sobre quanto capital foi preciso imobilizar para gerar aquela receita. Duas empresas com a mesma margem podem exigir investimentos muito diferentes."
+    },
+    {
+      "chave": "margemOperacional",
+      "nome": "Margem operacional",
+      "unidade": "porcento",
+      "oQueMede": "Quanto sobra da receita antes dos juros e dos impostos, ou seja, o quanto a operação em si gera.",
+      "ondeEngana": "Quem arrenda em vez de comprar empurra custo para a linha financeira, que fica abaixo desta. A margem operacional melhora sem que nada tenha melhorado — e duas empresas idênticas com estruturas de capital diferentes deixam de ser comparáveis aqui.",
+      "oQueNaoDiz": "Se o lucro chega ao sócio. Dívida cara consome tudo o que aparece nesta linha, e ela não a enxerga."
+    },
+    {
+      "chave": "retornoSobrePatrimonio",
+      "nome": "Retorno sobre o patrimônio",
+      "unidade": "porcento",
+      "oQueMede": "Quanto a companhia devolveu no ano sobre o dinheiro que é dos sócios.",
+      "ondeEngana": "Dívida infla este número. Patrimônio pequeno sustentado por muita dívida produz retorno alto sem que a operação seja melhor — um retorno de 30% com alavancagem de cinco vezes e outro de 30% sem dívida nenhuma são coisas diferentes. Compare sempre com a alavancagem ao lado.",
+      "oQueNaoDiz": "Nada sobre risco. E quando o patrimônio é negativo o número perde sentido: aqui ele sai vazio em vez de sair errado."
+    },
+    {
+      "chave": "liquidezCorrente",
+      "nome": "Liquidez corrente",
+      "unidade": "vezes",
+      "oQueMede": "Quantas vezes o que a companhia recebe dentro de um ano cobre o que ela precisa pagar dentro de um ano.",
+      "ondeEngana": "Estoque conta como ativo circulante mesmo quando não gira. Uma varejista com estoque encalhado mostra folga que ela não tem, e o índice só piora depois que a mercadoria for baixada.",
+      "oQueNaoDiz": "Nada sobre o prazo dentro do ano. Receber em 180 dias e pagar em 30 dá o mesmo número que o contrário, e são situações opostas."
+    },
+    {
+      "chave": "alavancagem",
+      "nome": "Alavancagem",
+      "unidade": "vezes",
+      "oQueMede": "Quantas vezes o passivo total supera o patrimônio dos sócios.",
+      "ondeEngana": "Passivo não é só dívida. Fornecedor a pagar e imposto a recolher entram aqui, então varejo com prazo longo de fornecedor aparece endividado sem pagar juro nenhum por isso.",
+      "oQueNaoDiz": "O custo da dívida nem quando ela vence. Dever muito e barato a dez anos não é o mesmo que dever pouco e caro em seis meses."
+    },
+    {
+      "chave": "crescimentoDeReceita",
+      "nome": "Crescimento de receita",
+      "unidade": "porcento",
+      "oQueMede": "A taxa composta ao ano da receita no período coberto pelos dados da CVM.",
+      "ondeEngana": "Aquisição entra como crescimento. Uma companhia que comprou outra cresce a receita sem ter vendido mais nada, e a taxa não distingue as duas coisas.",
+      "oQueNaoDiz": "Se o crescimento deu lucro. Receita cresce com desconto, e a margem ao lado é que responde isso."
+    }
+  ]
+}
