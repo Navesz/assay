@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
-import { site } from '@/conteudo/carregar'
+import { naPasta, site } from '@/conteudo/carregar'
 
 const fontSans = Geist({ subsets: ['latin'], variable: '--font-sans' })
 const fontMono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   description: site.meta.descricao,
   applicationName: site.identidade.nome,
   alternates: { canonical: '/' },
+  // A MARCA COMO FAVICON, e é o mesmo arquivo que o cabeçalho mostra: um SVG
+  // só, sem uma segunda cópia do desenho para divergir no dia em que um dos
+  // dois for ajustado. `naPasta` pelo motivo medido em `conteudo/carregar.ts`.
+  icons: { icon: { url: naPasta('/marca.svg'), type: 'image/svg+xml' } },
   openGraph: {
     type: 'website',
     // og wants `pt_BR`; the HTML `lang` attribute wants `pt-BR`. Same datum,

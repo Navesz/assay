@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="assay" color="#6fd3b8">
+  <title>assay</title>
+  <!--
+    A MARCA É UM CORPO DE PROVA CORTADO.
+
+    Um ensaio de metal corta a amostra para descobrir de que ela é feita, e é
+    isso que o site faz com a empresa. O corte ATRAVESSA a peça — não é um
+    entalhe no canto — e dentro dele aparecem três camadas de pesos diferentes:
+    a leitura é que a composição não é uniforme, que é a razão de existir um
+    ensaio.
+
+    Continua o idioma da marca do rebar, onde o que define a forma é o que foi
+    VAZADO e não o que foi desenhado por cima. A primeira versão punha as
+    camadas fora do corpo e, em 28px, sobrava um quadrado com um arranhão.
+
+    ESTE ARQUIVO É A FONTE DO DESENHO, e não uma cópia dele: `ferramental/
+    imagens.mjs` lê estes caminhos para rasterizar o og.png e os dois ícones do
+    manifesto. Mexer aqui e rodar o gerador muda as quatro peças de uma vez.
+  -->
+  <defs>
+    <!-- A região da máscara é declarada em coordenadas do desenho, e não nos
+         -10%/120% da caixa do elemento, que é o padrão. É o que faz o
+         rasterizador e o navegador concordarem: o gerador não lê região
+         nenhuma, ele assume o quadro inteiro. -->
+    <mask id="fenda" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff" />
+      <!-- A FENDA ATRAVESSA A PEÇA INTEIRA E SOBRA DOS DOIS LADOS. A primeira
+           versão parava dentro do corpo e deixava um triângulo solto no canto
+           de baixo — só visível depois de rasterizar em 512px, porque em
+           tamanho de tela ele passava por antisserrilhado. -->
+      <path d="M94 -14 L116 8 L12 112 L-10 90 Z" fill="#000" />
+    </mask>
+  </defs>
+
+  <rect x="12" y="12" width="76" height="76" rx="16" fill="currentColor" mask="url(#fenda)" />
+
+  <!-- As camadas, DENTRO da fenda: três traços paralelos ao corte, com pesos
+       decrescentes. As opacidades subiram em 08/09 — em 0.28 a terceira camada
+       sumia contra o fundo escuro, e três camadas em que só duas aparecem são
+       duas camadas. -->
+  <g stroke="currentColor" stroke-linecap="round" fill="none">
+    <path d="M70 22 L34 58" stroke-width="7" opacity="0.95" />
+    <path d="M76 34 L46 64" stroke-width="4" opacity="0.62" />
+    <path d="M80 46 L58 68" stroke-width="2.5" opacity="0.4" />
+  </g>
+</svg>

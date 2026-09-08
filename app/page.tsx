@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
-import { Companhias } from '@/components/companhias'
+import { Cabecalho } from '@/components/cabecalho'
+import { Companhias, Glossario } from '@/components/companhias'
 import { linkWhatsapp, site, type Contato } from '@/conteudo/carregar'
 
 /**
@@ -8,20 +9,20 @@ import { linkWhatsapp, site, type Contato } from '@/conteudo/carregar'
  * `conteudo/site.json`; what is left in the `.tsx` is structure and Tailwind
  * classes.
  *
- * The WhatsApp link is the case that gives §12.3 its name: the link FORMAT is
- * code (it does not change from business to business), the RECIPIENT is
- * validated content. The `Navesz/Galegos#1` PR missed the cut by sending the
- * recipient to an env var — the build passed and the link shipped with nobody
- * on the other side.
- *
  * ─────────────────────────────────────────────────────────────────────────
- * THIS FILE RENDERS WHAT WAS DECLARED, AND DOES NOT BREAK ON WHAT IS MISSING.
+ * A ORDEM DA PÁGINA É A DECISÃO DE DESENHO, e ela mudou em 08/09.
  *
- * Until 02/09 it assumed phone, e-mail and address always existed, and the
- * schema demanded them of every site so the assumption would be true. That was
- * §12.3 read wrong: it decided that the phone LIVES here and is validated, not
- * that every business HAS a phone. Now the three are conditional blocks, and
- * the declaration is the presence of the key in `conteudo/site.json`.
+ * Antes: título, subtítulo, três destaques, e só então a tabela — que começava
+ * abaixo da dobra em qualquer tela de notebook. Quem chegava a um site de
+ * indicadores lia três parágrafos sobre o site antes de ver um único indicador.
+ *
+ * Agora a tabela é o segundo bloco da página, depois de duas linhas de
+ * apresentação. O glossário vem DEPOIS dela, que é a ordem em que a pessoa
+ * precisa: primeiro o número, depois onde ele engana. E os destaques — que são
+ * a promessa do site, não o produto dele — foram para o fim.
+ * ─────────────────────────────────────────────────────────────────────────
+ *
+ * THIS FILE RENDERS WHAT WAS DECLARED, AND DOES NOT BREAK ON WHAT IS MISSING.
  *
  * THE `CONTATOS` MAP IS THE TOOTH, and it closes both directions of the defect
  * at once, with no new rule, no heuristic and no file scanning:
@@ -41,7 +42,6 @@ import { linkWhatsapp, site, type Contato } from '@/conteudo/carregar'
  * included, is caught by no type at all. That is the owner removing the home,
  * not a silent drift — and the project's `npm run lint` reports whatever is
  * left unused.
- * ─────────────────────────────────────────────────────────────────────────
  */
 const CONTATOS = {
   whatsapp: ({ whatsapp }: Contato) =>
@@ -81,53 +81,51 @@ const CONTATOS = {
 } satisfies { [Bloco in keyof Contato]: (contato: Contato) => ReactNode }
 
 export default function Pagina() {
-  // A one-level alias, which is what rebar's `blocos` step knows how to resolve
-  // when it checks every `site.<field>` against the validated shape.
-  const zap = site.identidade.whatsapp
-
   return (
-    <main className="mx-auto flex min-h-svh max-w-3xl flex-col gap-10 px-6 py-16">
-      <header className="flex flex-col gap-4">
-        <h1 className="text-4xl font-semibold tracking-tight">{site.home.titulo}</h1>
-        <p className="text-muted-foreground text-lg leading-relaxed">{site.home.subtitulo}</p>
-        {/* The main call to action IS the WhatsApp button, so it exists exactly
-            when the block exists. Without the block the home has no button, on
-            purpose: inventing a call to action for the e-mail would be the
-            generator writing copy nobody approved, and copy nobody approved is
-            what turns into a dead link. */}
-        {zap && (
-          <a
-            className="bg-primary text-primary-foreground inline-flex w-fit items-center rounded-md px-5 py-2.5 text-sm font-medium"
-            href={linkWhatsapp(zap)}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {zap.chamadaAcao}
-          </a>
-        )}
-      </header>
+    <>
+      <Cabecalho />
 
-      <ul className="grid gap-6 sm:grid-cols-3">
-        {site.home.destaques.map((destaque) => (
-          <li className="flex flex-col gap-2" key={destaque.titulo}>
-            <h2 className="font-medium">{destaque.titulo}</h2>
-            <p className="text-muted-foreground text-sm leading-relaxed">{destaque.texto}</p>
-          </li>
-        ))}
-      </ul>
+      <main className="mx-auto flex min-h-svh max-w-[92rem] flex-col gap-14 px-6 pb-24 pt-6">
+        {/* A APRESENTAÇÃO E A TABELA SÃO UM BLOCO SÓ, com o espaçamento curto
+            entre elas — o espaçamento largo separa seções, e aqui não há duas
+            seções: há uma frase dizendo o que se vai ver, e o que se vai ver.
+            Cada parágrafo a mais aqui em cima é uma linha da tabela empurrada
+            para fora da primeira tela. */}
+        <div className="flex min-h-0 flex-col gap-6 sm:h-[calc(100svh-var(--altura-cabecalho)-3rem)]">
+          <section className="flex flex-col gap-3">
+            <h1 className="max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+              {site.home.titulo}
+            </h1>
+            <p className="max-w-3xl text-sm leading-relaxed text-[var(--tinta-suave)]">
+              {site.home.subtitulo}
+            </p>
+          </section>
 
-      <Companhias />
+          <Companhias />
+        </div>
 
-      <footer className="text-muted-foreground mt-auto flex flex-col gap-1 text-sm">
-        <p>{site.identidade.nome}</p>
-        {Object.entries(CONTATOS).map(([bloco, montar]) => {
-          const linha = montar(site.identidade)
-          // An absent block returns `null` and does not become an empty
-          // paragraph: the footer of a site with only an e-mail has one line,
-          // not three with two holes.
-          return linha ? <p key={bloco}>{linha}</p> : null
-        })}
-      </footer>
-    </main>
+        <Glossario />
+
+        <ul className="grid gap-6 border-t border-[var(--linha)] pt-10 sm:grid-cols-3">
+          {site.home.destaques.map((destaque) => (
+            <li className="flex flex-col gap-2" key={destaque.titulo}>
+              <h2 className="text-sm font-semibold">{destaque.titulo}</h2>
+              <p className="text-sm leading-relaxed text-[var(--tinta-suave)]">{destaque.texto}</p>
+            </li>
+          ))}
+        </ul>
+
+        <footer className="mt-auto flex flex-col gap-1 border-t border-[var(--linha)] pt-8 text-sm text-[var(--tinta-fraca)]">
+          <p>{site.identidade.nome}</p>
+          {Object.entries(CONTATOS).map(([bloco, montar]) => {
+            const linha = montar(site.identidade)
+            // An absent block returns `null` and does not become an empty
+            // paragraph: the footer of a site with only an e-mail has one line,
+            // not three with two holes.
+            return linha ? <p key={bloco}>{linha}</p> : null
+          })}
+        </footer>
+      </main>
+    </>
   )
 }

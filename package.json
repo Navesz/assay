@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"testes/**/*.test.mjs\"",
-    "verificar": "npm run lint && npm run typecheck && npm test && npm run build"
+    "verificar": "npm run lint && npm run typecheck && npm test && node testes/publicado.mjs --provar && npm run build && node testes/publicado.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

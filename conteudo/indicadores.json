@@ -12,6 +12,7 @@
     "busca": "filtrar por nome ou código",
     "vazio": "Nenhuma companhia com esse filtro.",
     "contagem": "companhias",
+    "contagemUma": "companhia",
     "semValor": "—"
   },
   "semPreco": {

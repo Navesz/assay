@@ -34,6 +34,10 @@ const forma = objeto({
     busca: linha,
     vazio: linha,
     contagem: linha,
+    // O SINGULAR TAMBÉM É CONTEÚDO. Filtrar por "VALE" mostrava "1 companhias",
+    // que é o tipo de detalhe que diz ao leitor que ninguém olhou a página — e
+    // este site pede que se confie nos números dele.
+    contagemUma: linha,
     semValor: linha,
   }),
   semPreco: objeto({ titulo: linha, texto: linha }),
