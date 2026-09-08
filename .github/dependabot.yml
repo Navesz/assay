@@ -19,6 +19,37 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+    # HELD BACK BY AN UPSTREAM CEILING, NOT BY TASTE, and this repository does
+    # not own the constraint. Measured on 2026-09-07:
+    #
+    #   npm view typescript-eslint peerDependencies.typescript
+    #   >=4.8.4 <6.1.0
+    #
+    # `eslint-config-next` depends on `typescript-eslint@^8.46.0` in BOTH 16.2.6
+    # and 16.3.4, so the copy that refuses to resolve is the nested
+    # node_modules/eslint-config-next/node_modules/typescript-eslint. A bump to
+    # TypeScript 7.0.2 is two majors past that ceiling: `npm ci` cannot build a
+    # tree, and the grouped PR is red before one check has run. Nothing in this
+    # repository can fix that — only the upstream peer range moving can.
+    #
+    # THE RULE IS WRITTEN AGAINST THE MEASURED CEILING, NOT THE SHAPE OF THE
+    # BUMP. `update-types: version-update:semver-major` was the easy line and it
+    # is the wrong one: 6.0.0 is a major and the peer range ACCEPTS it, so that
+    # form would hold back a version nothing objects to. `>=6.1.0` is the exact
+    # complement of the peer's upper bound — every version the peer accepts
+    # still flows through, every version it refuses is held.
+    #
+    # `ignore` sits above `groups` because that is the order it happens in:
+    # Dependabot filters the ignored dependency out first and groups whatever
+    # survives, so the weekly PR still arrives carrying the other six.
+    #
+    # THE RELEASE CONDITION IS THAT COMMAND, not a date: when
+    # `peerDependencies.typescript` stops ending in `<6.1.0`, this block is
+    # finished. Remove it whole — there is no number here to edit by hand.
+    ignore:
+      - dependency-name: 'typescript'
+        versions: ['>=6.1.0']
+
     # Grouped so it does not open seven PRs a week. A dependency PR nobody reads
     # is noise that teaches people to close dependency PRs without reading.
     #

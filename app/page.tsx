@@ -85,7 +85,7 @@ export default function Pagina() {
     <>
       <Cabecalho />
 
-      <main className="mx-auto flex min-h-svh max-w-[92rem] flex-col gap-14 px-6 pb-24 pt-6">
+      <main className="mx-auto flex min-h-svh max-w-[92rem] flex-col gap-14 px-6 pt-6 pb-24">
         {/* A APRESENTAÇÃO E A TABELA SÃO UM BLOCO SÓ, com o espaçamento curto
             entre elas — o espaçamento largo separa seções, e aqui não há duas
             seções: há uma frase dizendo o que se vai ver, e o que se vai ver.
@@ -93,7 +93,7 @@ export default function Pagina() {
             para fora da primeira tela. */}
         <div className="flex min-h-0 flex-col gap-6 sm:h-[calc(100svh-var(--altura-cabecalho)-3rem)]">
           <section className="flex flex-col gap-3">
-            <h1 className="max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+            <h1 className="max-w-3xl text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
               {site.home.titulo}
             </h1>
             <p className="max-w-3xl text-sm leading-relaxed text-[var(--tinta-suave)]">

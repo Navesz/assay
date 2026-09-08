@@ -11,3 +11,8 @@ pnpm-lock.yaml
 *.md
 LICENSE
 NOTICE
+
+# A saida do next build e um lockfile: os dois sao gerados, e o `--check .`
+# varreria os dois. O lockfile a tabela do gerador ja declara preservado.
+/out
+package-lock.json

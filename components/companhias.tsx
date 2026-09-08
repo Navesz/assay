@@ -113,10 +113,10 @@ export function Companhias() {
         <table className="w-full min-w-[58rem] border-collapse text-sm">
           <thead className="tabela-cabeca">
             <tr className="border-b border-[var(--linha)] text-left">
-              <th className="p-3 font-mono text-[10px] uppercase tracking-widest text-[var(--tinta-fraca)]">
+              <th className="p-3 font-mono text-[10px] tracking-widest text-[var(--tinta-fraca)] uppercase">
                 {r.ticker}
               </th>
-              <th className="p-3 font-mono text-[10px] uppercase tracking-widest text-[var(--tinta-fraca)]">
+              <th className="p-3 font-mono text-[10px] tracking-widest text-[var(--tinta-fraca)] uppercase">
                 {r.empresa}
               </th>
               <th
@@ -147,11 +147,11 @@ export function Companhias() {
                 key={c.cnpj}
                 className="linha-companhia border-b border-[var(--linha)]/60 last:border-0"
               >
-                <td className="whitespace-nowrap p-3 font-mono text-xs text-[var(--ensaio)]">
+                <td className="p-3 font-mono text-xs whitespace-nowrap text-[var(--ensaio)]">
                   {c.tickers.join(' ')}
                 </td>
                 <td className="p-3 text-[var(--tinta-suave)]">{c.nome}</td>
-                <td className="whitespace-nowrap p-3 text-right font-mono text-xs text-[var(--tinta-suave)]">
+                <td className="p-3 text-right font-mono text-xs whitespace-nowrap text-[var(--tinta-suave)]">
                   {c.receita === null ? r.semValor : `${BILHOES.format(c.receita / 1e9)} bi`}
                 </td>
                 {glossario.lista.map((i) => {
@@ -159,7 +159,7 @@ export function Companhias() {
                   return (
                     <td
                       key={i.chave}
-                      className={`whitespace-nowrap p-3 text-right font-mono text-xs ${tom(v) || 'text-[var(--tinta)]'}`}
+                      className={`p-3 text-right font-mono text-xs whitespace-nowrap ${tom(v) || 'text-[var(--tinta)]'}`}
                     >
                       {formatar(v, i.unidade, r.semValor)}
                     </td>
@@ -210,19 +210,19 @@ export function Glossario() {
               <h3 className="text-base font-semibold">{i.nome}</h3>
               <dl className="mt-3 space-y-3 text-sm leading-relaxed">
                 <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-[var(--tinta-fraca)]">
+                  <dt className="font-mono text-[10px] tracking-widest text-[var(--tinta-fraca)] uppercase">
                     {r.oQueMede}
                   </dt>
                   <dd className="mt-1 text-[var(--tinta-suave)]">{i.oQueMede}</dd>
                 </div>
                 <div className="border-l-2 border-[var(--ensaio)] pl-3">
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-[var(--ensaio)]">
+                  <dt className="font-mono text-[10px] tracking-widest text-[var(--ensaio)] uppercase">
                     {r.ondeEngana}
                   </dt>
                   <dd className="mt-1 text-[var(--tinta-suave)]">{i.ondeEngana}</dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-[var(--tinta-fraca)]">
+                  <dt className="font-mono text-[10px] tracking-widest text-[var(--tinta-fraca)] uppercase">
                     {r.oQueNaoDiz}
                   </dt>
                   <dd className="mt-1 text-[var(--tinta-fraca)]">{i.oQueNaoDiz}</dd>

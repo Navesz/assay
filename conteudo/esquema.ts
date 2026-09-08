@@ -525,7 +525,9 @@ export const urlBase: Validador<string> = (valor, caminho) => {
   // hand the whole path to the host check below.
   const url = new URL(limpo)
   if (url.username || url.password || url.port || url.href.replace(/\/$/, '') !== limpo) {
-    throw new ErroDeConteudo(`${caminho}: canonical HTTPS URL, with no credentials, port or trailing slash`)
+    throw new ErroDeConteudo(
+      `${caminho}: canonical HTTPS URL, with no credentials, port or trailing slash`,
+    )
   }
   if (hostDeMentira(url.hostname)) {
     falharMorto(

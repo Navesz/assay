@@ -8,10 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"testes/**/*.test.mjs\"",
-    "verificar": "npm run lint && npm run typecheck && npm test && node testes/publicado.mjs --provar && npm run build && node testes/publicado.mjs"
+    "verificar": "npm run format-check && npm run lint && npm run typecheck && npm test && node testes/publicado.mjs --provar && npm run build && node testes/publicado.mjs",
+    "format-check": "prettier --check ."
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

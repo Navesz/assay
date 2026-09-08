@@ -17,8 +17,31 @@
 
 name: verificar
 
+# ONE RUN PER COMMIT, and the narrowing of `push` is what buys it. Measured on
+# 2026-09-07: with a bare `push:`, every Dependabot pull request ran the matrix
+# TWICE — four jobs where two answer the question, Windows minutes included.
+# Dependabot's branches live in THIS repository and not in a fork, so `push` and
+# `pull_request` both fire for the same commit.
+#
+# `concurrency` does not collapse them and widening it would be the wrong
+# repair. `github.ref` is `refs/heads/<branch>` for one event and
+# `refs/pull/N/merge` for the other, so the two runs land in different groups;
+# making them share a group would make one event CANCEL the other, and a
+# cancelled check is not a green check — it is a required context that never
+# reports. Deduplicate at the trigger, not by racing two runs against each other.
+#
+# THE COST, written down so nobody rediscovers it as a bug: a push to a branch
+# with no pull request open now runs no CI. That is the trade, and it is the
+# right one here. What this gate protects is `main`, and `main` is reached
+# through a pull request, where `pull_request` fires — including from forks,
+# which never had the double run because `push` does not fire for them. CI on a
+# branch nobody has proposed merging is a report nobody reads, which is the
+# thing this file exists not to be. Both ways back are already here:
+# `npm run verificar` is the same command on your machine, and
+# `workflow_dispatch` runs this workflow against any branch you pick.
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 

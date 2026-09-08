@@ -92,9 +92,7 @@ const artefato = dados as {
 // duas um erro de BUILD em vez de uma lacuna que só o leitor descobre.
 const primeira = artefato.empresas.find((e) => e.indicadores)
 if (primeira) {
-  const calculados = new Set(
-    Object.keys(primeira.indicadores).filter((k) => k !== 'anosDeReceita'),
-  )
+  const calculados = new Set(Object.keys(primeira.indicadores).filter((k) => k !== 'anosDeReceita'))
   const explicados = new Set(glossario.lista.map((i) => i.chave))
 
   const semTexto = [...calculados].filter((k) => !explicados.has(k))

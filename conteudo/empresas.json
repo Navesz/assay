@@ -9,10 +9,7 @@
     {
       "cnpj": "33.000.167/0001-01",
       "nome": "PETROLEO BRASILEIRO S.A. PETROBRAS",
-      "tickers": [
-        "PETR3",
-        "PETR4"
-      ],
+      "tickers": ["PETR3", "PETR4"],
       "exercicio": "2025-12-31",
       "receita": 497549000000,
       "lucro": 110605000000,
@@ -69,9 +66,7 @@
     {
       "cnpj": "33.453.598/0001-23",
       "nome": "RAÍZEN S.A.",
-      "tickers": [
-        "RAIZ4"
-      ],
+      "tickers": ["RAIZ4"],
       "exercicio": "2025-03-31",
       "receita": 255268454000,
       "lucro": -4176951000,
@@ -90,9 +85,7 @@
     {
       "cnpj": "33.592.510/0001-54",
       "nome": "VALE S.A.",
-      "tickers": [
-        "VALE3"
-      ],
+      "tickers": ["VALE3"],
       "exercicio": "2025-12-31",
       "receita": 213595000000,
       "lucro": 11811000000,
@@ -111,9 +104,7 @@
     {
       "cnpj": "34.274.233/0001-02",
       "nome": "VIBRA ENERGIA S/A",
-      "tickers": [
-        "VBBR3"
-      ],
+      "tickers": ["VBBR3"],
       "exercicio": "2025-12-31",
       "receita": 189075000000,
       "lucro": 1979000000,
@@ -151,9 +142,7 @@
     {
       "cnpj": "33.256.439/0001-39",
       "nome": "ULTRAPAR PARTICIPACOES S.A.",
-      "tickers": [
-        "UGPA3"
-      ],
+      "tickers": ["UGPA3"],
       "exercicio": "2025-12-31",
       "receita": 142369540000,
       "lucro": 2541908000,
@@ -172,9 +161,7 @@
     {
       "cnpj": "07.526.557/0001-00",
       "nome": "AMBEV S.A.",
-      "tickers": [
-        "ABEV3"
-      ],
+      "tickers": ["ABEV3"],
       "exercicio": "2025-12-31",
       "receita": 88242467000,
       "lucro": 15988433000,
@@ -212,11 +199,7 @@
     {
       "cnpj": "42.150.391/0001-70",
       "nome": "BRASKEM S.A.",
-      "tickers": [
-        "BRKM3",
-        "BRKM5",
-        "BRKM6"
-      ],
+      "tickers": ["BRKM3", "BRKM5", "BRKM6"],
       "exercicio": "2025-12-31",
       "receita": 70717000000,
       "lucro": -10961000000,
@@ -235,10 +218,7 @@
     {
       "cnpj": "33.611.500/0001-19",
       "nome": "GERDAU S.A.",
-      "tickers": [
-        "GGBR3",
-        "GGBR4"
-      ],
+      "tickers": ["GGBR3", "GGBR4"],
       "exercicio": "2025-12-31",
       "receita": 69858532000,
       "lucro": 1418438000,
@@ -257,10 +237,7 @@
     {
       "cnpj": "92.690.783/0001-09",
       "nome": "METALURGICA GERDAU S.A.",
-      "tickers": [
-        "GOAU3",
-        "GOAU4"
-      ],
+      "tickers": ["GOAU3", "GOAU4"],
       "exercicio": "2025-12-31",
       "receita": 69858532000,
       "lucro": 1413724000,
@@ -279,9 +256,7 @@
     {
       "cnpj": "01.838.723/0001-27",
       "nome": "BRF S.A.",
-      "tickers": [
-        "BRFS3"
-      ],
+      "tickers": ["BRFS3"],
       "exercicio": "2025-12-31",
       "receita": 65048731000,
       "lucro": 3288189000,
@@ -300,9 +275,7 @@
     {
       "cnpj": "02.558.157/0001-62",
       "nome": "TELEFÔNICA BRASIL S.A",
-      "tickers": [
-        "VIVT3"
-      ],
+      "tickers": ["VIVT3"],
       "exercicio": "2025-12-31",
       "receita": 59595000000,
       "lucro": 6177543000,
@@ -321,9 +294,7 @@
     {
       "cnpj": "06.047.087/0001-39",
       "nome": "REDE D'OR SÃO LUIZ S.A.",
-      "tickers": [
-        "RDOR3"
-      ],
+      "tickers": ["RDOR3"],
       "exercicio": "2025-12-31",
       "receita": 55725852000,
       "lucro": 4843623000,
@@ -342,10 +313,7 @@
     {
       "cnpj": "67.620.377/0001-14",
       "nome": "MINERVA S.A.",
-      "tickers": [
-        "BEEF11",
-        "BEEF3"
-      ],
+      "tickers": ["BEEF11", "BEEF3"],
       "exercicio": "2025-12-31",
       "receita": 54830072000,
       "lucro": 848260000,
@@ -364,9 +332,7 @@
     {
       "cnpj": "01.083.200/0001-18",
       "nome": "NEOENERGIA S.A.",
-      "tickers": [
-        "NEOE3"
-      ],
+      "tickers": ["NEOE3"],
       "exercicio": "2025-12-31",
       "receita": 52633000000,
       "lucro": 5057000000,
@@ -385,9 +351,7 @@
     {
       "cnpj": "03.220.438/0001-73",
       "nome": "EQUATORIAL S.A.",
-      "tickers": [
-        "EQTL3"
-      ],
+      "tickers": ["EQTL3"],
       "exercicio": "2025-12-31",
       "receita": 52073804000,
       "lucro": 2503931000,
@@ -425,11 +389,7 @@
     {
       "cnpj": "60.651.809/0001-05",
       "nome": "SUZANO HOLDING S.A.",
-      "tickers": [
-        "NEMO3",
-        "NEMO5",
-        "NEMO6"
-      ],
+      "tickers": ["NEMO3", "NEMO5", "NEMO6"],
       "exercicio": "2025-12-31",
       "receita": 50116256000,
       "lucro": 13443772000,
@@ -448,9 +408,7 @@
     {
       "cnpj": "16.404.287/0001-55",
       "nome": "SUZANO S.A.",
-      "tickers": [
-        "SUZB3"
-      ],
+      "tickers": ["SUZB3"],
       "exercicio": "2025-12-31",
       "receita": 50115679000,
       "lucro": 13437687000,
@@ -488,9 +446,7 @@
     {
       "cnpj": "02.429.144/0001-93",
       "nome": "CPFL ENERGIA S.A.",
-      "tickers": [
-        "CPFE3"
-      ],
+      "tickers": ["CPFE3"],
       "exercicio": "2025-12-31",
       "receita": 44367780000,
       "lucro": 5742553000,
@@ -509,9 +465,7 @@
     {
       "cnpj": "61.585.865/0001-51",
       "nome": "RAIA DROGASIL S.A.",
-      "tickers": [
-        "RADL3"
-      ],
+      "tickers": ["RADL3"],
       "exercicio": "2025-12-31",
       "receita": 44250449000,
       "lucro": 1300243000,
@@ -530,9 +484,7 @@
     {
       "cnpj": "07.415.333/0001-20",
       "nome": "SIMPAR S.A.",
-      "tickers": [
-        "SIMH3"
-      ],
+      "tickers": ["SIMH3"],
       "exercicio": "2025-12-31",
       "receita": 43528375000,
       "lucro": 215250000,
@@ -551,10 +503,7 @@
     {
       "cnpj": "17.155.730/0001-64",
       "nome": "CIA ENERGETICA DE MINAS GERAIS - CEMIG",
-      "tickers": [
-        "CMIG3",
-        "CMIG4"
-      ],
+      "tickers": ["CMIG3", "CMIG4"],
       "exercicio": "2025-12-31",
       "receita": 42751283000,
       "lucro": 4899617000,
@@ -573,9 +522,7 @@
     {
       "cnpj": "07.689.002/0001-89",
       "nome": "EMBRAER S.A.",
-      "tickers": [
-        "EMBJ3"
-      ],
+      "tickers": ["EMBJ3"],
       "exercicio": "2025-12-31",
       "receita": 41883234000,
       "lucro": 1992037000,
@@ -594,10 +541,7 @@
     {
       "cnpj": "16.670.085/0001-55",
       "nome": "LOCALIZA RENT A CAR S.A.",
-      "tickers": [
-        "RENT3",
-        "RENT4"
-      ],
+      "tickers": ["RENT3", "RENT4"],
       "exercicio": "2025-12-31",
       "receita": 41781588000,
       "lucro": 1870470000,
@@ -616,10 +560,7 @@
     {
       "cnpj": "00.001.180/0001-26",
       "nome": "AXIA ENERGIA S.A.",
-      "tickers": [
-        "AXIA3",
-        "AXIA7"
-      ],
+      "tickers": ["AXIA3", "AXIA7"],
       "exercicio": "2025-12-31",
       "receita": 41281596000,
       "lucro": 6559659000,
@@ -638,9 +579,7 @@
     {
       "cnpj": "02.149.205/0001-69",
       "nome": "PORTO SEGURO S.A.",
-      "tickers": [
-        "PSSA3"
-      ],
+      "tickers": ["PSSA3"],
       "exercicio": "2025-12-31",
       "receita": 40883141000,
       "lucro": 3424078000,
@@ -659,9 +598,7 @@
     {
       "cnpj": "84.429.695/0001-11",
       "nome": "WEG S.A.",
-      "tickers": [
-        "WEGE3"
-      ],
+      "tickers": ["WEGE3"],
       "exercicio": "2025-12-31",
       "receita": 40804110000,
       "lucro": 6775958000,
@@ -680,9 +617,7 @@
     {
       "cnpj": "50.746.577/0001-15",
       "nome": "COSAN S.A.",
-      "tickers": [
-        "CSAN3"
-      ],
+      "tickers": ["CSAN3"],
       "exercicio": "2025-12-31",
       "receita": 40418596000,
       "lucro": -10194401000,
@@ -701,9 +636,7 @@
     {
       "cnpj": "47.960.950/0001-21",
       "nome": "MAGAZINE LUIZA S.A.",
-      "tickers": [
-        "MGLU3"
-      ],
+      "tickers": ["MGLU3"],
       "exercicio": "2025-12-31",
       "receita": 38703387000,
       "lucro": 204603000,
@@ -722,9 +655,7 @@
     {
       "cnpj": "24.990.777/0001-09",
       "nome": "GRUPO MATEUS S.A.",
-      "tickers": [
-        "GMAT3"
-      ],
+      "tickers": ["GMAT3"],
       "exercicio": "2025-12-31",
       "receita": 38424403000,
       "lucro": 1857293000,
@@ -743,9 +674,7 @@
     {
       "cnpj": "43.776.517/0001-80",
       "nome": "CIA SANEAMENTO BASICO EST SAO PAULO",
-      "tickers": [
-        "SBSP3"
-      ],
+      "tickers": ["SBSP3"],
       "exercicio": "2025-12-31",
       "receita": 38092050000,
       "lucro": 8462059000,
@@ -764,11 +693,7 @@
     {
       "cnpj": "00.864.214/0001-06",
       "nome": "ENERGISA S.A.",
-      "tickers": [
-        "ENGI11",
-        "ENGI3",
-        "ENGI4"
-      ],
+      "tickers": ["ENGI11", "ENGI3", "ENGI4"],
       "exercicio": "2025-12-31",
       "receita": 35441353000,
       "lucro": 3140072000,
@@ -787,9 +712,7 @@
     {
       "cnpj": "05.197.443/0001-38",
       "nome": "HAPVIDA PARTICIPAÇÕES E INVESTIMENTOS S.A.",
-      "tickers": [
-        "HAPV3"
-      ],
+      "tickers": ["HAPV3"],
       "exercicio": "2025-12-31",
       "receita": 31577240000,
       "lucro": -142169000,
@@ -827,9 +750,7 @@
     {
       "cnpj": "33.041.260/0652-90",
       "nome": "GRUPO CASAS BAHIA S.A.",
-      "tickers": [
-        "BHIA3"
-      ],
+      "tickers": ["BHIA3"],
       "exercicio": "2025-12-31",
       "receita": 29197000000,
       "lucro": -2988000000,
@@ -867,11 +788,7 @@
     {
       "cnpj": "60.894.730/0001-05",
       "nome": "USINAS SID DE MINAS GERAIS S.A.-USIMINAS",
-      "tickers": [
-        "USIM3",
-        "USIM5",
-        "USIM6"
-      ],
+      "tickers": ["USIM3", "USIM5", "USIM6"],
       "exercicio": "2025-12-31",
       "receita": 26263450000,
       "lucro": -2910034000,
@@ -890,11 +807,7 @@
     {
       "cnpj": "76.483.817/0001-20",
       "nome": "CIA PARANAENSE DE ENERGIA - COPEL",
-      "tickers": [
-        "CPLE3",
-        "CPLE5",
-        "CPLE6"
-      ],
+      "tickers": ["CPLE3", "CPLE5", "CPLE6"],
       "exercicio": "2025-12-31",
       "receita": 26116856000,
       "lucro": 2687939000,
@@ -932,9 +845,7 @@
     {
       "cnpj": "71.673.990/0001-77",
       "nome": "NATURA COSMÉTICOS S.A.",
-      "tickers": [
-        "NATU3"
-      ],
+      "tickers": ["NATU3"],
       "exercicio": "2025-12-31",
       "receita": 21823488000,
       "lucro": -1785238000,
@@ -953,9 +864,7 @@
     {
       "cnpj": "09.305.994/0001-29",
       "nome": "AZUL S.A.",
-      "tickers": [
-        "AZUL3"
-      ],
+      "tickers": ["AZUL3"],
       "exercicio": "2025-12-31",
       "receita": 21640393000,
       "lucro": 124858000,
@@ -974,9 +883,7 @@
     {
       "cnpj": "89.637.490/0001-45",
       "nome": "KLABIN S.A.",
-      "tickers": [
-        "KLBN11"
-      ],
+      "tickers": ["KLBN11"],
       "exercicio": "2025-12-31",
       "receita": 20697507000,
       "lucro": 1678211000,
@@ -1014,9 +921,7 @@
     {
       "cnpj": "61.584.140/0001-49",
       "nome": "REDE ENERGIA PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "REDE3"
-      ],
+      "tickers": ["REDE3"],
       "exercicio": "2025-12-31",
       "receita": 19392049000,
       "lucro": 1677899000,
@@ -1035,9 +940,7 @@
     {
       "cnpj": "47.508.411/0001-56",
       "nome": "CIA BRASILEIRA DE DISTRIBUICAO",
-      "tickers": [
-        "PCAR3"
-      ],
+      "tickers": ["PCAR3"],
       "exercicio": "2025-12-31",
       "receita": 19113000000,
       "lucro": -815000000,
@@ -1056,9 +959,7 @@
     {
       "cnpj": "02.846.056/0001-97",
       "nome": "MOTIVA INFRAESTRUTURA DE MOBILIDADE S.A.",
-      "tickers": [
-        "MOTV3"
-      ],
+      "tickers": ["MOTV3"],
       "exercicio": "2025-12-31",
       "receita": 18850645000,
       "lucro": 3503497000,
@@ -1115,9 +1016,7 @@
     {
       "cnpj": "04.423.567/0001-21",
       "nome": "ENEVA S.A",
-      "tickers": [
-        "ENEV3"
-      ],
+      "tickers": ["ENEV3"],
       "exercicio": "2025-12-31",
       "receita": 18416056000,
       "lucro": 1691630000,
@@ -1155,9 +1054,7 @@
     {
       "cnpj": "09.229.201/0001-30",
       "nome": "GPS PARTICIPAÇÕES E EMPREENDIMENTOS S.A.",
-      "tickers": [
-        "GGPS3"
-      ],
+      "tickers": ["GGPS3"],
       "exercicio": "2025-12-31",
       "receita": 17283159000,
       "lucro": 694143000,
@@ -1176,11 +1073,7 @@
     {
       "cnpj": "21.389.501/0001-81",
       "nome": "COMPASS GÁS E ENERGIA S.A.",
-      "tickers": [
-        "PASS3",
-        "PASS5",
-        "PASS6"
-      ],
+      "tickers": ["PASS3", "PASS5", "PASS6"],
       "exercicio": "2025-12-31",
       "receita": 16604055000,
       "lucro": 1459707000,
@@ -1199,9 +1092,7 @@
     {
       "cnpj": "94.813.102/0001-70",
       "nome": "TRÊS TENTOS AGROINDUSTRIAL S/A",
-      "tickers": [
-        "TTEN3"
-      ],
+      "tickers": ["TTEN3"],
       "exercicio": "2025-12-31",
       "receita": 16423694000,
       "lucro": 808699000,
@@ -1220,9 +1111,7 @@
     {
       "cnpj": "92.754.738/0001-62",
       "nome": "LOJAS RENNER S.A.",
-      "tickers": [
-        "LREN3"
-      ],
+      "tickers": ["LREN3"],
       "exercicio": "2025-12-31",
       "receita": 15829460000,
       "lucro": 1457566000,
@@ -1241,9 +1130,7 @@
     {
       "cnpj": "10.629.105/0001-68",
       "nome": "PRIO S.A.",
-      "tickers": [
-        "PRIO3"
-      ],
+      "tickers": ["PRIO3"],
       "exercicio": "2025-12-31",
       "receita": 15583960000,
       "lucro": 2251479000,
@@ -1262,9 +1149,7 @@
     {
       "cnpj": "61.156.113/0001-75",
       "nome": "IOCHPE MAXION S.A.",
-      "tickers": [
-        "MYPK3"
-      ],
+      "tickers": ["MYPK3"],
       "exercicio": "2025-12-31",
       "receita": 15366537000,
       "lucro": 217134000,
@@ -1283,9 +1168,7 @@
     {
       "cnpj": "03.378.521/0001-75",
       "nome": "LIGHT S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "LIGT3"
-      ],
+      "tickers": ["LIGT3"],
       "exercicio": "2025-12-31",
       "receita": 14996448000,
       "lucro": 213095000,
@@ -1304,9 +1187,7 @@
     {
       "cnpj": "06.626.253/0001-51",
       "nome": "EMPREENDIMENTOS PAGUE MENOS S.A.",
-      "tickers": [
-        "PGMN3"
-      ],
+      "tickers": ["PGMN3"],
       "exercicio": "2025-12-31",
       "receita": 14906429000,
       "lucro": 260930000,
@@ -1325,9 +1206,7 @@
     {
       "cnpj": "21.314.559/0001-66",
       "nome": "MOVIDA PARTICIPACOES SA",
-      "tickers": [
-        "MOVI3"
-      ],
+      "tickers": ["MOVI3"],
       "exercicio": "2025-12-31",
       "receita": 14672054000,
       "lucro": 318364000,
@@ -1346,9 +1225,7 @@
     {
       "cnpj": "02.387.241/0001-60",
       "nome": "RUMO S.A.",
-      "tickers": [
-        "RAIL3"
-      ],
+      "tickers": ["RAIL3"],
       "exercicio": "2025-12-31",
       "receita": 13847776000,
       "lucro": 865125000,
@@ -1367,9 +1244,7 @@
     {
       "cnpj": "28.594.234/0001-23",
       "nome": "AUREN ENERGIA S.A.",
-      "tickers": [
-        "AURE3"
-      ],
+      "tickers": ["AURE3"],
       "exercicio": "2025-12-31",
       "receita": 13176952000,
       "lucro": -557875000,
@@ -1388,10 +1263,7 @@
     {
       "cnpj": "89.086.144/0001-16",
       "nome": "RANDONCORP S.A.",
-      "tickers": [
-        "RAPT3",
-        "RAPT4"
-      ],
+      "tickers": ["RAPT3", "RAPT4"],
       "exercicio": "2025-12-31",
       "receita": 13143266000,
       "lucro": -59791000,
@@ -1429,9 +1301,7 @@
     {
       "cnpj": "02.474.103/0001-19",
       "nome": "ENGIE BRASIL ENERGIA S.A.",
-      "tickers": [
-        "EGIE3"
-      ],
+      "tickers": ["EGIE3"],
       "exercicio": "2025-12-31",
       "receita": 12860075000,
       "lucro": 2857919000,
@@ -1450,9 +1320,7 @@
     {
       "cnpj": "35.654.688/0001-08",
       "nome": "AUTOMOB PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "AMOB3"
-      ],
+      "tickers": ["AMOB3"],
       "exercicio": "2025-12-31",
       "receita": 12815400000,
       "lucro": -285575000,
@@ -1490,10 +1358,7 @@
     {
       "cnpj": "59.105.999/0001-86",
       "nome": "WHIRLPOOL S.A.",
-      "tickers": [
-        "WHRL3",
-        "WHRL4"
-      ],
+      "tickers": ["WHRL3", "WHRL4"],
       "exercicio": "2025-12-31",
       "receita": 12561821000,
       "lucro": 450784000,
@@ -1531,9 +1396,7 @@
     {
       "cnpj": "00.776.574/0001-56",
       "nome": "AMERICANAS S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "AMER3"
-      ],
+      "tickers": ["AMER3"],
       "exercicio": "2025-12-31",
       "receita": 12305000000,
       "lucro": -271000000,
@@ -1552,9 +1415,7 @@
     {
       "cnpj": "64.904.295/0001-03",
       "nome": "CAMIL ALIMENTOS S.A.",
-      "tickers": [
-        "CAML3"
-      ],
+      "tickers": ["CAML3"],
       "exercicio": "2025-02-28",
       "receita": 12262939000,
       "lucro": 217001000,
@@ -1592,10 +1453,7 @@
     {
       "cnpj": "83.878.892/0001-55",
       "nome": "CENTRAIS ELET DE SANTA CATARINA S.A.",
-      "tickers": [
-        "CLSC3",
-        "CLSC4"
-      ],
+      "tickers": ["CLSC3", "CLSC4"],
       "exercicio": "2025-12-31",
       "receita": 11900276000,
       "lucro": 729495000,
@@ -1614,9 +1472,7 @@
     {
       "cnpj": "16.590.234/0001-76",
       "nome": "AZZAS 2154 S.A.",
-      "tickers": [
-        "AZZA3"
-      ],
+      "tickers": ["AZZA3"],
       "exercicio": "2025-12-31",
       "receita": 11819492000,
       "lucro": 911249000,
@@ -1635,9 +1491,7 @@
     {
       "cnpj": "12.091.809/0001-55",
       "nome": "BRAVA ENERGIA S.A.",
-      "tickers": [
-        "BRAV3"
-      ],
+      "tickers": ["BRAV3"],
       "exercicio": "2025-12-31",
       "receita": 11622991000,
       "lucro": 1411225000,
@@ -1656,9 +1510,7 @@
     {
       "cnpj": "12.420.164/0001-57",
       "nome": "CM HOSPITALAR S.A",
-      "tickers": [
-        "VVEO3"
-      ],
+      "tickers": ["VVEO3"],
       "exercicio": "2025-12-31",
       "receita": 11566926000,
       "lucro": 18239000,
@@ -1677,9 +1529,7 @@
     {
       "cnpj": "04.149.454/0001-80",
       "nome": "ECORODOVIAS INFRAESTRUTURA E LOGÍSTICA S.A.",
-      "tickers": [
-        "ECOR3"
-      ],
+      "tickers": ["ECOR3"],
       "exercicio": "2025-12-31",
       "receita": 11521073000,
       "lucro": 866818000,
@@ -1698,9 +1548,7 @@
     {
       "cnpj": "45.453.214/0001-51",
       "nome": "PROFARMA DISTRIB PROD FARMACEUTICOS S.A.",
-      "tickers": [
-        "PFRM3"
-      ],
+      "tickers": ["PFRM3"],
       "exercicio": "2025-12-31",
       "receita": 11450521000,
       "lucro": 126013000,
@@ -1738,9 +1586,7 @@
     {
       "cnpj": "61.486.650/0001-83",
       "nome": "DIAGNOSTICOS DA AMERICA S.A.",
-      "tickers": [
-        "DASA3"
-      ],
+      "tickers": ["DASA3"],
       "exercicio": "2025-12-31",
       "receita": 11170362000,
       "lucro": -1135024000,
@@ -1816,9 +1662,7 @@
     {
       "cnpj": "08.343.492/0001-20",
       "nome": "MRV ENGENHARIA E PARTICIPACOES S.A.",
-      "tickers": [
-        "MRVE3"
-      ],
+      "tickers": ["MRVE3"],
       "exercicio": "2025-12-31",
       "receita": 10906236000,
       "lucro": -1042704000,
@@ -1856,9 +1700,7 @@
     {
       "cnpj": "08.402.943/0001-52",
       "nome": "GUARARAPES CONFECCOES S.A.",
-      "tickers": [
-        "RIAA3"
-      ],
+      "tickers": ["RIAA3"],
       "exercicio": "2025-12-31",
       "receita": 10497046000,
       "lucro": 1475168000,
@@ -1877,9 +1719,7 @@
     {
       "cnpj": "07.206.816/0001-15",
       "nome": "M.DIAS BRANCO S.A. IND COM DE ALIMENTOS",
-      "tickers": [
-        "MDIA3"
-      ],
+      "tickers": ["MDIA3"],
       "exercicio": "2025-12-31",
       "receita": 10437548000,
       "lucro": 659817000,
@@ -1936,9 +1776,7 @@
     {
       "cnpj": "89.096.457/0001-55",
       "nome": "SLC AGRICOLA S.A.",
-      "tickers": [
-        "SLCE3"
-      ],
+      "tickers": ["SLCE3"],
       "exercicio": "2025-12-31",
       "receita": 9759214000,
       "lucro": 565213000,
@@ -1957,9 +1795,7 @@
     {
       "cnpj": "84.683.374/0001-49",
       "nome": "TUPY S.A.",
-      "tickers": [
-        "TUPY3"
-      ],
+      "tickers": ["TUPY3"],
       "exercicio": "2025-12-31",
       "receita": 9692948000,
       "lucro": -654552000,
@@ -1978,9 +1814,7 @@
     {
       "cnpj": "52.548.435/0001-79",
       "nome": "JSL S.A.",
-      "tickers": [
-        "JSLG3"
-      ],
+      "tickers": ["JSLG3"],
       "exercicio": "2025-12-31",
       "receita": 9640608000,
       "lucro": 81704000,
@@ -1999,10 +1833,7 @@
     {
       "cnpj": "73.178.600/0001-18",
       "nome": "CYRELA BRAZIL REALTY S.A.EMPREEND E PART",
-      "tickers": [
-        "CYRE3",
-        "CYRE4"
-      ],
+      "tickers": ["CYRE3", "CYRE4"],
       "exercicio": "2025-12-31",
       "receita": 9423494000,
       "lucro": 2395829000,
@@ -2021,10 +1852,7 @@
     {
       "cnpj": "02.998.611/0001-04",
       "nome": "ISA ENERGIA BRASIL",
-      "tickers": [
-        "ISAE3",
-        "ISAE4"
-      ],
+      "tickers": ["ISAE3", "ISAE4"],
       "exercicio": "2025-12-31",
       "receita": 9411153000,
       "lucro": 2511015000,
@@ -2043,10 +1871,7 @@
     {
       "cnpj": "88.611.835/0001-29",
       "nome": "MARCOPOLO S.A.",
-      "tickers": [
-        "POMO3",
-        "POMO4"
-      ],
+      "tickers": ["POMO3", "POMO4"],
       "exercicio": "2025-12-31",
       "receita": 9057548000,
       "lucro": 1235508000,
@@ -2084,9 +1909,7 @@
     {
       "cnpj": "61.409.892/0001-73",
       "nome": "COMPANHIA BRASILEIRA DE ALUMÍNIO",
-      "tickers": [
-        "CBAV3"
-      ],
+      "tickers": ["CBAV3"],
       "exercicio": "2025-12-31",
       "receita": 8788797000,
       "lucro": 229854000,
@@ -2124,9 +1947,7 @@
     {
       "cnpj": "17.281.106/0001-03",
       "nome": "CIA SANEAMENTO DE MINAS GERAIS-COPASA MG",
-      "tickers": [
-        "CSMG3"
-      ],
+      "tickers": ["CSMG3"],
       "exercicio": "2025-12-31",
       "receita": 8330190000,
       "lucro": 1415744000,
@@ -2145,9 +1966,7 @@
     {
       "cnpj": "60.840.055/0001-31",
       "nome": "FLEURY S.A.",
-      "tickers": [
-        "FLRY3"
-      ],
+      "tickers": ["FLRY3"],
       "exercicio": "2025-12-31",
       "receita": 8291182000,
       "lucro": 596671000,
@@ -2166,10 +1985,7 @@
     {
       "cnpj": "61.532.644/0001-15",
       "nome": "ITAÚSA S.A.",
-      "tickers": [
-        "ITSA3",
-        "ITSA4"
-      ],
+      "tickers": ["ITSA3", "ITSA4"],
       "exercicio": "2025-12-31",
       "receita": 8249000000,
       "lucro": 16550000000,
@@ -2188,9 +2004,7 @@
     {
       "cnpj": "97.837.181/0001-47",
       "nome": "DEXCO S.A.",
-      "tickers": [
-        "DXCO3"
-      ],
+      "tickers": ["DXCO3"],
       "exercicio": "2025-12-31",
       "receita": 8248752000,
       "lucro": 63065000,
@@ -2228,9 +2042,7 @@
     {
       "cnpj": "45.242.914/0001-05",
       "nome": "C&A MODAS S.A.",
-      "tickers": [
-        "CEAB3"
-      ],
+      "tickers": ["CEAB3"],
       "exercicio": "2025-12-31",
       "receita": 7982958000,
       "lucro": 587087000,
@@ -2249,9 +2061,7 @@
     {
       "cnpj": "13.217.485/0001-11",
       "nome": "GRUPO SBF S.A.",
-      "tickers": [
-        "SBFG3"
-      ],
+      "tickers": ["SBFG3"],
       "exercicio": "2025-12-31",
       "receita": 7736413000,
       "lucro": 327970000,
@@ -2270,9 +2080,7 @@
     {
       "cnpj": "02.932.074/0001-91",
       "nome": "HYPERA S.A.",
-      "tickers": [
-        "HYPE3"
-      ],
+      "tickers": ["HYPE3"],
       "exercicio": "2025-12-31",
       "receita": 7699157000,
       "lucro": 1190132000,
@@ -2291,11 +2099,7 @@
     {
       "cnpj": "01.417.222/0001-77",
       "nome": "MRS LOGISTICA S.A.",
-      "tickers": [
-        "MRSA3",
-        "MRSA5",
-        "MRSA6"
-      ],
+      "tickers": ["MRSA3", "MRSA5", "MRSA6"],
       "exercicio": "2025-12-31",
       "receita": 7585058000,
       "lucro": 1555063000,
@@ -2333,9 +2137,7 @@
     {
       "cnpj": "07.594.978/0001-78",
       "nome": "SMARTFIT ESCOLA DE GINÁSTICA E DANÇA S.A.",
-      "tickers": [
-        "SMFT3"
-      ],
+      "tickers": ["SMFT3"],
       "exercicio": "2025-12-31",
       "receita": 7241694000,
       "lucro": 640534000,
@@ -2373,9 +2175,7 @@
     {
       "cnpj": "51.466.860/0001-56",
       "nome": "SAO MARTINHO S.A.",
-      "tickers": [
-        "SMTO3"
-      ],
+      "tickers": ["SMTO3"],
       "exercicio": "2025-03-31",
       "receita": 7162034000,
       "lucro": 556731000,
@@ -2413,9 +2213,7 @@
     {
       "cnpj": "02.800.026/0001-40",
       "nome": "COGNA EDUCAÇÃO S.A.",
-      "tickers": [
-        "COGN3"
-      ],
+      "tickers": ["COGN3"],
       "exercicio": "2025-12-31",
       "receita": 7016663000,
       "lucro": 586035000,
@@ -2453,9 +2251,7 @@
     {
       "cnpj": "42.500.384/0001-51",
       "nome": "SERENA ENERGIA S.A.",
-      "tickers": [
-        "SRNA3"
-      ],
+      "tickers": ["SRNA3"],
       "exercicio": "2025-12-31",
       "receita": 6393211000,
       "lucro": 20837000,
@@ -2512,9 +2308,7 @@
     {
       "cnpj": "53.113.791/0001-22",
       "nome": "TOTVS S.A.",
-      "tickers": [
-        "TOTS3"
-      ],
+      "tickers": ["TOTS3"],
       "exercicio": "2025-12-31",
       "receita": 5771867000,
       "lucro": 920742000,
@@ -2533,9 +2327,7 @@
     {
       "cnpj": "23.373.000/0001-32",
       "nome": "VAMOS LOCAÇÃO DE CAMINHÕES, MÁQUINAS E EQUIPAMENTOS S.A.",
-      "tickers": [
-        "VAMO3"
-      ],
+      "tickers": ["VAMO3"],
       "exercicio": "2025-12-31",
       "receita": 5755712000,
       "lucro": 328702000,
@@ -2573,9 +2365,7 @@
     {
       "cnpj": "12.104.241/0004-02",
       "nome": "ONCOCLÍNICAS DO BRASIL SERVIÇOS MÉDICOS S.A.",
-      "tickers": [
-        "ONCO3"
-      ],
+      "tickers": ["ONCO3"],
       "exercicio": "2025-12-31",
       "receita": 5739367000,
       "lucro": -3671107000,
@@ -2632,9 +2422,7 @@
     {
       "cnpj": "08.807.432/0001-10",
       "nome": "YDUQS PARTICIPACOES S.A.",
-      "tickers": [
-        "YDUQ3"
-      ],
+      "tickers": ["YDUQ3"],
       "exercicio": "2025-12-31",
       "receita": 5521740000,
       "lucro": 180177000,
@@ -2653,9 +2441,7 @@
     {
       "cnpj": "92.665.611/0001-77",
       "nome": "DIMED S.A. DISTRIBUIDORA DE MEDICAMENTOS",
-      "tickers": [
-        "PNVL3"
-      ],
+      "tickers": ["PNVL3"],
       "exercicio": "2025-12-31",
       "receita": 5512118000,
       "lucro": 124605000,
@@ -2674,9 +2460,7 @@
     {
       "cnpj": "20.247.322/0001-47",
       "nome": "ALLIED TECNOLOGIA S.A.",
-      "tickers": [
-        "ALLD3"
-      ],
+      "tickers": ["ALLD3"],
       "exercicio": "2025-12-31",
       "receita": 5504620000,
       "lucro": 332712000,
@@ -2695,9 +2479,7 @@
     {
       "cnpj": "88.610.126/0001-29",
       "nome": "FRASLE MOBILITY S.A.",
-      "tickers": [
-        "FRAS3"
-      ],
+      "tickers": ["FRAS3"],
       "exercicio": "2025-12-31",
       "receita": 5490878000,
       "lucro": 283166000,
@@ -2735,9 +2517,7 @@
     {
       "cnpj": "60.476.884/0001-87",
       "nome": "MAHLE METAL LEVE S.A.",
-      "tickers": [
-        "LEVE3"
-      ],
+      "tickers": ["LEVE3"],
       "exercicio": "2025-12-31",
       "receita": 5406682000,
       "lucro": 608756000,
@@ -2756,9 +2536,7 @@
     {
       "cnpj": "08.797.760/0001-83",
       "nome": "CURY CONSTRUTORA E INCORPORADORA S.A.",
-      "tickers": [
-        "CURY3"
-      ],
+      "tickers": ["CURY3"],
       "exercicio": "2025-12-31",
       "receita": 5399424000,
       "lucro": 1081220000,
@@ -2815,9 +2593,7 @@
     {
       "cnpj": "33.376.989/0001-91",
       "nome": "IRB - BRASIL RESSEGUROS S.A.",
-      "tickers": [
-        "IRBR3"
-      ],
+      "tickers": ["IRBR3"],
       "exercicio": "2025-12-31",
       "receita": 5211349000,
       "lucro": 390945000,
@@ -2836,11 +2612,7 @@
     {
       "cnpj": "33.958.695/0001-78",
       "nome": "UNIPAR CARBOCLORO S.A.",
-      "tickers": [
-        "UNIP3",
-        "UNIP5",
-        "UNIP6"
-      ],
+      "tickers": ["UNIP3", "UNIP5", "UNIP6"],
       "exercicio": "2025-12-31",
       "receita": 5142676000,
       "lucro": 481744000,
@@ -2935,11 +2707,7 @@
     {
       "cnpj": "07.859.971/0001-30",
       "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
-      "tickers": [
-        "TAEE11",
-        "TAEE3",
-        "TAEE4"
-      ],
+      "tickers": ["TAEE11", "TAEE3", "TAEE4"],
       "exercicio": "2025-12-31",
       "receita": 4624113000,
       "lucro": 1579863000,
@@ -2958,10 +2726,7 @@
     {
       "cnpj": "61.079.117/0001-05",
       "nome": "ALPARGATAS S.A.",
-      "tickers": [
-        "ALPA3",
-        "ALPA4"
-      ],
+      "tickers": ["ALPA3", "ALPA4"],
       "exercicio": "2025-12-31",
       "receita": 4564874000,
       "lucro": 567926000,
@@ -2999,9 +2764,7 @@
     {
       "cnpj": "82.901.000/0001-27",
       "nome": "INTELBRAS S.A. IND. DE TELECOMUNICAÇÃO ELETRÔNICA BRASILEIRA",
-      "tickers": [
-        "INTB3"
-      ],
+      "tickers": ["INTB3"],
       "exercicio": "2025-12-31",
       "receita": 4460379000,
       "lucro": 483733000,
@@ -3039,9 +2802,7 @@
     {
       "cnpj": "08.364.948/0001-38",
       "nome": "ALUPAR INVESTIMENTO S/A",
-      "tickers": [
-        "ALUP11"
-      ],
+      "tickers": ["ALUP11"],
       "exercicio": "2025-12-31",
       "receita": 4397883000,
       "lucro": 1733193000,
@@ -3060,9 +2821,7 @@
     {
       "cnpj": "16.614.075/0001-00",
       "nome": "DIRECIONAL ENGENHARIA S.A.",
-      "tickers": [
-        "DIRR3"
-      ],
+      "tickers": ["DIRR3"],
       "exercicio": "2025-12-31",
       "receita": 4343008000,
       "lucro": 979692000,
@@ -3100,9 +2859,7 @@
     {
       "cnpj": "71.476.527/0001-35",
       "nome": "CONSTRUTORA TENDA S.A.",
-      "tickers": [
-        "TEND3"
-      ],
+      "tickers": ["TEND3"],
       "exercicio": "2025-12-31",
       "receita": 4173389000,
       "lucro": 484431000,
@@ -3159,9 +2916,7 @@
     {
       "cnpj": "09.288.252/0001-32",
       "nome": "ANIMA HOLDING S.A.",
-      "tickers": [
-        "ANIM3"
-      ],
+      "tickers": ["ANIM3"],
       "exercicio": "2025-12-31",
       "receita": 4023697000,
       "lucro": 256665000,
@@ -3180,9 +2935,7 @@
     {
       "cnpj": "59.717.553/0001-02",
       "nome": "GRUPO MULTILASER S.A.",
-      "tickers": [
-        "MLAS3"
-      ],
+      "tickers": ["MLAS3"],
       "exercicio": "2025-12-31",
       "receita": 3923762000,
       "lucro": 121899000,
@@ -3201,10 +2954,7 @@
     {
       "cnpj": "03.758.318/0001-24",
       "nome": "INVESTIMENTOS E PARTICIP. EM INFRA S.A. - INVEPAR",
-      "tickers": [
-        "IVPR3",
-        "IVPR4"
-      ],
+      "tickers": ["IVPR3", "IVPR4"],
       "exercicio": "2025-12-31",
       "receita": 3818051000,
       "lucro": 741462000,
@@ -3261,9 +3011,7 @@
     {
       "cnpj": "18.328.118/0001-09",
       "nome": "PET CENTER COMÉRCIO E PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "PETZ3"
-      ],
+      "tickers": ["PETZ3"],
       "exercicio": "2025-12-31",
       "receita": 3586622000,
       "lucro": 40042000,
@@ -3282,9 +3030,7 @@
     {
       "cnpj": "00.194.724/0001-13",
       "nome": "AUREN OPERAÇÕES S.A.",
-      "tickers": [
-        "AESO3"
-      ],
+      "tickers": ["AESO3"],
       "exercicio": "2025-12-31",
       "receita": 3575301000,
       "lucro": 99953000,
@@ -3303,9 +3049,7 @@
     {
       "cnpj": "50.926.955/0001-42",
       "nome": "VULCABRAS S.A.",
-      "tickers": [
-        "VULC3"
-      ],
+      "tickers": ["VULC3"],
       "exercicio": "2025-12-31",
       "receita": 3560287000,
       "lucro": 1165314000,
@@ -3400,9 +3144,7 @@
     {
       "cnpj": "08.294.224/0001-65",
       "nome": "JHSF PARTICIPACOES S.A.",
-      "tickers": [
-        "JHSF3"
-      ],
+      "tickers": ["JHSF3"],
       "exercicio": "2025-12-31",
       "receita": 3479142000,
       "lucro": 1868540000,
@@ -3459,9 +3201,7 @@
     {
       "cnpj": "81.243.735/0001-48",
       "nome": "POSITIVO TECNOLOGIA S.A.",
-      "tickers": [
-        "POSI3"
-      ],
+      "tickers": ["POSI3"],
       "exercicio": "2025-12-31",
       "receita": 3354898000,
       "lucro": 12234000,
@@ -3499,9 +3239,7 @@
     {
       "cnpj": "24.230.275/0001-80",
       "nome": "PLANO & PLANO DESENVOLVIMENTO IMOBILIÁRIO S.A.",
-      "tickers": [
-        "PLPL3"
-      ],
+      "tickers": ["PLPL3"],
       "exercicio": "2025-12-31",
       "receita": 3281707000,
       "lucro": 422700000,
@@ -3577,9 +3315,7 @@
     {
       "cnpj": "03.342.704/0001-30",
       "nome": "PETRORECÔNCAVO S.A.",
-      "tickers": [
-        "RECV3"
-      ],
+      "tickers": ["RECV3"],
       "exercicio": "2025-12-31",
       "receita": 3157609000,
       "lucro": 638352000,
@@ -3598,10 +3334,7 @@
     {
       "cnpj": "56.643.018/0001-66",
       "nome": "EUCATEX S.A. INDUSTRIA E COMERCIO",
-      "tickers": [
-        "EUCA3",
-        "EUCA4"
-      ],
+      "tickers": ["EUCA3", "EUCA4"],
       "exercicio": "2025-12-31",
       "receita": 3104252000,
       "lucro": 319096000,
@@ -3620,9 +3353,7 @@
     {
       "cnpj": "42.278.291/0001-24",
       "nome": "LOG-IN LOGISTICA INTERMODAL S.A.",
-      "tickers": [
-        "LOGN3"
-      ],
+      "tickers": ["LOGN3"],
       "exercicio": "2025-12-31",
       "receita": 3081024000,
       "lucro": 93675000,
@@ -3641,9 +3372,7 @@
     {
       "cnpj": "33.839.910/0001-11",
       "nome": "VIVARA PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "VIVA3"
-      ],
+      "tickers": ["VIVA3"],
       "exercicio": "2025-12-31",
       "receita": 3026581564,
       "lucro": 619502301,
@@ -3681,9 +3410,7 @@
     {
       "cnpj": "53.153.938/0001-08",
       "nome": "UNIÃO PET PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "AUAU3"
-      ],
+      "tickers": ["AUAU3"],
       "exercicio": "2025-12-31",
       "receita": 3013799000,
       "lucro": 109339000,
@@ -3702,10 +3429,7 @@
     {
       "cnpj": "33.228.024/0001-51",
       "nome": "WLM PART. E COMÉRCIO DE MÁQUINAS E VEÍCULOS S.A.",
-      "tickers": [
-        "WLMM3",
-        "WLMM4"
-      ],
+      "tickers": ["WLMM3", "WLMM4"],
       "exercicio": "2025-12-31",
       "receita": 3011892000,
       "lucro": 86892000,
@@ -3743,9 +3467,7 @@
     {
       "cnpj": "05.878.397/0001-32",
       "nome": "ALLOS S.A.",
-      "tickers": [
-        "ALOS3"
-      ],
+      "tickers": ["ALOS3"],
       "exercicio": "2025-12-31",
       "receita": 2859106000,
       "lucro": 945293000,
@@ -3764,9 +3486,7 @@
     {
       "cnpj": "62.984.091/0001-02",
       "nome": "CRUZEIRO DO SUL EDUCACIONAL S.A.",
-      "tickers": [
-        "CSED3"
-      ],
+      "tickers": ["CSED3"],
       "exercicio": "2025-12-31",
       "receita": 2836184000,
       "lucro": 296866000,
@@ -3804,10 +3524,7 @@
     {
       "cnpj": "17.765.891/0001-70",
       "nome": "GRUPO SALTA EDUCAÇÃO S.A.",
-      "tickers": [
-        "SALT3",
-        "SALT4"
-      ],
+      "tickers": ["SALT3", "SALT4"],
       "exercicio": "2025-12-31",
       "receita": 2791597000,
       "lucro": 121025000,
@@ -3826,9 +3543,7 @@
     {
       "cnpj": "96.418.264/0218-02",
       "nome": "LOJAS QUERO QUERO S.A.",
-      "tickers": [
-        "LJQQ3"
-      ],
+      "tickers": ["LJQQ3"],
       "exercicio": "2025-12-31",
       "receita": 2788412000,
       "lucro": -161941000,
@@ -3847,9 +3562,7 @@
     {
       "cnpj": "07.816.890/0001-53",
       "nome": "MULTIPLAN - EMPREEND IMOBILIARIOS S.A.",
-      "tickers": [
-        "MULT3"
-      ],
+      "tickers": ["MULT3"],
       "exercicio": "2025-12-31",
       "receita": 2739082000,
       "lucro": 1141233000,
@@ -3868,9 +3581,7 @@
     {
       "cnpj": "12.108.897/0001-50",
       "nome": "D1000 VAREJO FARMA PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "DMVF3"
-      ],
+      "tickers": ["DMVF3"],
       "exercicio": "2025-12-31",
       "receita": 2666765000,
       "lucro": 22565000,
@@ -3889,9 +3600,7 @@
     {
       "cnpj": "10.807.374/0001-77",
       "nome": "BOA SAFRA SEMENTES S.A.",
-      "tickers": [
-        "SOJA3"
-      ],
+      "tickers": ["SOJA3"],
       "exercicio": "2025-12-31",
       "receita": 2622416000,
       "lucro": 101130000,
@@ -3910,9 +3619,7 @@
     {
       "cnpj": "83.475.913/0001-91",
       "nome": "PBG S/A",
-      "tickers": [
-        "PTBL3"
-      ],
+      "tickers": ["PTBL3"],
       "exercicio": "2025-12-31",
       "receita": 2606148000,
       "lucro": -291722000,
@@ -3931,9 +3638,7 @@
     {
       "cnpj": "89.850.341/0001-60",
       "nome": "GRENDENE S.A.",
-      "tickers": [
-        "GRND3"
-      ],
+      "tickers": ["GRND3"],
       "exercicio": "2025-12-31",
       "receita": 2584341000,
       "lucro": 644808000,
@@ -3990,9 +3695,7 @@
     {
       "cnpj": "58.119.199/0001-51",
       "nome": "BRADSAÚDE S.A.",
-      "tickers": [
-        "SAUD3"
-      ],
+      "tickers": ["SAUD3"],
       "exercicio": "2025-12-31",
       "receita": 2420159000,
       "lucro": 582537000,
@@ -4011,9 +3714,7 @@
     {
       "cnpj": "04.821.041/0001-08",
       "nome": "METALFRIO SOLUTIONS S.A.",
-      "tickers": [
-        "FRIO3"
-      ],
+      "tickers": ["FRIO3"],
       "exercicio": "2025-12-31",
       "receita": 2402881000,
       "lucro": 21936000,
@@ -4051,9 +3752,7 @@
     {
       "cnpj": "12.049.631/0001-84",
       "nome": "MOURA DUBEUX ENGENHARIA S/A",
-      "tickers": [
-        "MDNE3"
-      ],
+      "tickers": ["MDNE3"],
       "exercicio": "2025-12-31",
       "receita": 2356938000,
       "lucro": 420173000,
@@ -4072,9 +3771,7 @@
     {
       "cnpj": "02.635.522/0001-95",
       "nome": "JALLES MACHADO S.A.",
-      "tickers": [
-        "JALL3"
-      ],
+      "tickers": ["JALL3"],
       "exercicio": "2025-03-31",
       "receita": 2337911000,
       "lucro": -55950000,
@@ -4093,10 +3790,7 @@
     {
       "cnpj": "15.141.799/0001-03",
       "nome": "CIA FERRO LIGAS DA BAHIA - FERBASA",
-      "tickers": [
-        "FESA3",
-        "FESA4"
-      ],
+      "tickers": ["FESA3", "FESA4"],
       "exercicio": "2025-12-31",
       "receita": 2334454000,
       "lucro": 188676000,
@@ -4172,9 +3866,7 @@
     {
       "cnpj": "20.512.706/0001-40",
       "nome": "VITRU EDUCAÇÃO S.A.",
-      "tickers": [
-        "VTRU3"
-      ],
+      "tickers": ["VTRU3"],
       "exercicio": "2025-12-31",
       "receita": 2259078000,
       "lucro": 369891000,
@@ -4193,9 +3885,7 @@
     {
       "cnpj": "12.648.327/0001-53",
       "nome": "HIDROVIAS DO BRASIL S.A.",
-      "tickers": [
-        "HBSA3"
-      ],
+      "tickers": ["HBSA3"],
       "exercicio": "2025-12-31",
       "receita": 2241099000,
       "lucro": -140918000,
@@ -4214,9 +3904,7 @@
     {
       "cnpj": "02.351.144/0001-18",
       "nome": "TEGMA GESTAO LOGISTICA S.A.",
-      "tickers": [
-        "TGMA3"
-      ],
+      "tickers": ["TGMA3"],
       "exercicio": "2025-12-31",
       "receita": 2225428000,
       "lucro": 242963000,
@@ -4235,9 +3923,7 @@
     {
       "cnpj": "04.986.320/0001-13",
       "nome": "SER EDUCACIONAL S.A.",
-      "tickers": [
-        "SEER3"
-      ],
+      "tickers": ["SEER3"],
       "exercicio": "2025-12-31",
       "receita": 2216531000,
       "lucro": 214436000,
@@ -4275,9 +3961,7 @@
     {
       "cnpj": "16.676.520/0001-59",
       "nome": "HOSPITAL MATER DEI S.A.",
-      "tickers": [
-        "MATD3"
-      ],
+      "tickers": ["MATD3"],
       "exercicio": "2025-12-31",
       "receita": 2175285000,
       "lucro": 111916000,
@@ -4315,10 +3999,7 @@
     {
       "cnpj": "02.193.750/0001-52",
       "nome": "DEXXOS PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "DEXP3",
-        "DEXP4"
-      ],
+      "tickers": ["DEXP3", "DEXP4"],
       "exercicio": "2025-12-31",
       "receita": 2136828000,
       "lucro": 143653000,
@@ -4337,9 +4018,7 @@
     {
       "cnpj": "09.114.805/0001-30",
       "nome": "OCEANPACT SERVIÇOS MARITIMOS S.A.",
-      "tickers": [
-        "OPCT3"
-      ],
+      "tickers": ["OPCT3"],
       "exercicio": "2025-12-31",
       "receita": 2133917000,
       "lucro": 105475000,
@@ -4396,9 +4075,7 @@
     {
       "cnpj": "33.113.309/0001-47",
       "nome": "VALID SOLUÇÕES S.A.",
-      "tickers": [
-        "VLID3"
-      ],
+      "tickers": ["VLID3"],
       "exercicio": "2025-12-31",
       "receita": 2062563000,
       "lucro": 268707000,
@@ -4455,10 +4132,7 @@
     {
       "cnpj": "84.693.183/0001-68",
       "nome": "SCHULZ S.A.",
-      "tickers": [
-        "SHUL3",
-        "SHUL4"
-      ],
+      "tickers": ["SHUL3", "SHUL4"],
       "exercicio": "2025-12-31",
       "receita": 1938864000,
       "lucro": 288876000,
@@ -4477,10 +4151,7 @@
     {
       "cnpj": "92.693.019/0001-89",
       "nome": "PANATLANTICA S.A.",
-      "tickers": [
-        "PATI3",
-        "PATI4"
-      ],
+      "tickers": ["PATI3", "PATI4"],
       "exercicio": "2025-12-31",
       "receita": 1928530000,
       "lucro": 49866000,
@@ -4499,9 +4170,7 @@
     {
       "cnpj": "43.470.988/0001-65",
       "nome": "EVEN CONSTRUTORA E INCORPORADORA S.A.",
-      "tickers": [
-        "EVEN3"
-      ],
+      "tickers": ["EVEN3"],
       "exercicio": "2025-12-31",
       "receita": 1920257000,
       "lucro": 299052000,
@@ -4520,9 +4189,7 @@
     {
       "cnpj": "00.242.184/0001-04",
       "nome": "ARMAC LOCAÇÃO, LOGÍSTICA E SERVIÇOS S.A.",
-      "tickers": [
-        "ARML3"
-      ],
+      "tickers": ["ARML3"],
       "exercicio": "2025-12-31",
       "receita": 1887757000,
       "lucro": 73771000,
@@ -4541,9 +4208,7 @@
     {
       "cnpj": "60.537.263/0001-66",
       "nome": "ALLPARK EMPREENDIMENTOS, PARTICIPAÇÕES E SERVIÇOS S.A.",
-      "tickers": [
-        "ALPK3"
-      ],
+      "tickers": ["ALPK3"],
       "exercicio": "2025-12-31",
       "receita": 1872588000,
       "lucro": 14096000,
@@ -4562,9 +4227,7 @@
     {
       "cnpj": "27.093.558/0001-15",
       "nome": "MILLS LOCAÇÃO, SERVIÇOS E LOGÍSTICA S.A.",
-      "tickers": [
-        "MILS3"
-      ],
+      "tickers": ["MILS3"],
       "exercicio": "2025-12-31",
       "receita": 1837835000,
       "lucro": 301263000,
@@ -4583,10 +4246,7 @@
     {
       "cnpj": "87.456.562/0001-22",
       "nome": "JOSAPAR-JOAQUIM OLIVEIRA S.A. - PARTICIP",
-      "tickers": [
-        "JOPA3",
-        "JOPA4"
-      ],
+      "tickers": ["JOPA3", "JOPA4"],
       "exercicio": "2025-12-31",
       "receita": 1802130000,
       "lucro": 16792000,
@@ -4624,9 +4284,7 @@
     {
       "cnpj": "26.462.693/0001-28",
       "nome": "LAVVI EMPREENDIMENTOS IMOBILIÁRIOS S.A.",
-      "tickers": [
-        "LAVV3"
-      ],
+      "tickers": ["LAVV3"],
       "exercicio": "2025-12-31",
       "receita": 1761398000,
       "lucro": 464164000,
@@ -4683,9 +4341,7 @@
     {
       "cnpj": "17.314.329/0001-20",
       "nome": "INTERNATIONAL MEAL COMPANY ALIMENTACAO S.A.",
-      "tickers": [
-        "MEAL3"
-      ],
+      "tickers": ["MEAL3"],
       "exercicio": "2025-12-31",
       "receita": 1729658000,
       "lucro": -148968000,
@@ -4704,10 +4360,7 @@
     {
       "cnpj": "50.564.053/0001-03",
       "nome": "BOMBRIL S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "BOBR3",
-        "BOBR4"
-      ],
+      "tickers": ["BOBR3", "BOBR4"],
       "exercicio": "2025-12-31",
       "receita": 1729013000,
       "lucro": 68008000,
@@ -4764,9 +4417,7 @@
     {
       "cnpj": "58.430.828/0001-60",
       "nome": "BLAU FARMACÊUTICA S.A.",
-      "tickers": [
-        "BLAU3"
-      ],
+      "tickers": ["BLAU3"],
       "exercicio": "2025-12-31",
       "receita": 1702382000,
       "lucro": 296773000,
@@ -4785,9 +4436,7 @@
     {
       "cnpj": "09.042.817/0001-05",
       "nome": "BEMOBI MOBILE TECH S.A.",
-      "tickers": [
-        "BMOB3"
-      ],
+      "tickers": ["BMOB3"],
       "exercicio": "2025-12-31",
       "receita": 1696407000,
       "lucro": 161262000,
@@ -4806,9 +4455,7 @@
     {
       "cnpj": "92.791.243/0001-03",
       "nome": "IRANI PAPEL E EMBALAGEM S.A.",
-      "tickers": [
-        "RANI3"
-      ],
+      "tickers": ["RANI3"],
       "exercicio": "2025-12-31",
       "receita": 1686311000,
       "lucro": 242050000,
@@ -4827,9 +4474,7 @@
     {
       "cnpj": "04.601.397/0001-28",
       "nome": "BRISANET SERVIÇOS DE TELECOMUNICAÇÕES S.A.",
-      "tickers": [
-        "BRST3"
-      ],
+      "tickers": ["BRST3"],
       "exercicio": "2025-12-31",
       "receita": 1677263000,
       "lucro": 40884000,
@@ -4848,9 +4493,7 @@
     {
       "cnpj": "06.977.745/0001-91",
       "nome": "BR MALLS PARTICIPACOES S.A.",
-      "tickers": [
-        "BRML3"
-      ],
+      "tickers": ["BRML3"],
       "exercicio": "2025-12-31",
       "receita": 1643621000,
       "lucro": 875365000,
@@ -4888,9 +4531,7 @@
     {
       "cnpj": "18.593.815/0001-97",
       "nome": "PRINER SERVIÇOS INDUSTRIAIS S.A.",
-      "tickers": [
-        "PRNR3"
-      ],
+      "tickers": ["PRNR3"],
       "exercicio": "2025-12-31",
       "receita": 1563623000,
       "lucro": 8404000,
@@ -4928,9 +4569,7 @@
     {
       "cnpj": "08.312.229/0001-73",
       "nome": "EZ TEC EMPREEND. E PARTICIPACOES S.A.",
-      "tickers": [
-        "EZTC3"
-      ],
+      "tickers": ["EZTC3"],
       "exercicio": "2025-12-31",
       "receita": 1498822000,
       "lucro": 547595000,
@@ -4949,10 +4588,7 @@
     {
       "cnpj": "91.983.056/0001-69",
       "nome": "KEPLER WEBER S.A.",
-      "tickers": [
-        "KEPL11",
-        "KEPL3"
-      ],
+      "tickers": ["KEPL11", "KEPL3"],
       "exercicio": "2025-12-31",
       "receita": 1490300000,
       "lucro": 156270000,
@@ -4971,9 +4607,7 @@
     {
       "cnpj": "02.351.877/0001-52",
       "nome": "LWSA S/A",
-      "tickers": [
-        "LWSA3"
-      ],
+      "tickers": ["LWSA3"],
       "exercicio": "2025-12-31",
       "receita": 1488531000,
       "lucro": -225450000,
@@ -4992,9 +4626,7 @@
     {
       "cnpj": "10.760.260/0001-19",
       "nome": "CVC BRASIL OPERADORA E AGÊNCIA DE VIAGENS S.A.",
-      "tickers": [
-        "CVCB3"
-      ],
+      "tickers": ["CVCB3"],
       "exercicio": "2025-12-31",
       "receita": 1488493000,
       "lucro": -40935000,
@@ -5013,11 +4645,7 @@
     {
       "cnpj": "60.543.816/0001-93",
       "nome": "IGUATEMI S.A.",
-      "tickers": [
-        "IGTI11",
-        "IGTI3",
-        "IGTI4"
-      ],
+      "tickers": ["IGTI11", "IGTI3", "IGTI4"],
       "exercicio": "2025-12-31",
       "receita": 1486833000,
       "lucro": 582576000,
@@ -5074,10 +4702,7 @@
     {
       "cnpj": "92.781.335/0001-02",
       "nome": "TAURUS ARMAS S.A.",
-      "tickers": [
-        "TASA3",
-        "TASA4"
-      ],
+      "tickers": ["TASA3", "TASA4"],
       "exercicio": "2025-12-31",
       "receita": 1463029000,
       "lucro": 17673000,
@@ -5115,10 +4740,7 @@
     {
       "cnpj": "31.553.627/0001-01",
       "nome": "GRUPO TOKY S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "TOKY12",
-        "TOKY3"
-      ],
+      "tickers": ["TOKY12", "TOKY3"],
       "exercicio": "2025-12-31",
       "receita": 1445029000,
       "lucro": -146886000,
@@ -5137,9 +4759,7 @@
     {
       "cnpj": "11.992.680/0001-93",
       "nome": "QUALICORP CONSULTORIA E CORRETORA DE SEGUROS S.A.",
-      "tickers": [
-        "QUAL3"
-      ],
+      "tickers": ["QUAL3"],
       "exercicio": "2025-12-31",
       "receita": 1426845000,
       "lucro": 17049000,
@@ -5158,9 +4778,7 @@
     {
       "cnpj": "42.278.473/0001-03",
       "nome": "WIZ CO PARTICIPAÇÕES E CORRETAGEM DE SEGUROS S.A.",
-      "tickers": [
-        "WIZC3"
-      ],
+      "tickers": ["WIZC3"],
       "exercicio": "2025-12-31",
       "receita": 1382973000,
       "lucro": 367710000,
@@ -5179,9 +4797,7 @@
     {
       "cnpj": "08.811.643/0001-27",
       "nome": "TRISUL S.A.",
-      "tickers": [
-        "TRIS3"
-      ],
+      "tickers": ["TRIS3"],
       "exercicio": "2025-12-31",
       "receita": 1378596000,
       "lucro": 213095000,
@@ -5219,9 +4835,7 @@
     {
       "cnpj": "01.107.327/0001-20",
       "nome": "BBM LOGÍSTICA S.A.",
-      "tickers": [
-        "BBML3"
-      ],
+      "tickers": ["BBML3"],
       "exercicio": "2025-12-31",
       "receita": 1345480000,
       "lucro": -252881000,
@@ -5240,9 +4854,7 @@
     {
       "cnpj": "56.720.428/0001-63",
       "nome": "ROMI S.A.",
-      "tickers": [
-        "ROMI3"
-      ],
+      "tickers": ["ROMI3"],
       "exercicio": "2025-12-31",
       "receita": 1326712000,
       "lucro": 86170000,
@@ -5280,9 +4892,7 @@
     {
       "cnpj": "40.159.947/0001-64",
       "nome": "HMOBI PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "HMOB3"
-      ],
+      "tickers": ["HMOB3"],
       "exercicio": "2025-12-31",
       "receita": 1254247000,
       "lucro": -23103000,
@@ -5301,9 +4911,7 @@
     {
       "cnpj": "49.669.856/0001-43",
       "nome": "VESTE S.A. ESTILO",
-      "tickers": [
-        "VSTE3"
-      ],
+      "tickers": ["VSTE3"],
       "exercicio": "2025-12-31",
       "receita": 1230948000,
       "lucro": 24409000,
@@ -5322,9 +4930,7 @@
     {
       "cnpj": "20.258.278/0001-70",
       "nome": "OUROFINO S.A.",
-      "tickers": [
-        "OFSA3"
-      ],
+      "tickers": ["OFSA3"],
       "exercicio": "2025-12-31",
       "receita": 1224992000,
       "lucro": 222311000,
@@ -5343,9 +4949,7 @@
     {
       "cnpj": "08.170.849/0001-15",
       "nome": "DESKTOP S.A.",
-      "tickers": [
-        "DESK3"
-      ],
+      "tickers": ["DESK3"],
       "exercicio": "2025-12-31",
       "receita": 1218547000,
       "lucro": 80773000,
@@ -5402,9 +5006,7 @@
     {
       "cnpj": "51.218.147/0001-93",
       "nome": "IGUATEMI EMPRESA DE SHOPPING CENTERS S.A",
-      "tickers": [
-        "IGTA3"
-      ],
+      "tickers": ["IGTA3"],
       "exercicio": "2025-12-31",
       "receita": 1188409000,
       "lucro": 569684000,
@@ -5442,9 +5044,7 @@
     {
       "cnpj": "02.255.187/0001-08",
       "nome": "UNIFIQUE TELECOMUNICAÇÕES S.A.",
-      "tickers": [
-        "FIQE3"
-      ],
+      "tickers": ["FIQE3"],
       "exercicio": "2025-12-31",
       "receita": 1185580000,
       "lucro": 208957000,
@@ -5463,9 +5063,7 @@
     {
       "cnpj": "07.628.528/0001-59",
       "nome": "BRASILAGRO - CIA BRAS DE PROP AGRICOLAS",
-      "tickers": [
-        "AGRO3"
-      ],
+      "tickers": ["AGRO3"],
       "exercicio": "2025-06-30",
       "receita": 1172131000,
       "lucro": 138019000,
@@ -5503,9 +5101,7 @@
     {
       "cnpj": "42.771.949/0001-35",
       "nome": "ALLIANÇA SAÚDE E PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "AALR3"
-      ],
+      "tickers": ["AALR3"],
       "exercicio": "2025-12-31",
       "receita": 1153825000,
       "lucro": -1371831000,
@@ -5543,9 +5139,7 @@
     {
       "cnpj": "61.092.037/0001-81",
       "nome": "ETERNIT S.A.",
-      "tickers": [
-        "ETER3"
-      ],
+      "tickers": ["ETER3"],
       "exercicio": "2025-12-31",
       "receita": 1150164000,
       "lucro": 48975000,
@@ -5564,9 +5158,7 @@
     {
       "cnpj": "49.263.189/0001-02",
       "nome": "HELBOR EMPREENDIMENTOS S.A.",
-      "tickers": [
-        "HBOR3"
-      ],
+      "tickers": ["HBOR3"],
       "exercicio": "2025-12-31",
       "receita": 1128462000,
       "lucro": 92028000,
@@ -5585,9 +5177,7 @@
     {
       "cnpj": "12.181.987/0001-77",
       "nome": "MELNICK DESENVOLVIMENTO IMOBILIÁRIO S.A.",
-      "tickers": [
-        "MELK3"
-      ],
+      "tickers": ["MELK3"],
       "exercicio": "2025-12-31",
       "receita": 1117283000,
       "lucro": 150056000,
@@ -5606,9 +5196,7 @@
     {
       "cnpj": "26.659.061/0001-59",
       "nome": "MPM CORPÓREOS S.A.",
-      "tickers": [
-        "ESPA3"
-      ],
+      "tickers": ["ESPA3"],
       "exercicio": "2025-12-31",
       "receita": 1092985000,
       "lucro": 13158000,
@@ -5684,10 +5272,7 @@
     {
       "cnpj": "61.065.298/0001-02",
       "nome": "MANGELS INDUSTRIAL S.A.",
-      "tickers": [
-        "MGEL3",
-        "MGEL4"
-      ],
+      "tickers": ["MGEL3", "MGEL4"],
       "exercicio": "2025-12-31",
       "receita": 1063608000,
       "lucro": 48022000,
@@ -5706,9 +5291,7 @@
     {
       "cnpj": "07.882.930/0001-65",
       "nome": "MITRE REALTY EMPREENDIMENTOS E PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "MTRE3"
-      ],
+      "tickers": ["MTRE3"],
       "exercicio": "2025-12-31",
       "receita": 1054924000,
       "lucro": 78116000,
@@ -5727,9 +5310,7 @@
     {
       "cnpj": "03.014.553/0001-91",
       "nome": "TPI - TRIUNFO PARTICIP. E INVEST. S.A.",
-      "tickers": [
-        "TPIS3"
-      ],
+      "tickers": ["TPIS3"],
       "exercicio": "2025-12-31",
       "receita": 1054757000,
       "lucro": -402656000,
@@ -5748,9 +5329,7 @@
     {
       "cnpj": "11.421.994/0001-36",
       "nome": "ORIZON VALORIZAÇÃO DE RESÍDUOS S.A.",
-      "tickers": [
-        "ORVR3"
-      ],
+      "tickers": ["ORVR3"],
       "exercicio": "2025-12-31",
       "receita": 1050340000,
       "lucro": 73962000,
@@ -5769,9 +5348,7 @@
     {
       "cnpj": "59.418.806/0001-47",
       "nome": "TRACK & FIELD CO S.A.",
-      "tickers": [
-        "TFCO4"
-      ],
+      "tickers": ["TFCO4"],
       "exercicio": "2025-12-31",
       "receita": 1046512000,
       "lucro": 142318000,
@@ -5790,9 +5367,7 @@
     {
       "cnpj": "88.610.191/0001-54",
       "nome": "MUNDIAL S.A. - PRODUTOS DE CONSUMO",
-      "tickers": [
-        "MNDL3"
-      ],
+      "tickers": ["MNDL3"],
       "exercicio": "2025-12-31",
       "receita": 1018848000,
       "lucro": -21970000,
@@ -5830,11 +5405,7 @@
     {
       "cnpj": "14.807.945/0001-24",
       "nome": "SANSUY S.A. INDUSTRIA DE PLASTICOS",
-      "tickers": [
-        "SNSY3",
-        "SNSY5",
-        "SNSY6"
-      ],
+      "tickers": ["SNSY3", "SNSY5", "SNSY6"],
       "exercicio": "2025-12-31",
       "receita": 975914000,
       "lucro": -284204000,
@@ -5891,9 +5462,7 @@
     {
       "cnpj": "09.146.451/0001-06",
       "nome": "KALLAS INCORPORAÇÕES E CONSTRUÇÕES S.A.",
-      "tickers": [
-        "KLAS3"
-      ],
+      "tickers": ["KLAS3"],
       "exercicio": "2025-12-31",
       "receita": 923144000,
       "lucro": -155379000,
@@ -5988,10 +5557,7 @@
     {
       "cnpj": "97.191.902/0001-94",
       "nome": "CONSERVAS ODERICH S.A.",
-      "tickers": [
-        "ODER3",
-        "ODER4"
-      ],
+      "tickers": ["ODER3", "ODER4"],
       "exercicio": "2025-12-31",
       "receita": 828048000,
       "lucro": 75539000,
@@ -6010,9 +5576,7 @@
     {
       "cnpj": "45.365.558/0001-09",
       "nome": "VITTIA S.A.",
-      "tickers": [
-        "VITT3"
-      ],
+      "tickers": ["VITT3"],
       "exercicio": "2025-12-31",
       "receita": 819983000,
       "lucro": 66151000,
@@ -6069,10 +5633,7 @@
     {
       "cnpj": "82.640.558/0001-04",
       "nome": "KARSTEN S.A.",
-      "tickers": [
-        "CTKA3",
-        "CTKA4"
-      ],
+      "tickers": ["CTKA3", "CTKA4"],
       "exercicio": "2025-12-31",
       "receita": 759038000,
       "lucro": 70539000,
@@ -6091,9 +5652,7 @@
     {
       "cnpj": "12.528.708/0001-07",
       "nome": "AERIS IND. E COM. DE EQUIP. PARA GER. DE ENG. S.A.",
-      "tickers": [
-        "AERI3"
-      ],
+      "tickers": ["AERI3"],
       "exercicio": "2025-12-31",
       "receita": 746006000,
       "lucro": -901213000,
@@ -6112,10 +5671,7 @@
     {
       "cnpj": "92.012.467/0001-70",
       "nome": "GRAZZIOTIN S.A.",
-      "tickers": [
-        "CGRA3",
-        "CGRA4"
-      ],
+      "tickers": ["CGRA3", "CGRA4"],
       "exercicio": "2025-12-31",
       "receita": 744815000,
       "lucro": 83855000,
@@ -6172,10 +5728,7 @@
     {
       "cnpj": "38.456.921/0001-36",
       "nome": "INFRACOMMERCE CXAAS S.A.",
-      "tickers": [
-        "IFCM11",
-        "IFCM3"
-      ],
+      "tickers": ["IFCM11", "IFCM3"],
       "exercicio": "2025-12-31",
       "receita": 709955000,
       "lucro": -341892000,
@@ -6289,9 +5842,7 @@
     {
       "cnpj": "01.896.779/0001-38",
       "nome": "CSU DIGITAL S.A.",
-      "tickers": [
-        "CSUD3"
-      ],
+      "tickers": ["CSUD3"],
       "exercicio": "2025-12-31",
       "receita": 623529000,
       "lucro": 106051000,
@@ -6310,9 +5861,7 @@
     {
       "cnpj": "01.545.826/0001-07",
       "nome": "GAFISA S.A.",
-      "tickers": [
-        "GFSA3"
-      ],
+      "tickers": ["GFSA3"],
       "exercicio": "2025-12-31",
       "receita": 619692000,
       "lucro": -544550000,
@@ -6350,9 +5899,7 @@
     {
       "cnpj": "01.599.101/0001-93",
       "nome": "SEQUOIA LOGÍSTICA E TRANSPORTES S.A.",
-      "tickers": [
-        "SEQL3"
-      ],
+      "tickers": ["SEQL3"],
       "exercicio": "2025-12-31",
       "receita": 592928000,
       "lucro": -195422000,
@@ -6371,9 +5918,7 @@
     {
       "cnpj": "16.811.931/0001-00",
       "nome": "ALPHAVILLE S.A.",
-      "tickers": [
-        "AVLL3"
-      ],
+      "tickers": ["AVLL3"],
       "exercicio": "2025-12-31",
       "receita": 584948000,
       "lucro": -105497000,
@@ -6411,9 +5956,7 @@
     {
       "cnpj": "60.398.369/0004-79",
       "nome": "PARANAPANEMA S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "PMAM3"
-      ],
+      "tickers": ["PMAM3"],
       "exercicio": "2025-12-31",
       "receita": 562435000,
       "lucro": -1331490000,
@@ -6432,9 +5975,7 @@
     {
       "cnpj": "09.611.768/0001-76",
       "nome": "INC EMPREENDIMENTOS IMOBILIÁRIOS S.A.",
-      "tickers": [
-        "INNC3"
-      ],
+      "tickers": ["INNC3"],
       "exercicio": "2025-12-31",
       "receita": 560645000,
       "lucro": 75863000,
@@ -6453,10 +5994,7 @@
     {
       "cnpj": "82.643.537/0001-34",
       "nome": "ELECTRO ACO ALTONA S.A.",
-      "tickers": [
-        "EALT3",
-        "EALT4"
-      ],
+      "tickers": ["EALT3", "EALT4"],
       "exercicio": "2025-12-31",
       "receita": 556054000,
       "lucro": 91042000,
@@ -6513,9 +6051,7 @@
     {
       "cnpj": "14.785.152/0001-51",
       "nome": "HBR REALTY EMPREENDIMENTOS IMOBILIÁRIOS S.A.",
-      "tickers": [
-        "HBRE3"
-      ],
+      "tickers": ["HBRE3"],
       "exercicio": "2025-12-31",
       "receita": 532608000,
       "lucro": 96823000,
@@ -6534,10 +6070,7 @@
     {
       "cnpj": "86.375.425/0001-09",
       "nome": "METISA METALURGICA TIMBOENSE S.A.",
-      "tickers": [
-        "MTSA3",
-        "MTSA4"
-      ],
+      "tickers": ["MTSA3", "MTSA4"],
       "exercicio": "2025-12-31",
       "receita": 532602422,
       "lucro": 40684240,
@@ -6575,10 +6108,7 @@
     {
       "cnpj": "08.534.605/0001-74",
       "nome": "RENOVA ENERGIA S.A.",
-      "tickers": [
-        "RNEW3",
-        "RNEW4"
-      ],
+      "tickers": ["RNEW3", "RNEW4"],
       "exercicio": "2025-12-31",
       "receita": 514958000,
       "lucro": -162231000,
@@ -6616,11 +6146,7 @@
     {
       "cnpj": "00.070.698/0001-11",
       "nome": "COMPANHIA ENERGÉTICA DE BRASÍLIA - CEB",
-      "tickers": [
-        "CEBR3",
-        "CEBR5",
-        "CEBR6"
-      ],
+      "tickers": ["CEBR3", "CEBR5", "CEBR6"],
       "exercicio": "2025-12-31",
       "receita": 510334000,
       "lucro": 235310000,
@@ -6639,9 +6165,7 @@
     {
       "cnpj": "09.295.063/0001-97",
       "nome": "TECHNOS S.A.",
-      "tickers": [
-        "TECN3"
-      ],
+      "tickers": ["TECN3"],
       "exercicio": "2025-12-31",
       "receita": 478423000,
       "lucro": 71475000,
@@ -6660,10 +6184,7 @@
     {
       "cnpj": "02.302.101/0001-42",
       "nome": "EMAE - EMPRESA METROP. DE AGUAS E ENERGIA S.A.",
-      "tickers": [
-        "EMAE3",
-        "EMAE4"
-      ],
+      "tickers": ["EMAE3", "EMAE4"],
       "exercicio": "2025-12-31",
       "receita": 476851000,
       "lucro": -133356000,
@@ -6682,9 +6203,7 @@
     {
       "cnpj": "14.110.585/0001-07",
       "nome": "MÉLIUZ S.A.",
-      "tickers": [
-        "CASH3"
-      ],
+      "tickers": ["CASH3"],
       "exercicio": "2025-12-31",
       "receita": 460204000,
       "lucro": -1140000,
@@ -6703,9 +6222,7 @@
     {
       "cnpj": "04.032.433/0001-80",
       "nome": "CONTAX PARTICIPAÇÕES S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "ATMP3"
-      ],
+      "tickers": ["ATMP3"],
       "exercicio": "2025-12-31",
       "receita": 447089000,
       "lucro": -34365000,
@@ -6743,9 +6260,7 @@
     {
       "cnpj": "90.076.886/0001-40",
       "nome": "MINUPAR PARTICIPACOES S.A.",
-      "tickers": [
-        "MNPR3"
-      ],
+      "tickers": ["MNPR3"],
       "exercicio": "2025-12-31",
       "receita": 436344000,
       "lucro": 516149000,
@@ -6783,9 +6298,7 @@
     {
       "cnpj": "06.981.381/0001-13",
       "nome": "CTC - CENTRO DE TECNOLOGIA CANAVIEIRA S.A.",
-      "tickers": [
-        "CTCA3"
-      ],
+      "tickers": ["CTCA3"],
       "exercicio": "2025-03-31",
       "receita": 422648000,
       "lucro": 175677000,
@@ -6804,10 +6317,7 @@
     {
       "cnpj": "85.778.074/0001-06",
       "nome": "METALURGICA RIOSULENSE S.A.",
-      "tickers": [
-        "RSUL3",
-        "RSUL4"
-      ],
+      "tickers": ["RSUL3", "RSUL4"],
       "exercicio": "2025-12-31",
       "receita": 420460000,
       "lucro": 64448000,
@@ -6826,9 +6336,7 @@
     {
       "cnpj": "08.574.411/0001-00",
       "nome": "PRÁTICA PRODUTOS S.A.",
-      "tickers": [
-        "PTCA3"
-      ],
+      "tickers": ["PTCA3"],
       "exercicio": "2025-12-31",
       "receita": 388697000,
       "lucro": 20198000,
@@ -6866,9 +6374,7 @@
     {
       "cnpj": "61.088.894/0001-08",
       "nome": "CAMBUCI S.A.",
-      "tickers": [
-        "CAMB3"
-      ],
+      "tickers": ["CAMB3"],
       "exercicio": "2025-12-31",
       "receita": 383122000,
       "lucro": 68390000,
@@ -6906,10 +6412,7 @@
     {
       "cnpj": "61.022.042/0001-18",
       "nome": "CONSTRUTORA ADOLPHO LINDENBERG S.A.",
-      "tickers": [
-        "CALI11",
-        "CALI3"
-      ],
+      "tickers": ["CALI11", "CALI3"],
       "exercicio": "2025-12-31",
       "receita": 365614000,
       "lucro": 45872000,
@@ -6985,10 +6488,7 @@
     {
       "cnpj": "61.351.532/0001-68",
       "nome": "AZEVEDO E TRAVASSOS S.A.",
-      "tickers": [
-        "AZEV3",
-        "AZEV4"
-      ],
+      "tickers": ["AZEV3", "AZEV4"],
       "exercicio": "2025-12-31",
       "receita": 349427000,
       "lucro": -618309000,
@@ -7045,9 +6545,7 @@
     {
       "cnpj": "45.987.245/0001-92",
       "nome": "BIOMA EDUCAÇÃO S.A.",
-      "tickers": [
-        "BIED3"
-      ],
+      "tickers": ["BIED3"],
       "exercicio": "2025-12-31",
       "receita": 332743000,
       "lucro": -61569000,
@@ -7104,9 +6602,7 @@
     {
       "cnpj": "08.801.621/0001-86",
       "nome": "SYN PROP & TECH S.A.",
-      "tickers": [
-        "SYNE3"
-      ],
+      "tickers": ["SYNE3"],
       "exercicio": "2025-12-31",
       "receita": 327667000,
       "lucro": 74867000,
@@ -7125,9 +6621,7 @@
     {
       "cnpj": "10.739.356/0001-03",
       "nome": "BRBI BR PARTNERS S.A",
-      "tickers": [
-        "BRBI11"
-      ],
+      "tickers": ["BRBI11"],
       "exercicio": "2025-12-31",
       "receita": 319804000,
       "lucro": 175073000,
@@ -7165,9 +6659,7 @@
     {
       "cnpj": "29.780.061/0001-09",
       "nome": "SAO CARLOS EMPREEND E PARTICIPACOES S.A.",
-      "tickers": [
-        "SCAR3"
-      ],
+      "tickers": ["SCAR3"],
       "exercicio": "2025-12-31",
       "receita": 299829000,
       "lucro": -48442000,
@@ -7186,9 +6678,7 @@
     {
       "cnpj": "19.526.748/0001-50",
       "nome": "COMPANHIA INDUSTRIAL CATAGUASES",
-      "tickers": [
-        "CATA3"
-      ],
+      "tickers": ["CATA3"],
       "exercicio": "2025-12-31",
       "receita": 298894000,
       "lucro": 15808000,
@@ -7207,10 +6697,7 @@
     {
       "cnpj": "33.467.572/0001-34",
       "nome": "TEKNO S.A. - INDUSTRIA E COMERCIO",
-      "tickers": [
-        "TKNO3",
-        "TKNO4"
-      ],
+      "tickers": ["TKNO3", "TKNO4"],
       "exercicio": "2025-12-31",
       "receita": 296981000,
       "lucro": 30018000,
@@ -7229,9 +6716,7 @@
     {
       "cnpj": "10.139.870/0001-08",
       "nome": "NEOGRID PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "NGRD3"
-      ],
+      "tickers": ["NGRD3"],
       "exercicio": "2025-12-31",
       "receita": 270844000,
       "lucro": -5383000,
@@ -7250,9 +6735,7 @@
     {
       "cnpj": "04.752.991/0001-10",
       "nome": "BIOMM S.A.",
-      "tickers": [
-        "BIOM3"
-      ],
+      "tickers": ["BIOM3"],
       "exercicio": "2025-12-31",
       "receita": 269299000,
       "lucro": -6687000,
@@ -7271,9 +6754,7 @@
     {
       "cnpj": "16.922.038/0001-51",
       "nome": "ENJOEI S.A.",
-      "tickers": [
-        "ENJU3"
-      ],
+      "tickers": ["ENJU3"],
       "exercicio": "2025-12-31",
       "receita": 263964000,
       "lucro": -16788000,
@@ -7311,9 +6792,7 @@
     {
       "cnpj": "09.041.168/0001-10",
       "nome": "LOG COMMERCIAL PROPERTIES E PARTICIPAÇÕES",
-      "tickers": [
-        "LOGG3"
-      ],
+      "tickers": ["LOGG3"],
       "exercicio": "2025-12-31",
       "receita": 248759000,
       "lucro": 363486000,
@@ -7332,9 +6811,7 @@
     {
       "cnpj": "90.441.460/0001-48",
       "nome": "UNICASA INDÚSTRIA DE MÓVEIS S.A.",
-      "tickers": [
-        "UCAS3"
-      ],
+      "tickers": ["UCAS3"],
       "exercicio": "2025-12-31",
       "receita": 238958000,
       "lucro": -11549000,
@@ -7372,9 +6849,7 @@
     {
       "cnpj": "18.174.270/0001-84",
       "nome": "DOTZ S.A.",
-      "tickers": [
-        "DOTZ3"
-      ],
+      "tickers": ["DOTZ3"],
       "exercicio": "2025-12-31",
       "receita": 230776000,
       "lucro": -469000,
@@ -7393,11 +6868,7 @@
     {
       "cnpj": "33.386.210/0001-19",
       "nome": "SONDOTECNICA ENGENHARIA SOLOS S.A.",
-      "tickers": [
-        "SOND3",
-        "SOND5",
-        "SOND6"
-      ],
+      "tickers": ["SOND3", "SOND5", "SOND6"],
       "exercicio": "2025-12-31",
       "receita": 226418000,
       "lucro": 35732000,
@@ -7416,9 +6887,7 @@
     {
       "cnpj": "51.128.999/0001-90",
       "nome": "NUTRIPLANT INDUSTRIA E COMERCIO S.A.",
-      "tickers": [
-        "NUTR3"
-      ],
+      "tickers": ["NUTR3"],
       "exercicio": "2025-12-31",
       "receita": 216120000,
       "lucro": 5386000,
@@ -7437,9 +6906,7 @@
     {
       "cnpj": "08.065.557/0001-12",
       "nome": "TECNISA S.A.",
-      "tickers": [
-        "TCSA3"
-      ],
+      "tickers": ["TCSA3"],
       "exercicio": "2025-12-31",
       "receita": 214539000,
       "lucro": -100131000,
@@ -7458,10 +6925,7 @@
     {
       "cnpj": "61.374.161/0001-30",
       "nome": "BAUMER S.A.",
-      "tickers": [
-        "BALM3",
-        "BALM4"
-      ],
+      "tickers": ["BALM3", "BALM4"],
       "exercicio": "2025-12-31",
       "receita": 213729000,
       "lucro": 22106000,
@@ -7518,9 +6982,7 @@
     {
       "cnpj": "08.078.847/0001-09",
       "nome": "LPS BRASIL - CONSULTORIA DE IMOVEIS S.A.",
-      "tickers": [
-        "LPSB3"
-      ],
+      "tickers": ["LPSB3"],
       "exercicio": "2025-12-31",
       "receita": 203138000,
       "lucro": 52090000,
@@ -7558,10 +7020,7 @@
     {
       "cnpj": "84.683.671/0001-94",
       "nome": "WETZEL S.A.",
-      "tickers": [
-        "MWET3",
-        "MWET4"
-      ],
+      "tickers": ["MWET3", "MWET4"],
       "exercicio": "2025-12-31",
       "receita": 197561000,
       "lucro": -28578000,
@@ -7580,9 +7039,7 @@
     {
       "cnpj": "33.200.049/0001-47",
       "nome": "HOTEIS OTHON S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "HOOT4"
-      ],
+      "tickers": ["HOOT4"],
       "exercicio": "2025-12-31",
       "receita": 193088000,
       "lucro": 30596000,
@@ -7601,9 +7058,7 @@
     {
       "cnpj": "08.764.621/0001-53",
       "nome": "GENERAL SHOPPING E OUTLETS DO BRASIL BRASIL S.A.",
-      "tickers": [
-        "GSHP3"
-      ],
+      "tickers": ["GSHP3"],
       "exercicio": "2025-12-31",
       "receita": 190189000,
       "lucro": 22170000,
@@ -7641,9 +7096,7 @@
     {
       "cnpj": "02.860.694/0001-62",
       "nome": "T4F ENTRETENIMENTO S.A.",
-      "tickers": [
-        "SHOW3"
-      ],
+      "tickers": ["SHOW3"],
       "exercicio": "2025-12-31",
       "receita": 180765000,
       "lucro": -54365000,
@@ -7662,10 +7115,7 @@
     {
       "cnpj": "60.730.348/0001-66",
       "nome": "CIA MELHORAMENTOS DE SAO PAULO",
-      "tickers": [
-        "MSPA3",
-        "MSPA4"
-      ],
+      "tickers": ["MSPA3", "MSPA4"],
       "exercicio": "2025-12-31",
       "receita": 177091000,
       "lucro": -32702000,
@@ -7684,9 +7134,7 @@
     {
       "cnpj": "33.035.536/0001-00",
       "nome": "JOAO FORTES ENGENHARIA S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "JFEN3"
-      ],
+      "tickers": ["JFEN3"],
       "exercicio": "2025-12-31",
       "receita": 174975000,
       "lucro": -223606000,
@@ -7724,9 +7172,7 @@
     {
       "cnpj": "61.082.004/0001-50",
       "nome": "MANUFATURA DE BRINQUEDOS ESTRELA S.A.",
-      "tickers": [
-        "ESTR4"
-      ],
+      "tickers": ["ESTR4"],
       "exercicio": "2025-12-31",
       "receita": 150810000,
       "lucro": 142138000,
@@ -7745,9 +7191,7 @@
     {
       "cnpj": "38.199.406/0001-18",
       "nome": "RIO ALTO ENERGIAS RENOVÁVEIS S.A.",
-      "tickers": [
-        "RIOS3"
-      ],
+      "tickers": ["RIOS3"],
       "exercicio": "2025-12-31",
       "receita": 139905000,
       "lucro": -537416000,
@@ -7804,9 +7248,7 @@
     {
       "cnpj": "02.950.811/0001-89",
       "nome": "PDG REALTY S.A. EMPREEND E PARTICIPACOES",
-      "tickers": [
-        "PDGR3"
-      ],
+      "tickers": ["PDGR3"],
       "exercicio": "2025-12-31",
       "receita": 125272000,
       "lucro": -333739000,
@@ -7844,10 +7286,7 @@
     {
       "cnpj": "01.938.783/0001-11",
       "nome": "CIA PARTICIPACOES ALIANCA DA BAHIA",
-      "tickers": [
-        "PEAB3",
-        "PEAB4"
-      ],
+      "tickers": ["PEAB3", "PEAB4"],
       "exercicio": "2025-12-31",
       "receita": 117260000,
       "lucro": 33709000,
@@ -7866,10 +7305,7 @@
     {
       "cnpj": "82.982.075/0001-80",
       "nome": "TEXTIL RENAUXVIEW S.A.",
-      "tickers": [
-        "TRXR3",
-        "TXRX4"
-      ],
+      "tickers": ["TRXR3", "TXRX4"],
       "exercicio": "2025-12-31",
       "receita": 115881000,
       "lucro": -57092000,
@@ -7907,9 +7343,7 @@
     {
       "cnpj": "40.337.136/0001-06",
       "nome": "TERRA SANTA PROPRIEDADES AGRÍCOLAS S.A.",
-      "tickers": [
-        "LAND3"
-      ],
+      "tickers": ["LAND3"],
       "exercicio": "2025-12-31",
       "receita": 96574000,
       "lucro": 4745000,
@@ -7928,9 +7362,7 @@
     {
       "cnpj": "09.112.685/0001-32",
       "nome": "OSX BRASIL S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "OSXB3"
-      ],
+      "tickers": ["OSXB3"],
       "exercicio": "2025-12-31",
       "receita": 82656000,
       "lucro": -1106833000,
@@ -7968,9 +7400,7 @@
     {
       "cnpj": "00.359.742/0001-08",
       "nome": "FASA S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "FASA3"
-      ],
+      "tickers": ["FASA3"],
       "exercicio": "2025-12-31",
       "receita": 77084000,
       "lucro": -23420000,
@@ -7989,9 +7419,7 @@
     {
       "cnpj": "14.127.813/0001-51",
       "nome": "ARANDU INVESTIMENTOS S.A.",
-      "tickers": [
-        "ARND3"
-      ],
+      "tickers": ["ARND3"],
       "exercicio": "2025-12-31",
       "receita": 70943000,
       "lucro": -459708000,
@@ -8010,9 +7438,7 @@
     {
       "cnpj": "87.762.563/0001-03",
       "nome": "CIA HABITASUL DE PARTICIPACOES",
-      "tickers": [
-        "HBTS5"
-      ],
+      "tickers": ["HBTS5"],
       "exercicio": "2025-12-31",
       "receita": 67165000,
       "lucro": 74559000,
@@ -8031,9 +7457,7 @@
     {
       "cnpj": "35.791.391/0001-94",
       "nome": "QUALITY SOFTWARE S.A.",
-      "tickers": [
-        "QUSW3"
-      ],
+      "tickers": ["QUSW3"],
       "exercicio": "2025-12-31",
       "receita": 65675705,
       "lucro": 25768350,
@@ -8052,9 +7476,7 @@
     {
       "cnpj": "89.463.822/0001-12",
       "nome": "LUPATECH S.A",
-      "tickers": [
-        "LUPA3"
-      ],
+      "tickers": ["LUPA3"],
       "exercicio": "2025-12-31",
       "receita": 52054000,
       "lucro": -60176000,
@@ -8073,10 +7495,7 @@
     {
       "cnpj": "60.851.615/0001-53",
       "nome": "BARDELLA S.A. INDUSTRIAS MECANICAS EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "BDLL3",
-        "BDLL4"
-      ],
+      "tickers": ["BDLL3", "BDLL4"],
       "exercicio": "2025-12-31",
       "receita": 48072000,
       "lucro": -20752000,
@@ -8095,10 +7514,7 @@
     {
       "cnpj": "61.156.931/0001-78",
       "nome": "ALIPERTI S.A.",
-      "tickers": [
-        "APTI3",
-        "APTI4"
-      ],
+      "tickers": ["APTI3", "APTI4"],
       "exercicio": "2025-12-31",
       "receita": 45296000,
       "lucro": 16938000,
@@ -8117,10 +7533,7 @@
     {
       "cnpj": "67.571.414/0001-41",
       "nome": "VIVER INCORPORADORA E CONSTRUTORA S.A.",
-      "tickers": [
-        "VIVR11",
-        "VIVR3"
-      ],
+      "tickers": ["VIVR11", "VIVR3"],
       "exercicio": "2025-12-31",
       "receita": 28779000,
       "lucro": -17549000,
@@ -8158,9 +7571,7 @@
     {
       "cnpj": "23.994.857/0001-70",
       "nome": "ATOM EDUCAÇÃO E EDITORA S.A.",
-      "tickers": [
-        "ATED3"
-      ],
+      "tickers": ["ATED3"],
       "exercicio": "2025-12-31",
       "receita": 26465000,
       "lucro": -3939000,
@@ -8179,9 +7590,7 @@
     {
       "cnpj": "61.065.751/0001-80",
       "nome": "ROSSI RESIDENCIAL S.A. - EM RECUPERAÇÃO JUDICIAL",
-      "tickers": [
-        "RSID3"
-      ],
+      "tickers": ["RSID3"],
       "exercicio": "2025-12-31",
       "receita": 25852000,
       "lucro": -155563000,
@@ -8219,9 +7628,7 @@
     {
       "cnpj": "26.345.998/0001-50",
       "nome": "ECONOMATICA S.A.",
-      "tickers": [
-        "ECOM3"
-      ],
+      "tickers": ["ECOM3"],
       "exercicio": "2025-12-31",
       "receita": 22335000,
       "lucro": -85986000,
@@ -8259,9 +7666,7 @@
     {
       "cnpj": "76.627.504/0001-06",
       "nome": "INEPAR S.A. INDUSTRIA E CONSTRUCOES EM RECUPERACAO JUDICIAL",
-      "tickers": [
-        "INEP3"
-      ],
+      "tickers": ["INEP3"],
       "exercicio": "2025-12-31",
       "receita": 6503000,
       "lucro": -513225000,
@@ -8299,9 +7704,7 @@
     {
       "cnpj": "52.017.473/0001-03",
       "nome": "AZEVEDO & TRAVASSOS ENERGIA S.A.",
-      "tickers": [
-        "AZTE3"
-      ],
+      "tickers": ["AZTE3"],
       "exercicio": "2025-12-31",
       "receita": 2873000,
       "lucro": -9854000,
@@ -8358,10 +7761,7 @@
     {
       "cnpj": "91.333.666/0001-17",
       "nome": "RECRUSUL S.A.",
-      "tickers": [
-        "RCSL3",
-        "RCSL4"
-      ],
+      "tickers": ["RCSL3", "RCSL4"],
       "exercicio": "2025-12-31",
       "receita": 1575000,
       "lucro": -16965000,
@@ -8380,9 +7780,7 @@
     {
       "cnpj": "52.841.191/0001-18",
       "nome": "REVEE S.A.",
-      "tickers": [
-        "RVEE3"
-      ],
+      "tickers": ["RVEE3"],
       "exercicio": "2025-12-31",
       "receita": 1134000,
       "lucro": 12042000,
@@ -8401,9 +7799,7 @@
     {
       "cnpj": "08.613.550/0001-98",
       "nome": "NEXPE PARTICIPAÇÕES S.A",
-      "tickers": [
-        "NEXP3"
-      ],
+      "tickers": ["NEXP3"],
       "exercicio": "2025-12-31",
       "receita": 659000,
       "lucro": 107550000,
@@ -8441,9 +7837,7 @@
     {
       "cnpj": "02.365.069/0001-44",
       "nome": "PADTEC HOLDING S.A.",
-      "tickers": [
-        "PDTC3"
-      ],
+      "tickers": ["PDTC3"],
       "exercicio": "2025-12-31",
       "receita": 291854,
       "lucro": 6961,
@@ -8481,9 +7875,7 @@
     {
       "cnpj": "01.957.772/0001-89",
       "nome": "SUL 116 PARTICIPAÇÕES S.A. - EM LIQUIDAÇÃO",
-      "tickers": [
-        "OPTS3"
-      ],
+      "tickers": ["OPTS3"],
       "exercicio": "2025-12-31",
       "receita": 0,
       "lucro": -157000,
@@ -8502,10 +7894,7 @@
     {
       "cnpj": "02.217.319/0001-07",
       "nome": "YBYRÁ CAPITAL S.A.",
-      "tickers": [
-        "YBRA3",
-        "YBRA4"
-      ],
+      "tickers": ["YBRA3", "YBRA4"],
       "exercicio": "2025-12-31",
       "receita": 0,
       "lucro": -289467,
@@ -8524,9 +7913,7 @@
     {
       "cnpj": "02.421.421/0001-11",
       "nome": "TIM S.A.",
-      "tickers": [
-        "TIMS3"
-      ],
+      "tickers": ["TIMS3"],
       "exercicio": "2025-12-31",
       "receita": 0,
       "lucro": 0,
@@ -8545,10 +7932,7 @@
     {
       "cnpj": "02.998.301/0001-81",
       "nome": "RIO PARANAPANEMA ENERGIA S.A.",
-      "tickers": [
-        "GEPA3",
-        "GEPA4"
-      ],
+      "tickers": ["GEPA3", "GEPA4"],
       "exercicio": "2025-12-31",
       "receita": 0,
       "lucro": 0,
@@ -8567,9 +7951,7 @@
     {
       "cnpj": "17.344.597/0001-94",
       "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "BBSE3"
-      ],
+      "tickers": ["BBSE3"],
       "exercicio": "2025-12-31",
       "receita": 0,
       "lucro": 9017329000,
@@ -8588,9 +7970,7 @@
     {
       "cnpj": "22.543.331/0001-00",
       "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
-      "tickers": [
-        "CXSE3"
-      ],
+      "tickers": ["CXSE3"],
       "exercicio": "2025-12-31",
       "receita": 0,
       "lucro": 4291560000,
@@ -8685,10 +8065,7 @@
     {
       "cnpj": "07.820.907/0001-46",
       "nome": "FICA EMPREENDIMENTOS IMOBILIÁRIOS S.A.",
-      "tickers": [
-        "CRDE3",
-        "FIEI3"
-      ],
+      "tickers": ["CRDE3", "FIEI3"],
       "exercicio": "2025-12-31",
       "receita": -29000,
       "lucro": -8275000,

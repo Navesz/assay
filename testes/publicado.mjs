@@ -58,8 +58,7 @@ export function caminhosForaDaPasta(texto, pasta, tipo) {
     for (const [, valor] of texto.matchAll(/\b(?:src|href)="([^"]*)"/g)) candidatos.push(valor)
     // `srcset` é uma lista de "caminho descritor", separada por vírgula.
     for (const [, lista] of texto.matchAll(/\bsrcset="([^"]*)"/g))
-      for (const item of lista.split(','))
-        candidatos.push(item.trim().split(/\s+/)[0] ?? '')
+      for (const item of lista.split(',')) candidatos.push(item.trim().split(/\s+/)[0] ?? '')
   }
 
   return [...new Set(candidatos.filter((v) => ABSOLUTO(v) && !dentro(v)))]
@@ -94,7 +93,9 @@ function provar() {
   for (const [nome, texto, tipo, esperado] of casos) {
     const obtido = caminhosForaDaPasta(texto, '/assay', tipo)
     const bate = JSON.stringify(obtido) === JSON.stringify(esperado)
-    console.log(`  ${bate ? '✓' : '✗'} ${nome}${bate ? '' : ` — esperava ${esperado}, veio ${obtido}`}`)
+    console.log(
+      `  ${bate ? '✓' : '✗'} ${nome}${bate ? '' : ` — esperava ${esperado}, veio ${obtido}`}`,
+    )
     if (!bate) quebrou = true
   }
   return quebrou ? 1 : 0
