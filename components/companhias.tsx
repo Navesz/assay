@@ -5,19 +5,20 @@ import { useMemo, useState } from 'react'
 import { companhias, glossario, procedencia } from '@/conteudo/indicadores'
 
 /**
- * A TABELA. Ela vem PRIMEIRO na página, antes do glossário e antes de qualquer
- * texto de apresentação, e a ordem é a decisão de desenho mais importante aqui:
- * quem chega quer ver as companhias, não ler sobre elas. A explicação de cada
- * indicador fica embaixo, para quem já viu o número e quer saber onde ele
- * engana.
+ * THE TABLE. It comes FIRST on the page, before the glossary and before any
+ * presentation text, and that order is the most important design decision here:
+ * whoever arrives wants to see the companies, not to read about them. The
+ * explanation of each indicator sits below, for whoever has already seen the
+ * number and wants to know where it misleads.
  *
- * Nenhum texto visível está escrito neste arquivo: tudo vem de
- * `conteudo/indicadores.json`, validado na carga, e os números de
- * `conteudo/empresas.json`, derivado da CVM por `ferramental/coletar.mjs`.
+ * No visible text is written in this file: everything comes from
+ * `conteudo/indicadores.json`, validated on load, and the numbers from
+ * `conteudo/empresas.json`, derived from the CVM by `ferramental/coletar.mjs`.
  *
- * `'use client'` por dois motivos e só dois: o filtro e a ordenação. O HTML sai
- * pronto com todas as linhas — este site é `output: "export"`, e a tabela
- * precisa existir para quem chega pelo buscador ou sem JavaScript.
+ * `'use client'` for two reasons and only two: the filter and the sorting. The
+ * HTML comes out complete, with every row — this site is `output: "export"`,
+ * and the table has to exist for whoever arrives from a search engine or with
+ * no JavaScript.
  */
 
 const PORCENTO = new Intl.NumberFormat('pt-BR', {
@@ -41,7 +42,7 @@ const formatar = (valor: number | null, unidade: string, vazio: string) =>
       ? PORCENTO.format(valor)
       : VEZES.format(valor)
 
-/** Negativo em vermelho: prejuízo e patrimônio a descoberto não passam batido. */
+/** Negative in red: a loss and negative equity do not slip by unnoticed. */
 const tom = (v: number | null) => (v !== null && v < 0 ? 'text-[var(--baixa)]' : '')
 
 type Coluna = 'receita' | string
@@ -51,6 +52,11 @@ export function Companhias() {
   const [coluna, setColuna] = useState<Coluna>('receita')
   const [desc, setDesc] = useState(true)
   const r = glossario.rotulos
+  // `rp` e nao `r.procedencia`: os rotulos da procedencia sao irmaos de
+  // `rotulos` no conteudo, e `procedencia` sozinho ja e o DADO importado.
+  // Dois nomes parecidos para coisas diferentes na mesma funcao e como se
+  // acha um numero no lugar de um rotulo sem ninguem ver.
+  const rp = glossario.procedencia
 
   const visiveis = useMemo(() => {
     const q = filtro.trim().toUpperCase()
@@ -63,10 +69,11 @@ export function Companhias() {
     const valorDe = (c: (typeof companhias)[number]) =>
       coluna === 'receita' ? c.receita : (c.indicadores[coluna] ?? null)
 
-    // SEM VALOR VAI SEMPRE PARA O FIM, nos dois sentidos da ordenação. Tratar
-    // ausência como zero colocaria as companhias sem o dado no topo de "menor
-    // primeiro", como se fossem as melhores naquele indicador — o pior desfecho
-    // possível para uma tabela que promete dizer de onde vem cada número.
+    // NO VALUE ALWAYS GOES TO THE END, in both directions of the sort. Treating
+    // absence as zero would put the companies missing the datum at the top of
+    // "smallest first", as if they were the best at that indicator — the worst
+    // possible outcome for a table that promises to say where every number
+    // comes from.
     return [...filtradas].sort((a, b) => {
       const x = valorDe(a)
       const y = valorDe(b)
@@ -174,24 +181,25 @@ export function Companhias() {
         )}
       </div>
 
-      {/* A PROCEDÊNCIA FICA COLADA NA TABELA, e não num rodapé distante: é a
-          promessa do site, e promessa que exige rolar até o fim não é cumprida. */}
+      {/* THE PROVENANCE STAYS GLUED TO THE TABLE, and not in some distant
+          footer: it is the site's promise, and a promise that demands scrolling
+          to the very end is a promise not kept. */}
       <p className="font-mono text-[11px] leading-relaxed text-[var(--tinta-fraca)]">
-        {procedencia.fonte} · exercício {procedencia.exercicio} · coletado em{' '}
-        {procedencia.coletadoEm} · {procedencia.foraDoConjunto} companhias fora do conjunto ·{' '}
+        {procedencia.fonte} · {rp.exercicio} {procedencia.exercicio} · {rp.coletadoEm}{' '}
+        {procedencia.coletadoEm} · {procedencia.foraDoConjunto} {rp.foraDoConjunto} ·{' '}
         <a
           href={procedencia.fonteUrl}
           className="underline decoration-dotted hover:text-[var(--ensaio)]"
         >
-          fonte
+          {rp.fonte}
         </a>{' '}
-        · dados sob {procedencia.licenca}
+        · {rp.licenca} {procedencia.licenca}
       </p>
     </section>
   )
 }
 
-/** O glossário, DEPOIS da tabela: quem chega quer ver, e só então entender. */
+/** The glossary, AFTER the table: whoever arrives wants to see, and only then to understand. */
 export function Glossario() {
   const r = glossario.rotulos
   return (

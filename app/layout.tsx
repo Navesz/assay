@@ -27,9 +27,10 @@ export const metadata: Metadata = {
   description: site.meta.descricao,
   applicationName: site.identidade.nome,
   alternates: { canonical: '/' },
-  // A MARCA COMO FAVICON, e é o mesmo arquivo que o cabeçalho mostra: um SVG
-  // só, sem uma segunda cópia do desenho para divergir no dia em que um dos
-  // dois for ajustado. `naPasta` pelo motivo medido em `conteudo/carregar.ts`.
+  // THE BRAND AS THE FAVICON, and it is the same file the header shows: one
+  // SVG only, with no second copy of the drawing to diverge on the day one of
+  // the two is adjusted. `naPasta` for the reason measured in
+  // `conteudo/carregar.ts`.
   icons: { icon: { url: naPasta('/marca.svg'), type: 'image/svg+xml' } },
   openGraph: {
     type: 'website',

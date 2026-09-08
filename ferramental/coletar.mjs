@@ -1,33 +1,34 @@
 #!/usr/bin/env node
-// COLETA AS DEMONSTRAÇÕES FINANCEIRAS DA CVM E DERIVA OS INDICADORES.
+// COLLECTS THE CVM FINANCIAL STATEMENTS AND DERIVES THE INDICATORS.
 //
-// A fonte é dados.cvm.gov.br: demonstração entregue por companhia aberta é
-// informação PÚBLICA por lei, publicada sob ODbL. Não há preço aqui, e a
-// ausência é deliberada — todo indicador que depende de cotação (P/L, P/VP,
-// dividend yield) exige uma API paga cujo carimbo de data, medido em 07/09/2026,
-// é o relógio do cache e não a hora do negócio. O que fica é a empresa pelos
-// números que ela mesma declarou.
+// The source is dados.cvm.gov.br: a statement filed by a listed company is
+// PUBLIC information by law, published under ODbL. There is no price here, and
+// the absence is deliberate — every indicator that depends on a quote (P/E,
+// P/B, dividend yield) needs a paid API whose date stamp, measured on
+// 2026-09-07, is the cache's clock and not the time of the trade. What is left
+// is the company by the numbers it declared itself.
 //
-//   node ferramental/coletar.mjs           coleta e escreve conteudo/empresas.json
-//   node ferramental/coletar.mjs --conferir  não escreve; sai 1 se o arquivo divergir
+//   node ferramental/coletar.mjs           collects and writes conteudo/empresas.json
+//   node ferramental/coletar.mjs --conferir  does not write; exits 1 if the file diverges
 //
-// ── AS TRÊS ARMADILHAS DESTE DADO, todas medidas antes de virar código ────────
+// ── THE THREE TRAPS IN THIS DATA, all measured before they became code ───────
 //
-// 1. `ORDEM_EXERC`. A mesma `DT_REFER` traz DUAS linhas por conta: ÚLTIMO e
-//    PENÚLTIMO. Na Petrobras de 2025, conta 3.11, são 110.605.000 e 37.009.000 —
-//    quem não filtra erra por 3×. O filtro aqui é `DT_FIM_EXERC === DT_REFER` e
-//    não a string "ÚLTIMO": o arquivo é latin-1 e a palavra vem acentuada, então
-//    comparar texto acentuado é frágil onde comparar datas é exato.
+// 1. `ORDEM_EXERC`. The same `DT_REFER` carries TWO rows per account: ÚLTIMO and
+//    PENÚLTIMO. In Petrobras' 2025, account 3.11, they are 110,605,000 and
+//    37,009,000 — whoever does not filter is off by 3×. The filter here is
+//    `DT_FIM_EXERC === DT_REFER` and not the string "ÚLTIMO": the file is
+//    latin-1 and the word comes accented, so comparing accented text is fragile
+//    where comparing dates is exact.
 //
-// 2. PLANOS DE CONTAS DIFERENTES. Medido na DFP de 2025: 426 companhias usam o
-//    plano padrão e 15 não — 13 bancos e 2 seguradoras, onde `1.01` é "Caixa e
-//    Equivalentes" e não "Ativo Circulante", e `2.01` é "Passivos Financeiros ao
-//    Valor Justo" e não "Passivo Circulante". Calcular liquidez corrente com
-//    esses códigos num banco produz um número errado com aparência de certo.
-//    Elas saem do conjunto COM O MOTIVO REGISTRADO, nunca em silêncio.
+// 2. DIFFERENT CHARTS OF ACCOUNTS. Measured on the 2025 DFP: 426 companies use
+//    the standard chart and 15 do not — 13 banks and 2 insurers, where `1.01` is
+//    "Caixa e Equivalentes" and not "Ativo Circulante", and `2.01` is "Passivos
+//    Financeiros ao Valor Justo" and not "Passivo Circulante". Computing the
+//    current ratio with those codes on a bank produces a wrong number that looks
+//    right. They leave the set WITH THE REASON RECORDED, never in silence.
 //
-// 3. `ESCALA_MOEDA`. O valor vem em unidades ou em MIL, por linha. Somar sem
-//    normalizar mistura reais com milhares de reais.
+// 3. `ESCALA_MOEDA`. The value comes in units or in MIL, row by row. Summing
+//    without normalising mixes reais with thousands of reais.
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -41,16 +42,16 @@ const CACHE = join(RAIZ, '.cache-cvm')
 const DESTINO = join(RAIZ, 'conteudo', 'empresas.json')
 
 const BASE = 'https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC'
-// Cinco anos: é a janela que a própria CVM mantém no dataset, e é o que basta
-// para uma taxa de crescimento de receita ter significado.
+// Five years: it is the window the CVM itself keeps in the dataset, and it is
+// what a revenue growth rate needs in order to mean anything.
 const ANOS = [2021, 2022, 2023, 2024, 2025]
-const ANO_BASE = 2025 // o exercício completo mais recente, medido: 438 companhias
+const ANO_BASE = 2025 // the most recent complete fiscal year, measured: 438 companies
 
-// ── busca, com cache em disco ────────────────────────────────────────────────
+// ── fetching, with an on-disk cache ──────────────────────────────────────────
 //
-// O cache não é conforto: sem ele cada execução puxa ~60 MB da CVM, e um
-// coletor que castiga o servidor de dados abertos a cada tentativa é um coletor
-// que merece ser bloqueado.
+// The cache is not a comfort: without it every run pulls ~60 MB from the CVM,
+// and a collector that punishes the open-data server on every attempt is a
+// collector that deserves to be blocked.
 async function baixar(url, nomeLocal) {
   const caminho = join(CACHE, nomeLocal)
   if (existsSync(caminho)) return readFileSync(caminho)
@@ -63,7 +64,7 @@ async function baixar(url, nomeLocal) {
   return bytes
 }
 
-/** CSV da CVM: `;` como separador, latin-1, e cabeçalho na primeira linha. */
+/** The CVM's CSV: `;` as the separator, latin-1, and the header on the first line. */
 function lerCsv(buffer) {
   const linhas = buffer.toString('latin1').split(/\r?\n/)
   const cabecalho = linhas[0].split(';')
@@ -78,15 +79,16 @@ function lerCsv(buffer) {
   return registros
 }
 
-/** MIL vira unidade. Ver a armadilha 3 no cabeçalho. */
+/** MIL becomes units. See trap 3 in the header. */
 const valorNormalizado = (r) =>
   Number(r.VL_CONTA) * (/\bMIL\b/i.test(r.ESCALA_MOEDA ?? '') ? 1000 : 1)
 
 /**
- * As contas do exercício de referência, pela versão mais recente.
+ * The accounts of the reference fiscal year, by the most recent version.
  *
- * Duas filtragens, e as duas são a armadilha 1: `DT_FIM_EXERC === DT_REFER` tira
- * o PENÚLTIMO, e a maior `VERSAO` tira a demonstração que foi retificada depois.
+ * Two filters, and both of them are trap 1: `DT_FIM_EXERC === DT_REFER` drops
+ * the PENÚLTIMO, and the highest `VERSAO` drops the statement that was refiled
+ * afterwards.
  */
 function contasDoExercicio(registros) {
   const versaoMaxima = new Map()
@@ -105,7 +107,8 @@ function contasDoExercicio(registros) {
       porEmpresa.set(r.CNPJ_CIA, { nome: r.DENOM_CIA, refer: r.DT_REFER, contas: new Map() })
     }
     const e = porEmpresa.get(r.CNPJ_CIA)
-    // Fica a referência MAIS RECENTE quando a companhia tem mais de uma no ano.
+    // The MOST RECENT reference is the one that stays when a company has more
+    // than one in the year.
     if (r.DT_REFER > e.refer) {
       e.refer = r.DT_REFER
       e.contas = new Map()
@@ -129,7 +132,7 @@ async function anoDe(ano, quais) {
   return saida
 }
 
-/** CNPJ → códigos de negociação, pelo FCA. `cad_cia_aberta` não traz ticker. */
+/** CNPJ → trading codes, from the FCA. `cad_cia_aberta` carries no ticker. */
 async function tickers() {
   const zip = lerZip(
     await baixar(`${BASE}/FCA/DADOS/fca_cia_aberta_${ANO_BASE + 1}.zip`, `fca_${ANO_BASE + 1}.zip`),
@@ -152,7 +155,7 @@ async function principal() {
   const base = await anoDe(ANO_BASE, ['DRE', 'BPA', 'BPP'])
   const mapaTicker = await tickers()
 
-  // A série de receita, para a taxa de crescimento. Só a DRE dos anos anteriores.
+  // The revenue series, for the growth rate. Only the DRE of the earlier years.
   const receitaPorAno = new Map()
   for (const ano of ANOS) {
     const { DRE } = await anoDe(ano, ['DRE'])
@@ -175,8 +178,8 @@ async function principal() {
       continue
     }
 
-    // A ARMADILHA 2, resolvida pelo RÓTULO e não pelo código: o código `1.01`
-    // existe nos dois planos e significa coisas diferentes em cada um.
+    // TRAP 2, settled by the LABEL and not by the code: the code `1.01` exists
+    // in both charts and means different things in each.
     const rotuloAtivo = bpa.contas.get('1.01')?.rotulo ?? ''
     if (!/^Ativo Circulante$/i.test(rotuloAtivo)) {
       foraDoConjunto.push({
@@ -203,7 +206,7 @@ async function principal() {
       const primeiro = serie.get(anos[0])
       const ultimo = serie.get(anos[anos.length - 1])
       const periodos = Number(anos[anos.length - 1]) - Number(anos[0])
-      // Só faz sentido com base positiva: de prejuízo para lucro não há taxa.
+      // It only makes sense on a positive base: from loss to profit there is no rate.
       if (primeiro > 0 && ultimo > 0 && periodos > 0) {
         crescimento = (ultimo / primeiro) ** (1 / periodos) - 1
       }
@@ -239,9 +242,9 @@ async function principal() {
   empresas.sort((a, b) => (b.receita ?? 0) - (a.receita ?? 0))
 
   const artefato = {
-    // A licença é obrigação, não enfeite: o dado da CVM é ODbL, e a base
-    // derivada que este arquivo É tem de sair sob a mesma licença, com
-    // atribuição. Ver a nota no README.
+    // The licence is an obligation, not decoration: the CVM's data is ODbL, and
+    // the derived database this file IS has to go out under the same licence,
+    // with attribution. See the note in the README.
     licenca: 'ODbL-1.0',
     fonte: 'Comissão de Valores Mobiliários — dados.cvm.gov.br',
     fonteUrl: `${BASE}/DFP/DADOS/`,
@@ -257,7 +260,7 @@ async function principal() {
 
   if (conferir) {
     const atual = existsSync(DESTINO) ? readFileSync(DESTINO, 'utf8') : ''
-    // A data de coleta muda todo dia e não é divergência de CONTEÚDO.
+    // The collection date changes every day and is not a divergence of CONTENT.
     const semData = (s) => s.replace(/"coletadoEm": "[^"]*"/, '"coletadoEm": ""')
     if (semData(atual) !== semData(texto)) {
       process.stderr.write('coletar --conferir: conteudo/empresas.json divergiu da CVM.\n')

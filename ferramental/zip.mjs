@@ -1,14 +1,14 @@
-// Um leitor de ZIP em cima do `zlib`, que é built-in.
+// A ZIP reader on top of `zlib`, which is built in.
 //
-// POR QUE NÃO `unzip` DO SISTEMA: o portão deste projeto roda em Windows E em
-// Linux, e `unzip` não existe no runner do Windows. Um passo que só funciona num
-// dos dois é um passo que passa metade das vezes — e a matriz existe justamente
-// porque o defeito que matou o projeto anterior sobreviveu um ano num CI que só
-// rodava Linux.
+// WHY NOT THE SYSTEM'S `unzip`: this project's gate runs on Windows AND on
+// Linux, and `unzip` does not exist on the Windows runner. A step that only
+// works on one of the two is a step that passes half the time — and the matrix
+// exists precisely because the defect that killed the previous project survived
+// a year in a CI that only ran Linux.
 //
-// POR QUE NÃO UMA DEPENDÊNCIA: são cinquenta linhas, e o formato não muda desde
-// 1989. Uma dependência aqui seria uma superfície de atualização e de auditoria
-// para resolver o que `zlib.inflateRawSync` já resolve.
+// WHY NOT A DEPENDENCY: it is fifty lines, and the format has not changed since
+// 1989. A dependency here would be an update surface and an audit surface to
+// solve what `zlib.inflateRawSync` already solves.
 
 import { inflateRawSync } from 'node:zlib'
 
@@ -17,17 +17,17 @@ const ASSINATURA_CENTRAL = 0x02014b50 // Central Directory File Header
 const ASSINATURA_LOCAL = 0x04034b50 // Local File Header
 
 /**
- * Os nomes e os conteúdos de um ZIP, lidos do DIRETÓRIO CENTRAL e não varrendo
- * cabeçalhos locais.
+ * The names and the contents of a ZIP, read from the CENTRAL DIRECTORY and not
+ * by scanning local headers.
  *
- * A diferença importa: o cabeçalho local pode declarar tamanho zero e remeter a
- * um descritor DEPOIS dos dados, o que é comum em arquivo gerado em streaming —
- * e é o caso dos ZIPs da CVM. Quem lê o cabeçalho local acha um arquivo vazio e
- * não percebe.
+ * The difference matters: the local header can declare size zero and defer to a
+ * descriptor AFTER the data, which is common in a file produced by streaming —
+ * and that is the case with the CVM's ZIPs. Whoever reads the local header finds
+ * an empty file and does not notice.
  */
 export function lerZip(buffer) {
-  // O EOCD tem tamanho variável por causa do comentário no fim; procura-se de
-  // trás para frente, que é o que a especificação manda.
+  // The EOCD has a variable size because of the comment at the end; the search
+  // runs from the back forwards, which is what the specification requires.
   let fim = -1
   for (let i = buffer.length - 22; i >= 0; i--) {
     if (buffer.readUInt32LE(i) === ASSINATURA_FIM) {
@@ -59,15 +59,16 @@ export function lerZip(buffer) {
 
   return {
     nomes: () => [...arquivos.keys()],
-    /** O conteúdo de uma entrada, já descomprimido, como Buffer. */
+    /** The content of an entry, already decompressed, as a Buffer. */
     ler(nome) {
       const e = arquivos.get(nome)
       if (!e) throw new Error(`entrada ausente no ZIP: ${nome}`)
       if (buffer.readUInt32LE(e.deslocamentoLocal) !== ASSINATURA_LOCAL) {
         throw new Error(`cabeçalho local corrompido para ${nome}`)
       }
-      // O nome e o extra do cabeçalho LOCAL podem ter tamanhos diferentes dos do
-      // central — o extra costuma diferir. Lê-se os do local para achar os dados.
+      // The name and the extra of the LOCAL header can have sizes different from
+      // the central one's — the extra usually differs. The local ones are what is
+      // read to find the data.
       const tamanhoNome = buffer.readUInt16LE(e.deslocamentoLocal + 26)
       const tamanhoExtra = buffer.readUInt16LE(e.deslocamentoLocal + 28)
       const inicio = e.deslocamentoLocal + 30 + tamanhoNome + tamanhoExtra

@@ -1,18 +1,19 @@
-// O GLOSSÁRIO E O CONJUNTO DE COMPANHIAS, validados na carga.
+// THE GLOSSARY AND THE SET OF COMPANIES, validated at load time.
 //
-// Segue o mesmo desenho de `carregar.ts`: o JSON entra por um validador que
-// LANÇA, e o `next.config.ts` importa esse caminho — então conteúdo inválido
-// derruba o BUILD, não a página em produção. Um campo faltando aqui é um erro
-// que aparece no `npm run verificar`, não um `undefined` renderizado para o
-// visitante.
+// It follows the same design as `carregar.ts`: the JSON comes in through a
+// validator that THROWS, and `next.config.ts` imports that path — so invalid
+// content brings down the BUILD, not the page in production. A field missing
+// here is an error that shows up in `npm run verificar`, not an `undefined`
+// rendered for the visitor.
 //
-// A LISTA DE COMPANHIAS NÃO É VALIDADA CAMPO A CAMPO, e a razão é a assimetria
-// entre as duas fontes: o glossário é ESCRITO à mão e erra por descuido humano,
-// enquanto `empresas.json` é DERIVADO por `ferramental/coletar.mjs` a partir da
-// CVM e já passou pelos filtros de lá. O que se confere aqui é a forma do
-// artefato e o par glossário↔indicador, que é onde as duas partes podem
-// divergir sem ninguém ver: um indicador com texto e sem número, ou um número
-// sem explicação.
+// THE LIST OF COMPANIES IS NOT VALIDATED FIELD BY FIELD, and the reason is the
+// asymmetry between the two sources: the glossary is WRITTEN by hand and goes
+// wrong through human carelessness, while `empresas.json` is DERIVED by
+// `ferramental/coletar.mjs` out of the CVM and has already been through the
+// filters over there. What is checked here is the shape of the artifact and the
+// glossary↔indicator pair, which is where the two halves can diverge without
+// anybody seeing: an indicator with text and no number, or a number with no
+// explanation.
 
 import bruto from './indicadores.json'
 import dados from './empresas.json'
@@ -34,11 +35,22 @@ const forma = objeto({
     busca: linha,
     vazio: linha,
     contagem: linha,
-    // O SINGULAR TAMBÉM É CONTEÚDO. Filtrar por "VALE" mostrava "1 companhias",
-    // que é o tipo de detalhe que diz ao leitor que ninguém olhou a página — e
-    // este site pede que se confie nos números dele.
+    // THE SINGULAR IS CONTENT TOO. Filtering by "VALE" showed "1 companhias",
+    // which is the kind of detail that tells the reader nobody looked at the
+    // page — and this site asks to be trusted on its numbers.
     contagemUma: linha,
     semValor: linha,
+  }),
+  // THE PROVENANCE LINE IS CONTENT, and it was written in the `.tsx` -- five
+  // visible strings in a file whose own header states there are none. The claim
+  // was the thing that was wrong, not the header: a label the reader sees is
+  // content by the same argument that put every other label here.
+  procedencia: objeto({
+    exercicio: linha,
+    coletadoEm: linha,
+    foraDoConjunto: linha,
+    fonte: linha,
+    licenca: linha,
   }),
   semPreco: objeto({ titulo: linha, texto: linha }),
   foraDoConjunto: objeto({ titulo: linha, texto: linha }),
@@ -48,11 +60,11 @@ const forma = objeto({
       nome: linha,
       unidade: linha,
       oQueMede: linha,
-      // OBRIGATÓRIOS os dois, e é a decisão que define este site. Um indicador
-      // sem "onde engana" é um número apresentado como se fosse verdade
-      // suficiente — que é exatamente o que os outros lugares fazem e o que este
-      // existe para não fazer. Se não há limite que se possa escrever, o
-      // indicador não foi entendido.
+      // BOTH MANDATORY, and it is the decision that defines this site. An
+      // indicator with no `ondeEngana` is a number presented as though it were
+      // truth enough — which is exactly what the other places do and what this
+      // one exists in order not to do. If there is no limit that can be written
+      // down, the indicator was not understood.
       ondeEngana: linha,
       oQueNaoDiz: linha,
     }),
@@ -85,11 +97,12 @@ const artefato = dados as {
   foraDoConjunto: { cnpj: string; nome: string; motivo: string }[]
 }
 
-// O PAR GLOSSÁRIO ↔ INDICADOR, nas duas direções.
+// THE GLOSSARY ↔ INDICATOR PAIR, in both directions.
 //
-// Explicação sem número é uma coluna que nunca aparece; número sem explicação é
-// justamente o que este site promete não publicar. Conferir na carga faz das
-// duas um erro de BUILD em vez de uma lacuna que só o leitor descobre.
+// An explanation with no number is a column that never appears; a number with no
+// explanation is precisely what this site promises not to publish. Checking at
+// load time makes both of them a BUILD error instead of a gap only the reader
+// finds out about.
 const primeira = artefato.empresas.find((e) => e.indicadores)
 if (primeira) {
   const calculados = new Set(Object.keys(primeira.indicadores).filter((k) => k !== 'anosDeReceita'))
@@ -111,7 +124,7 @@ if (primeira) {
   }
 }
 
-/** Só as que têm código de negociação: é o que o leitor procura pelo nome. */
+/** Only the ones with a trading code: it is what the reader searches for by name. */
 export const companhias = artefato.empresas.filter((e) => e.tickers.length > 0)
 export const procedencia = {
   licenca: artefato.licenca,

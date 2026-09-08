@@ -14,11 +14,12 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      // COM A BARRA NO FIM, porque `trailingSlash: true` faz de `/assay/` a
-      // forma canônica e é ela que sai no `<link rel="canonical">` e no
-      // `og:url`. Um sitemap anunciando `/assay` e um canonical dizendo
-      // `/assay/` são duas respostas para a mesma pergunta, e quem decide qual
-      // indexar passa a ser o buscador.
+      // WITH THE TRAILING SLASH, because `trailingSlash: true` in
+      // `next.config.ts` makes `/assay/` the canonical form, and that is what
+      // comes out in `<link rel="canonical">` and in `og:url`. A sitemap
+      // announcing `/assay` while the canonical declares `/assay/` is two
+      // answers to the same question, and the one who picks which to index
+      // stops being this repository.
       url: `${site.meta.urlBase.replace(/\/$/, '')}/`,
       // CONTENT date, not `new Date()`. With `new Date()` the same commit
       // generates different bytes on every build, and a build that is not

@@ -10,12 +10,12 @@ export default function manifest(): MetadataRoute.Manifest {
     name: site.identidade.nome,
     short_name: site.meta.nomeCurto,
     description: site.meta.descricao,
-    // TUDO PASSA POR `naPasta`, E ISSO FOI LIDO NO ARQUIVO CONSTRUÍDO. O Next
-    // resolve o `basePath` no `<link rel="manifest">`, mas NÃO dentro do JSON
-    // que ele gera: o manifesto saía com `"start_url": "/"` e ícones em
-    // `/icone-192.png` — ou seja, apontando para a raiz de `navesz.github.io`,
-    // fora deste site. Instalar o app abriria a página errada e os dois ícones
-    // seriam 404, com o build verde o tempo todo.
+    // EVERY PATH GOES THROUGH `naPasta`, AND THIS WAS READ IN THE BUILT FILE.
+    // Next resolves the `basePath` in the `<link rel="manifest">` but NOT
+    // inside the JSON it generates here: the manifest came out with
+    // `"start_url": "/"` and icons at `/icone-192.png` — pointing at the root
+    // of `navesz.github.io`, outside this site. Installing the app would open
+    // the wrong page and both icons would 404, with the build green throughout.
     start_url: naPasta('/'),
     scope: naPasta('/'),
     display: 'standalone',

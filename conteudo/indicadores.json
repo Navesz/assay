@@ -15,6 +15,13 @@
     "contagemUma": "companhia",
     "semValor": "—"
   },
+  "procedencia": {
+    "exercicio": "exercício",
+    "coletadoEm": "coletado em",
+    "foraDoConjunto": "companhias fora do conjunto",
+    "fonte": "fonte",
+    "licenca": "dados sob"
+  },
   "semPreco": {
     "titulo": "Por que não há preço aqui",
     "texto": "Todo indicador que depende de cotação — P/L, P/VP, dividend yield — exige uma API paga cujo campo de data, medido em 07/09/2026 com a bolsa fechada, avançava minuto a minuto enquanto o preço ficava parado: era o relógio do cache, não a hora do negócio. Um site cujo contrato é citar a fonte e a data não pode publicar isso. O que ficou vem da demonstração que a companhia assinou e entregou, e tem data de referência de verdade."

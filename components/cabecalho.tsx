@@ -4,29 +4,30 @@ import { procedencia } from '@/conteudo/indicadores'
 import { naPasta, site } from '@/conteudo/carregar'
 
 /**
- * A BARRA DE CIMA, e ela gruda (`.cabecalho-fixo`, em `globals.css`).
+ * THE TOP BAR, and it sticks (`.cabecalho-fixo`, in `globals.css`).
  *
- * Não é enfeite: a tabela tem 272 linhas e ocupa a tela inteira depois do
- * primeiro rolar. Sem uma barra fixa, três telas abaixo não há nada dizendo que
- * site é este nem de que exercício são os números — e um número sem exercício
- * é um número sem significado.
+ * It is not decoration: the table has 272 rows and takes up the whole screen
+ * after the first scroll. Without a fixed bar, three screens down there is
+ * nothing saying which site this is nor which fiscal year the numbers are from
+ * — and a number without a fiscal year is a number without meaning.
  *
- * A MARCA É ARQUIVO, NÃO É CÓPIA. Vem de `public/marca.svg`, o mesmo arquivo
- * que o `<link rel="icon">` do `layout.tsx` aponta. Desenhar o mesmo caminho
- * SVG outra vez aqui dentro, em JSX, seria a marca em dois lugares para
- * divergir no dia em que um dos dois for ajustado.
+ * THE BRAND MARK IS A FILE, IT IS NOT A COPY. It comes from `public/marca.svg`,
+ * the same file the `<link rel="icon">` in `layout.tsx` points at. Drawing the
+ * same SVG path over again in here, in JSX, would be the mark in two places, to
+ * diverge on the day one of the two gets adjusted.
  *
- * O `src` PASSA POR `naPasta`, e isso foi medido, não suposto: com
- * `images.unoptimized` — obrigatório em `output: "export"` — o `next/image`
- * escreve o `src` cru, sem o `basePath`. O HTML construído saía com
- * `src="/marca.svg"`, que em `navesz.github.io/assay` é 404 com o build verde.
- * `testes/publicado.mjs` reprova a reincidência.
+ * The `src` GOES THROUGH `naPasta`, and that was measured, not assumed: with
+ * `images.unoptimized` — mandatory under `output: "export"` — `next/image`
+ * writes the `src` raw, without the `basePath`. The built HTML was coming out
+ * with `src="/marca.svg"`, which at `navesz.github.io/assay` is a 404 with the
+ * build green. `testes/publicado.mjs` fails the recurrence.
  */
 export function Cabecalho() {
   return (
     <header className="cabecalho-fixo">
-      {/* `h-full`, e não um `py-`: a altura vem de `--altura-cabecalho`, que é
-          a mesma medida com que a cabeça da tabela se cola aqui embaixo. */}
+      {/* `h-full`, and not a `py-`: the height comes from `--altura-cabecalho`,
+          the same measure by which the table head sticks itself right below
+          here. */}
       <div className="mx-auto flex h-full max-w-[92rem] items-center gap-3 px-6">
         <Image
           src={naPasta('/marca.svg')}

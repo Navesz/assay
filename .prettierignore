@@ -16,3 +16,10 @@ NOTICE
 # varreria os dois. O lockfile a tabela do gerador ja declara preservado.
 /out
 package-lock.json
+
+# O artefato de dados: os bytes sao do coletor, nao do prettier. O
+# `coletar.mjs --conferir` compara o JSON que ele gera com o arquivo em disco, e
+# um reflow do prettier faz essa comparacao falhar para sempre — o conferidor
+# passaria a medir a saida do formatador em vez do que ele foi escrito para
+# medir. Mesmo argumento do `mcp/rules.generated.json` no rebar.
+conteudo/empresas.json

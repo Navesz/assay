@@ -1,26 +1,29 @@
 /**
- * O PORTÃO QUE OLHA O QUE FOI PUBLICADO, e não o que foi escrito.
+ * THE GATE THAT LOOKS AT WHAT WAS PUBLISHED, and not at what was written.
  *
- * Este site mora numa PASTA — `navesz.github.io/assay` —, e um caminho absoluto
- * sem essa pasta na frente aponta para fora dele. O que se descobriu lendo o
- * `out/` de 08/09, com o build verde nos quatro passos do `verificar`:
+ * This site lives in a FOLDER — `navesz.github.io/assay` — and an absolute path
+ * without that folder in front of it points outside it. What reading the `out/`
+ * of 2026-09-08 showed, with the build green across the four steps of
+ * `verificar`:
  *
- *   · `next/image` com `images.unoptimized` escreve o `src` CRU. A marca do
- *     cabeçalho saía em `/marca.svg`.
- *   · o manifesto saía com `"start_url": "/"` e ícones em `/icone-192.png`.
+ *   · `next/image` with `images.unoptimized` writes the `src` RAW. The header's
+ *     logo came out at `/marca.svg`.
+ *   · the manifest came out with `"start_url": "/"` and icons at
+ *     `/icone-192.png`.
  *
- * Nenhum dos dois é erro de compilação, de tipo ou de lint: são 404 no site
- * publicado, e só quem abre a página vê. É a mesma classe dos badges do rebar,
- * que ficaram semanas renderizando como texto literal porque a prova conferia o
- * NÚMERO e nunca a PÁGINA.
+ * Neither of the two is a compile, type or lint error: they are 404s on the
+ * published site, and only whoever opens the page sees them. It is the same
+ * class as rebar's badges, which spent weeks rendering as literal text because
+ * the proof checked the NUMBER and never the PAGE.
  *
- * Daí a regra deste arquivo, que roda DEPOIS do `next build`:
+ * Hence the rule of this file, which runs AFTER `next build`:
  *
- *   todo caminho absoluto emitido no `out/` começa pela pasta do site.
+ *   every absolute path emitted into `out/` starts with the site's folder.
  *
- * Duas provas, como toda regra da casa: `--provar` planta um documento com o
- * defeito e exige reprovação, e planta o documento certo e exige aprovação.
- * Sem o caso que aprova, uma regra que reprovasse tudo passaria por correta.
+ * Two proofs, like every rule in this house: `--provar` plants a document with
+ * the defect and demands failure, and plants the right document and demands a
+ * pass. Without the case that passes, a rule that failed everything would pass
+ * for correct.
  */
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, relative } from 'node:path'
@@ -29,7 +32,7 @@ import { fileURLToPath } from 'node:url'
 const RAIZ = fileURLToPath(new URL('..', import.meta.url))
 const SAIDA = join(RAIZ, 'out')
 
-/** A pasta vem da MESMA `urlBase` de que `next.config.ts` deriva o `basePath`. */
+/** The folder comes from the SAME `urlBase` `next.config.ts` derives `basePath` from. */
 export function pastaDoSite(urlBase) {
   return new URL(urlBase).pathname.replace(/\/$/, '')
 }
@@ -37,11 +40,11 @@ export function pastaDoSite(urlBase) {
 const ABSOLUTO = (valor) => valor.startsWith('/') && !valor.startsWith('//')
 
 /**
- * Os caminhos absolutos de um documento que NÃO começam pela pasta.
+ * The absolute paths in a document that do NOT start with the folder.
  *
- * Vale para HTML — atributos `src`, `href` e `srcset` — e para JSON, onde
- * qualquer string que pareça caminho conta: é assim que o `start_url` e os
- * ícones do manifesto entram.
+ * Works for HTML — the `src`, `href` and `srcset` attributes — and for JSON,
+ * where any string that looks like a path counts: that is how the manifest's
+ * `start_url` and icons get in.
  */
 export function caminhosForaDaPasta(texto, pasta, tipo) {
   const dentro = (v) => v === pasta || v.startsWith(`${pasta}/`)
@@ -56,7 +59,7 @@ export function caminhosForaDaPasta(texto, pasta, tipo) {
     recolher(JSON.parse(texto))
   } else {
     for (const [, valor] of texto.matchAll(/\b(?:src|href)="([^"]*)"/g)) candidatos.push(valor)
-    // `srcset` é uma lista de "caminho descritor", separada por vírgula.
+    // `srcset` is a comma-separated list of "path descriptor".
     for (const [, lista] of texto.matchAll(/\bsrcset="([^"]*)"/g))
       for (const item of lista.split(',')) candidatos.push(item.trim().split(/\s+/)[0] ?? '')
   }
@@ -75,7 +78,7 @@ function documentos(pasta) {
   return achados
 }
 
-// ── as duas provas ────────────────────────────────────────────────────────
+// ── the two proofs ────────────────────────────────────────────────────────
 
 const HTML_ERRADO = '<img src="/marca.svg"/><link rel="icon" href="/assay/marca.svg"/>'
 const HTML_CERTO = '<img src="/assay/marca.svg"/><a href="https://cvm.gov.br">fonte</a>'
@@ -101,14 +104,15 @@ function provar() {
   return quebrou ? 1 : 0
 }
 
-// ── o portão ──────────────────────────────────────────────────────────────
+// ── the gate ──────────────────────────────────────────────────────────────
 
 function verificar() {
   const { meta } = JSON.parse(readFileSync(join(RAIZ, 'conteudo', 'site.json'), 'utf8'))
   const pasta = pastaDoSite(meta.urlBase)
 
-  // Site na raiz de um domínio: não há pasta, e a regra não se aplica. Isto é
-  // `na()` do rebar — sai do denominador em vez de virar um verde de graça.
+  // A site at the root of a domain: there is no folder, and the rule does not
+  // apply. This is rebar's `na()` — it leaves the denominator instead of turning
+  // into a free green.
   if (!pasta) {
     console.log('publicado · n/a — o site mora na raiz do domínio')
     return 0

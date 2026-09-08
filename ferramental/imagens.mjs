@@ -1,27 +1,28 @@
 /**
- * As imagens do site — og.png e os dois ícones —, GERADAS DA PRÓPRIA MARCA.
+ * The site's images — og.png and the two icons — GENERATED FROM THE MARK ITSELF.
  *
- * Por que existe. As três imagens vieram prontas do gerador do rebar, na cor
- * dele e com uma letra "A" no lugar do desenho. Quando a paleta do assay foi
- * decidida, elas continuaram laranja: o `og.png` é o que aparece quando alguém
- * manda o link no WhatsApp ou no LinkedIn, e era a única peça do site ainda na
- * cor de outro projeto. Sem um gerador aqui dentro, "atualizar a marca" seria
- * abrir um editor de imagem — e o que exige abrir editor não é atualizado.
+ * Why it exists. The three images came ready-made out of rebar's generator, in
+ * rebar's color and with a letter "A" where the drawing should be. When assay's
+ * palette was settled they stayed orange: `og.png` is what shows up when someone
+ * drops the link into WhatsApp or LinkedIn, and it was the last piece of the site
+ * still in another project's color. Without a generator in here, "update the
+ * mark" would mean opening an image editor — and what takes an editor to open
+ * does not get updated.
  *
- * O DESENHO NÃO É REESCRITO AQUI. Este arquivo LÊ `public/marca.svg` e
- * rasteriza o que está lá: o retângulo do corpo, o polígono da fenda que é
- * subtraído dele, e os traços das camadas com seus pesos e opacidades. Redigitar
- * os caminhos em JavaScript seria a marca em dois lugares — e o dia em que um
- * dos dois mudasse, o favicon e o ícone do celular mostrariam desenhos
- * diferentes sem nada reprovar.
+ * THE DRAWING IS NOT REWRITTEN HERE. This file READS `public/marca.svg` and
+ * rasterizes what is there: the body rectangle, the slit polygon that is
+ * subtracted from it, and the layer strokes with their weights and opacities.
+ * Retyping the paths in JavaScript would put the mark in two places — and the day
+ * one of the two changed, the favicon and the phone icon would show different
+ * drawings with nothing failing.
  *
- * O que ele NÃO faz: não é um renderizador de SVG. Entende o subconjunto exato
- * que a marca usa e ESTOURA em qualquer outra coisa — um `<circle>`, uma curva,
- * um segundo `<g>`. Estourar é o comportamento certo: a alternativa é desenhar
- * pela metade e gravar um PNG que ninguém conferiu.
+ * What it does NOT do: it is not an SVG renderer. It understands the exact subset
+ * the mark uses and BLOWS UP on anything else — a `<circle>`, a curve, a second
+ * `<g>`. Blowing up is the right behavior: the alternative is drawing half of it
+ * and writing a PNG nobody checked.
  *
- *   node ferramental/imagens.mjs            grava as três imagens
- *   node ferramental/imagens.mjs --provar   confere o que foi lido do SVG
+ *   node ferramental/imagens.mjs            writes the three images
+ *   node ferramental/imagens.mjs --provar   shows what was read from the SVG
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { deflateSync } from 'node:zlib'
@@ -30,10 +31,10 @@ import { join } from 'node:path'
 
 const RAIZ = fileURLToPath(new URL('..', import.meta.url))
 
-// ── PNG, só com o que vem no Node ─────────────────────────────────────────
-// A mesma mecânica do gerador: assinatura, IHDR, IDAT e IEND com CRC32. Não há
-// codificador de JPEG escrito à mão nem arquivo com extensão mentindo sobre o
-// conteúdo — alguns leitores de preview farejam os bytes, não o nome.
+// ── PNG, with nothing but what ships in Node ──────────────────────────────
+// The generator's own mechanics: signature, IHDR, IDAT and IEND with CRC32. There
+// is no hand-written JPEG encoder and no file whose extension lies about its
+// content — some preview readers sniff the bytes, not the name.
 
 const TABELA_CRC = (() => {
   const t = new Uint32Array(256)
@@ -80,7 +81,7 @@ function png(largura, altura, rgb) {
   ])
 }
 
-// ── o SVG lido, não redigitado ────────────────────────────────────────────
+// ── the SVG read, not retyped ─────────────────────────────────────────────
 
 const exigir = (condicao, mensagem) => {
   if (!condicao) throw new Error(`marca.svg: ${mensagem}`)
@@ -91,7 +92,7 @@ const atributo = (tag, nome) => {
   return casou ? casou[1] : null
 }
 
-/** Os pontos de um `d` feito só de M, L e Z — que é tudo que a marca usa. */
+/** The points of a `d` made only of M, L and Z — all the mark ever uses. */
 function pontos(d) {
   exigir(/^[ MLZ0-9.-]+$/i.test(d), `caminho fora do subconjunto M/L/Z: ${d}`)
   const numeros = d.match(/-?\d+(?:\.\d+)?/g)?.map(Number) ?? []
@@ -139,7 +140,7 @@ export function lerMarca(svg) {
   }
 }
 
-// ── geometria ─────────────────────────────────────────────────────────────
+// ── geometry ──────────────────────────────────────────────────────────────
 
 function dentroDoRetangulo(px, py, r) {
   const x1 = r.x + r.raio
@@ -147,14 +148,14 @@ function dentroDoRetangulo(px, py, r) {
   const y1 = r.y + r.raio
   const y2 = r.y + r.altura - r.raio
   if (px < r.x || px > r.x + r.largura || py < r.y || py > r.y + r.altura) return false
-  // Fora dos quatro cantos, é retângulo puro; dentro deles, vale o círculo.
+  // Outside the four corners it is a plain rectangle; inside them the circle rules.
   const cx = px < x1 ? x1 : px > x2 ? x2 : px
   const cy = py < y1 ? y1 : py > y2 ? y2 : py
   if (cx === px || cy === py) return true
   return (px - cx) ** 2 + (py - cy) ** 2 <= r.raio ** 2
 }
 
-/** Raio para a direita, contando cruzamentos. */
+/** A ray to the right, counting crossings. */
 function dentroDoPoligono(px, py, vertices) {
   let dentro = false
   for (let i = 0, j = vertices.length - 1; i < vertices.length; j = i++) {
@@ -165,7 +166,7 @@ function dentroDoPoligono(px, py, vertices) {
   return dentro
 }
 
-/** Segmento com ponta redonda: distância do ponto ao segmento ≤ metade da largura. */
+/** Round-capped segment: distance from the point to the segment ≤ half the width. */
 function dentroDaCapsula(px, py, [[ax, ay], [bx, by]], largura) {
   const dx = bx - ax
   const dy = by - ay
@@ -177,12 +178,22 @@ function dentroDaCapsula(px, py, [[ax, ay], [bx, by]], largura) {
   return (px - qx) ** 2 + (py - qy) ** 2 <= (largura / 2) ** 2
 }
 
-const AMOSTRAS = 4 // 4×4 por pixel: a fenda é diagonal, e diagonal sem suavizar vira serra
+const AMOSTRAS = 4 // 4×4 per pixel: the slit is diagonal, and an unsmoothed diagonal is a sawblade
 
 /**
- * Pinta a marca num buffer RGB já existente, em `tamanho` pixels de lado.
- * `mistura` é a composição do traço sobre o que já está embaixo — é o que
- * reproduz as opacidades 0.9 / 0.5 / 0.28 do SVG.
+ * Paints the mark into an already existing RGB buffer, `tamanho` pixels a side.
+ *
+ * The strokes are composited over whatever is already underneath them —
+ * `alfa + t.opacidade * (1 - alfa)` in the sampling loop — and that is what
+ * reproduces the layer opacities the SVG declares. It is done inline, on
+ * purpose: there is one blend in this file and giving it a name would be a name
+ * to keep in step with nothing.
+ *
+ * The numbers are NOT repeated here any more. This block used to quote them, and
+ * they went stale the day `public/marca.svg` was adjusted — the comment said
+ * 0.9 / 0.5 / 0.28 while the file it reads said 0.95 / 0.62 / 0.4. A measurement
+ * copied out of the source it describes is a measurement that will disagree with
+ * it; `--provar` prints the live ones.
  */
 export function pintarMarca(rgb, larguraDaTela, marca, { x0, y0, tamanho, tinta }) {
   const escala = tamanho / 100
@@ -223,8 +234,9 @@ export function pintarMarca(rgb, larguraDaTela, marca, { x0, y0, tamanho, tinta 
   }
 }
 
-// ── a fonte 5×7, para o cartão ────────────────────────────────────────────
-// Vinda do gerador. Não é tipografia: é o que impede o preview de sair vazio.
+// ── the 5×7 font, for the card ────────────────────────────────────────────
+// Straight from the generator. Not typography: it is what keeps the preview from
+// coming out empty.
 
 const FONTE = {
   A: '01110 10001 10001 11111 10001 10001 10001',
@@ -313,20 +325,20 @@ function escrever(rgb, largura, altura, texto, x0, y0, escala, cor) {
   }
 }
 
-// ── as três imagens ───────────────────────────────────────────────────────
+// ── the three images ──────────────────────────────────────────────────────
 
 const LARGURA_OG = 1200
 const ALTURA_OG = 630
 
 export function cartaoOg(marca, { nome, dominio, tinta, fundo, suave }) {
   const rgb = tela(LARGURA_OG, ALTURA_OG, fundo)
-  // A MARCA GRANDE À ESQUERDA, e o nome ao lado dela: é a leitura de um
-  // segundo que um preview de link tem. Um cartão só com texto não diz de quem
-  // é; um cartão só com o símbolo não diz o que é.
+  // THE MARK BIG ON THE LEFT, with the name beside it: one second of reading is
+  // all a link preview ever gets. A card with text alone does not say whose it
+  // is; a card with the symbol alone does not say what it is.
   pintarMarca(rgb, LARGURA_OG, marca, { x0: 96, y0: 195, tamanho: 240, tinta })
   escrever(rgb, LARGURA_OG, ALTURA_OG, normalizar(nome), 392, 250, 18, tinta)
   escrever(rgb, LARGURA_OG, ALTURA_OG, normalizar(dominio).slice(0, 40), 392, 400, 5, suave)
-  // Um fio embaixo, na cor da marca, para o cartão ter eixo.
+  // A thread along the bottom, in the mark's color, to give the card an axis.
   retangulo(rgb, LARGURA_OG, ALTURA_OG, 96, 534, LARGURA_OG - 192, 6, tinta)
   return png(LARGURA_OG, ALTURA_OG, rgb)
 }
@@ -337,39 +349,39 @@ export function icone(marca, tamanho, { tinta, fundo }) {
   return png(tamanho, tamanho, rgb)
 }
 
-// ── os dois SVG do README ─────────────────────────────────────────────────
+// ── the two README SVGs ───────────────────────────────────────────────────
 
 /**
- * A DECLARAÇÃO DE PROCEDÊNCIA que todo artefato gerado carrega.
+ * THE DECLARATION OF PROVENANCE that every generated artifact carries.
  *
- * Não é cortesia com quem abre o arquivo — é o que permite a uma régua
- * distinguir um valor DERIVADO de um valor REDIGITADO. A regra `raw-hex` do
- * rebar acusa uma cor escrita à mão que já existe como token no CSS, e ela está
- * certa: essa cor vai divergir. Num arquivo gerado A PARTIR do token ela não
- * pode divergir, porque regerar a re-deriva — e a única forma de a régua saber
- * a diferença é o arquivo dizer de onde veio e por quem.
+ * It is not a courtesy to whoever opens the file — it is what lets a `regua`
+ * tell a DERIVED value apart from a RETYPED one. rebar's `raw-hex` rule flags a
+ * hand-written color that already exists as a token in the CSS, and it is right:
+ * that color is going to drift. In a file generated FROM the token it cannot
+ * drift, because regenerating re-derives it — and the only way for the `regua`
+ * to know the difference is for the file to say where it came from and by whom.
  *
- * A marca nomeia o gerador. Nomear é o que a torna conferível em vez de
- * palavra mágica: dá para exigir que o arquivo citado exista.
+ * The marker names the generator. Naming is what makes it checkable instead of a
+ * magic word: you can demand that the file it cites exist.
  */
 const MARCA_DE_GERACAO =
   '  <!-- GENERATED by ferramental/imagens.mjs from public/marca.svg and app/globals.css. Do not edit by hand: run the generator. -->'
 
-// A MARCA VIRA DOIS PEDAÇOS DE SVG, e não um só, porque em SVG a ORDEM É A
-// PINTURA: a máscara tem que entrar no `<defs>` lá em cima e o corpo tem que
-// sair DEPOIS do cartão e do ladrilho, ou o cartão pinta por cima da marca. A
-// primeira versão devolvia os dois juntos e o estandarte saiu sem marca
-// nenhuma — visível só abrindo o arquivo, que é o que quase ninguém faz com um
-// SVG gerado.
+// THE MARK BECOMES TWO PIECES OF SVG, not one, because in SVG ORDER IS THE
+// PAINTING: the mask has to go into the `<defs>` up at the top and the body has
+// to come out AFTER the card and the tile, or the card paints over the mark. The
+// first version returned the two together and the banner came out with no mark at
+// all — visible only by opening the file, which is what almost nobody does with a
+// generated SVG.
 
-/** A máscara da fenda, para o `<defs>`. */
+/** The slit's mask, for the `<defs>`. */
 const mascaraDaMarca = (marca, id) =>
   `    <mask id="${id}">
       <rect width="100" height="100" fill="#fff" />
       <path d="${marca.fenda.map(([x, y], i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' ')} Z" fill="#000" />
     </mask>`
 
-/** O corpo da marca, com a mesma geometria lida de `public/marca.svg`. */
+/** The mark's body, with the same geometry read from `public/marca.svg`. */
 function corpoDaMarca(marca, id, cor, transformacao) {
   const c = marca.corpo
   const camadas = marca.tracos
@@ -387,12 +399,12 @@ ${camadas}
 }
 
 /**
- * O ESTANDARTE DO README, gerado e não desenhado à mão.
+ * THE README BANNER, generated and not drawn by hand.
  *
- * A marca aqui dentro é a MESMA de `public/marca.svg` — os caminhos são
- * interpolados do que `lerMarca` leu, não redigitados. Redigitá-los faria a
- * marca do README divergir da do site no dia em que uma das duas mudasse, e
- * ninguém repara num estandarte.
+ * The mark inside it is the SAME one in `public/marca.svg` — the paths are
+ * interpolated from what `lerMarca` read, not retyped. Retyping them would make
+ * the README's mark drift from the site's the day either of the two changed, and
+ * nobody looks twice at a banner.
  */
 export function estandarte(marca, { nome, tema, fundo, tinta, suave, linha, superficie }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-label="${nome} — B3 fundamentals with provenance">
@@ -434,24 +446,20 @@ const BI_SVG = new Intl.NumberFormat('pt-BR', {
 })
 
 /**
- * A AMOSTRA DA TABELA, COM NÚMEROS DE VERDADE.
+ * THE SAMPLE OF THE TABLE, WITH REAL NUMBERS.
  *
- * Não é uma captura de tela nem um exemplo inventado: as linhas saem de
- * `conteudo/empresas.json`, o mesmo artefato que a página renderiza, ordenadas
- * pela receita como a tabela abre. Um README que mostra números plausíveis em
- * vez dos números publicados é a primeira mentira de um site que promete dizer
- * de onde vem cada número.
+ * It is not a screenshot and not a made-up example: the rows come out of
+ * `conteudo/empresas.json`, the same artifact the page renders, ordered by
+ * revenue the way the table opens. A README that shows plausible numbers instead
+ * of the published ones is the first lie told by a site that promises to say
+ * where every number came from.
  */
-export function amostra(
-  dados,
-  colunas,
-  { fundo, tinta, suave, fraca, linha, tema, baixa },
-  quantas = 8,
-) {
-  // SÓ AS QUE TÊM CÓDIGO DE NEGOCIAÇÃO, que é o mesmo recorte de
-  // `conteudo/indicadores.ts` e o mesmo número que a página publica. Contar o
-  // conjunto inteiro aqui e outro lá faria o README anunciar um total que a
-  // tabela não mostra — num site cuja promessa é dizer de onde vem cada número.
+export function amostra(dados, { fundo, tinta, suave, fraca, linha, tema, baixa }, quantas = 8) {
+  // ONLY THE ONES WITH A TRADING CODE, which is the same cut as
+  // `conteudo/indicadores.ts` and the same count the page publishes. Counting the
+  // whole set here and a different one there would have the README announce a
+  // total the table does not show — on a site whose promise is to say where every
+  // number comes from.
   const publicadas = dados.empresas.filter((e) => e.tickers.length > 0)
   const empresas = publicadas
     .filter((e) => e.receita !== null)
@@ -489,8 +497,8 @@ export function amostra(
             `    <text x="${x}" y="${y}" ${MONO} font-size="13" text-anchor="end" fill="${cor}">${texto}</text>`,
         )
         .join('\n')
-      // 26 e nao 34: em 13px monoespacado, 34 caracteres encostam na coluna da
-      // receita. Medido abrindo o SVG, que e a unica forma de saber.
+      // 26 and not 34: at 13px monospaced, 34 characters touch the revenue
+      // column. Measured by opening the SVG, which is the only way to know.
       const nome = e.nome.length > 26 ? `${e.nome.slice(0, 25)}…` : e.nome
       return `    <text x="${X[0]}" y="${y}" ${MONO} font-size="13" fill="${tema}">${e.tickers.slice(0, 2).join(' ')}</text>
     <text x="${X[1]}" y="${y}" ${MONO} font-size="13" fill="${suave}">${escaparXml(nome)}</text>
@@ -526,11 +534,11 @@ function main() {
     return
   }
 
-  // A PALETA VEM DE `app/globals.css`, LIDA E NÃO REDIGITADA — e isso não é
-  // gosto, é a regra `raw-hex` do rebar, que reprovou este arquivo assim que ele
-  // ganhou `#9aa3ad` escrito à mão ao lado do mesmo valor declarado como
-  // `--tinta-suave`. Uma cor em dois lugares é uma cor que vai divergir, e a
-  // peça que diverge é a que ninguém abre: o cartão que aparece no WhatsApp.
+  // THE PALETTE COMES FROM `app/globals.css`, READ AND NOT RETYPED — and that is
+  // not taste, it is rebar's `raw-hex` rule, which failed this file the moment it
+  // gained a hand-written `#9aa3ad` next to the same value already declared as
+  // `--tinta-suave`. A color in two places is a color that will drift, and the
+  // piece that drifts is the one nobody opens: the card that shows up in WhatsApp.
   const paleta = lerPaleta(readFileSync(join(RAIZ, 'app', 'globals.css'), 'utf8'))
   const tinta = hexParaRgb(meta.cores.tema)
   const fundo = hexParaRgb(meta.cores.fundo)
@@ -556,7 +564,7 @@ function main() {
     console.log(`public/${nome} · ${(bytes.length / 1024).toFixed(1)} KB`)
   }
 
-  // OS DOIS SVG DO README, na mesma paleta da página pelo mesmo motivo.
+  // THE TWO README SVGS, in the same palette as the page, for the same reason.
   const dados = JSON.parse(readFileSync(join(RAIZ, 'conteudo', 'empresas.json'), 'utf8'))
 
   mkdirSync(join(RAIZ, 'docs', 'assets'), { recursive: true })
@@ -575,7 +583,7 @@ function main() {
     ],
     [
       'assay-sample.svg',
-      amostra(dados, null, {
+      amostra(dados, {
         fundo: paleta.fundo,
         tinta: paleta.tinta,
         suave: paleta['tinta-suave'],
@@ -593,9 +601,9 @@ function main() {
 }
 
 /**
- * Os tokens de cor de `app/globals.css`. Ler em vez de repetir: a paleta mudou
- * uma vez nesta semana, e um estandarte com a cor antiga é a peça que ninguém
- * confere porque ninguém abre o README depois de escrevê-lo.
+ * The color tokens of `app/globals.css`. Read instead of repeat: the palette
+ * changed once this week, and a banner in the old color is the piece nobody
+ * checks, because nobody opens the README after writing it.
  */
 export function lerPaleta(css) {
   const paleta = {}

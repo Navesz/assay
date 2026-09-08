@@ -132,13 +132,15 @@
   }
 }
 /* ── assay ────────────────────────────────────────────────────────────────
-   Uma paleta, sem tema claro. A família dos três sites do dono: o portfólio é
-   quente com verde-limão, o rebar é frio com laranja-aço, e este é frio com
-   verde-mineral — a cor de instrumento de laboratório, que é o que um ensaio é.
+   One palette, no light theme. The family of the owner's three sites: the
+   portfolio is warm with lime green, rebar is cold with steel orange, and this
+   one is cold with mineral green — the color of a laboratory instrument, which
+   is what an assay is.
 
-   `color-scheme: dark` fixo: este site não tem versão clara, e declarar isso é
-   o que faz o navegador pintar a barra de rolagem e o campo de busca do lado
-   certo, em vez de abrir um retângulo branco no meio da tabela. */
+   `color-scheme: dark` fixed: this site has no light version, and declaring
+   that is what makes the browser paint the scrollbar and the search field on
+   the correct side of that line, instead of opening a white rectangle in the
+   middle of the table. */
 :root {
   color-scheme: dark;
   --fundo: #0f1113;
@@ -149,10 +151,10 @@
   --linha: #262b31;
   --ensaio: #6fd3b8;
   --baixa: #f0776a;
-  /* UMA MEDIDA, DOIS USUÁRIOS: a barra de cima tem esta altura, e é ela que o
-       painel da tabela desconta da tela para caber inteiro embaixo. Dois
-       números para a mesma medida divergiriam no primeiro ajuste, e o defeito
-       só apareceria rolando — nunca no build. */
+  /* ONE MEASURE, TWO USERS: the top bar is this tall, and this is what the
+       table panel subtracts from the screen so as to fit whole underneath it.
+       Two numbers for the same measure would diverge at the first adjustment,
+       and the defect would only show up by scrolling — never at build. */
   --altura-cabecalho: 3.25rem;
 }
 
@@ -161,31 +163,32 @@ body {
   color: var(--tinta);
 }
 
-/* O PAINEL DA TABELA ROLA POR CONTA PRÓPRIA, e a razão é técnica antes de ser
-   de gosto: o invólucro precisa de `overflow-x` para as nove colunas caberem no
-   celular, e um elemento com `overflow-x: auto` vira o contexto de rolagem de
-   quem está dentro dele. Foi medido em 08/09 — com o painel rolando junto com a
-   página, a cabeça `sticky` subia até −1083px, ou seja, não grudava em nada.
-   Dando altura ao painel, a cabeça gruda no topo DELE, que é o que se quer.
+/* THE TABLE PANEL SCROLLS ON ITS OWN, and the reason is technical before it is
+   a matter of taste: the wrapper needs `overflow-x` for the nine columns to fit
+   on a phone, and an element with `overflow-x: auto` becomes the scroll context
+   for whatever is inside it. Measured on 2026-09-08 — with the panel scrolling
+   along with the page, the `sticky` head climbed as far as −1083px, which is to
+   say it stuck to nothing. Give the panel a height and the head sticks to the
+   top of IT, which is what is wanted.
 
-   A altura desconta a barra de cima e a margem, para o painel terminar dentro
-   da primeira tela em vez de empurrar o glossário para a quinta. */
+   The height subtracts the top bar and the margin, so the panel ends inside the
+   first screen instead of pushing the glossary down to the fifth. */
 .painel-tabela {
-  /* `flex` para o painel ocupar o que sobrar da primeira tela quando o pai
-       tem altura definida, e `max-height` como piso para quando ele não tem —
-       telas estreitas, onde a coluna é natural. `min-height: 0` porque, sem
-       ele, um filho de flex se recusa a encolher abaixo do próprio conteúdo, e
-       "o conteúdo" aqui são 272 linhas. */
+  /* `flex` so the panel takes whatever is left of the first screen when the
+       parent has a defined height, and `max-height` as the floor for when it
+       does not — narrow screens, where the column is the natural layout.
+       `min-height: 0` because without it a flex child refuses to shrink below
+       its own content, and "the content" here is 272 rows. */
   flex: 1 1 auto;
   min-height: 0;
   max-height: calc(100svh - var(--altura-cabecalho) - 6rem);
   overflow: auto;
 }
 
-/* A CABEÇA DA TABELA GRUDA, e não é enfeite: são 272 linhas e nove colunas de
-   número. Sem isto, rolar três telas deixa o leitor sem saber que coluna está
-   lendo — e uma tabela de indicadores em que se perdeu o cabeçalho é uma tabela
-   de números sem significado. */
+/* THE TABLE HEAD STICKS, and it is not decoration: there are 272 rows and nine
+   columns of numbers. Without this, scrolling three screens leaves the reader
+   with no idea which column they are reading — and a table of indicators whose
+   header has been lost is a table of numbers without meaning. */
 .tabela-cabeca th {
   position: sticky;
   top: 0;
@@ -193,8 +196,8 @@ body {
   background: var(--fundo);
 }
 
-/* O CABEÇALHO DO SITE também gruda, porque a marca é o único ponto de
-   orientação quando a tabela ocupa a tela inteira. */
+/* THE SITE HEADER sticks too, because the brand mark is the only point of
+   orientation once the table takes up the whole screen. */
 .cabecalho-fixo {
   position: sticky;
   top: 0;
@@ -209,9 +212,9 @@ body {
   background: var(--superficie);
 }
 
-/* Ordenação: a seta só aparece na coluna ativa, e a coluna ativa fica com a
-   tinta cheia. Duas pistas para a mesma informação, porque só a cor não serve
-   para quem não a distingue. */
+/* Sorting: the arrow appears only on the active column, and the active column
+   gets the full ink. Two cues for the same piece of information, because color
+   on its own is no use to whoever cannot tell it apart. */
 .ordenavel {
   cursor: pointer;
   user-select: none;

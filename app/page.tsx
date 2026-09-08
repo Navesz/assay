@@ -10,16 +10,17 @@ import { linkWhatsapp, site, type Contato } from '@/conteudo/carregar'
  * classes.
  *
  * ─────────────────────────────────────────────────────────────────────────
- * A ORDEM DA PÁGINA É A DECISÃO DE DESENHO, e ela mudou em 08/09.
+ * THE ORDER OF THE PAGE IS THE DESIGN DECISION, and it changed on 2026-09-08.
  *
- * Antes: título, subtítulo, três destaques, e só então a tabela — que começava
- * abaixo da dobra em qualquer tela de notebook. Quem chegava a um site de
- * indicadores lia três parágrafos sobre o site antes de ver um único indicador.
+ * Before: title, subtitle, three `destaques`, and only then the table — which
+ * began below the fold on any laptop screen. Whoever arrived at a site of
+ * indicators read three paragraphs about the site before seeing a single
+ * indicator.
  *
- * Agora a tabela é o segundo bloco da página, depois de duas linhas de
- * apresentação. O glossário vem DEPOIS dela, que é a ordem em que a pessoa
- * precisa: primeiro o número, depois onde ele engana. E os destaques — que são
- * a promessa do site, não o produto dele — foram para o fim.
+ * Now the table is the second block on the page, after two lines of
+ * introduction. The `Glossario` comes AFTER it, which is the order the person
+ * needs: first the number, then where it misleads. And the `destaques` — which
+ * are the site's promise, not its product — went to the end.
  * ─────────────────────────────────────────────────────────────────────────
  *
  * THIS FILE RENDERS WHAT WAS DECLARED, AND DOES NOT BREAK ON WHAT IS MISSING.
@@ -86,11 +87,12 @@ export default function Pagina() {
       <Cabecalho />
 
       <main className="mx-auto flex min-h-svh max-w-[92rem] flex-col gap-14 px-6 pt-6 pb-24">
-        {/* A APRESENTAÇÃO E A TABELA SÃO UM BLOCO SÓ, com o espaçamento curto
-            entre elas — o espaçamento largo separa seções, e aqui não há duas
-            seções: há uma frase dizendo o que se vai ver, e o que se vai ver.
-            Cada parágrafo a mais aqui em cima é uma linha da tabela empurrada
-            para fora da primeira tela. */}
+        {/* THE INTRODUCTION AND THE TABLE ARE A SINGLE BLOCK, with the short
+            spacing between them — the wide spacing separates sections, and
+            there are no two sections here: there is one sentence saying what
+            you are about to see, and what you are about to see. Every extra
+            paragraph up here is one row of the table pushed off the first
+            screen. */}
         <div className="flex min-h-0 flex-col gap-6 sm:h-[calc(100svh-var(--altura-cabecalho)-3rem)]">
           <section className="flex flex-col gap-3">
             <h1 className="max-w-3xl text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
